@@ -1,0 +1,3 @@
+sudo apt-get install lamp-server^
+
+add directory in /etc/apache2/apache2.conf

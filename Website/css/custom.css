@@ -1,11 +1,38 @@
-.up {
-	color: green
+.station-up {
+	color: green;
 }
 
-.down {
-	color: orange
+.station-down {
+	color: orange;
 }
 
-.unknown {
-	color: red
+.station-unknown {
+	color: red;
+}
+
+.feed-info {
+	color: #2a9fd6;
+}
+
+.feed-warning {
+	color: #ff8800;
+}
+
+.feed-danger {
+	color: #cc0000;
+}
+
+.navbar-header .nav-pills {
+	left: 225px;
+	width: 225px;
+	position: fixed;
+	top: 5px;
+}
+
+.dropdown-menu li.li-warning a:hover {
+	 background-color: #ff8800 !important;
+}
+
+.dropdown-menu li.li-danger a:hover {
+	 background-color: #cc0000 !important;
 }
