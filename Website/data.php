@@ -45,7 +45,7 @@
 		<div class="panel-heading" data-toggle="collapse" data-target="#errorMessages">
 			<h3 class="panel-title"><i class="fa fa-rss"></i> Application messages </h3>
 		</div>
-		<div id="errorMessages" class="panel-body feed collapse in">
+		<div id="errorMessages" class="panel-body collapse in">
 			<section class="feed-item feed-info">
 				<div class="feed-item-body">
 					<div class="text">
