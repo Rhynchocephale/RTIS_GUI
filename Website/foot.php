@@ -6,8 +6,8 @@
 	<script type="text/javascript">
 		//putting icons before error messages
 		$('.feed-info').find('.text').before($('<div class="icon pull-left"><i class="fa fa-thumbs-o-up"></i></div>'));
-		$('.feed-warning').find('.text').before($('<div class="icon pull-left"><i class="fa fa-thumbs-o-down"></i></div>'));
-		$('.feed-danger').find('.text').before($('<div class="icon pull-left"><i class="fa fa-warning"></i></div>'));
+		$('.feed-warning').find('.text').before($('<div class="icon pull-left"><i class="fa fa-exclamation"></i></div>'));
+		$('.feed-danger').find('.text').before($('<div class="icon pull-left"><i class="fa fa-ban"></i></div>'));
 
 		
 		jQuery(function ($) {
