@@ -44,6 +44,7 @@
 				<a class="navbar-brand" href="index.php">RTIS GUI</a>
 				<ul class="navbar-nav nav nav-pills">
 					<li id="li-data"><a href="data.php">Data</a></li>
+					<li id="li-plots"><a href="plots.php">Plots</a></li>
 					<li id="li-config"><a href="config.php">Config</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">

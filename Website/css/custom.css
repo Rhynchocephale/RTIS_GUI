@@ -24,7 +24,6 @@
 
 .navbar-header .nav-pills {
 	left: 225px;
-	width: 225px;
 	position: fixed;
 	top: 5px;
 }
@@ -35,4 +34,8 @@
 
 .dropdown-menu li.li-danger a:hover {
 	 background-color: #cc0000 !important;
+}
+
+.panel-heading .form-group {
+	margin-bottom:0;
 }

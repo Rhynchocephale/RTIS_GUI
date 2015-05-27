@@ -26,7 +26,7 @@
 						<h4 class="modal-title">Are you sure you want to do this?</h4>
 					</div>
 					<div class="modal-body">
-						<h3>This file will be deleted forever. Do you really want to continue?</h3>
+						<h3>This file will be deleted from the database, with no possible recovery. Do you really want to continue?</h3>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Yep, sure.</button>
