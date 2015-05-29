@@ -1,3 +1,14 @@
 sudo apt-get install lamp-server^
 
-add directory in /etc/apache2/apache2.conf
+add the following in /etc/apache2/apache2.conf :
+<Directory /path/to/website>
+        Options Indexes FollowSymLinks Includes ExecCGI
+        AllowOverride All 
+        Order deny,allow
+        Allow from all
+        Require all granted
+</Directory>
+
+
+
+change directory in /etc/apache"2/sites-available/000-default.conf

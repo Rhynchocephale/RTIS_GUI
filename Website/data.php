@@ -5,7 +5,7 @@
 
 	<!-- LIST OF PROCESS -->
 	<div class="panel panel-primary">
-		<div class="panel-heading clearfix">
+		<div class="panel-heading clearfix" data-toggle="collapse" data-target="#listOfProcess">
 			<h3 class="panel-title pull-left">
 				<i class="fa fa-list"></i> List of active processes
 			</h3>
@@ -14,7 +14,7 @@
 				<span class="input-group-addon input-sm">seconds</span>
 			</div>
 		</div>
-		<div class="table-responsive">
+		<div id="listOfProcess" class="table-responsive collapse in">
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
@@ -34,6 +34,43 @@
 					<tr>
 						<td>3</td>
 						<td>yetAnotherSubProcess.py</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	
+	<!-- MONITORING TABLE -->
+	<div class="panel panel-primary">
+		<div class="panel-heading clearfix" data-toggle="collapse" data-target="#monitoringTable">
+			<h3 class="panel-title pull-left">
+				<i class="fa fa-list"></i> Monitoring table
+			</h3>
+			<div class="form-group input-group col-lg-2 pull-right">
+				<input type="text" class="form-control input-sm" placeholder="Refresh frequency">
+				<span class="input-group-addon input-sm">seconds</span>
+			</div>
+		</div>
+		<div id="monitoringTable" class="table-responsive collapse in">
+			<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Parametre</th>
+						<th>Value</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Number of stuff</td>
+						<td>23</td>
+					</tr>
+					<tr>
+						<td>Number of other stuff</td>
+						<td>2</td>
+					</tr>
+					<tr>
+						<td>Index of thing</td>
+						<td>13</td>
 					</tr>
 				</tbody>
 			</table>
@@ -94,5 +131,12 @@
 	</div>
 </div>
 
-<script>setActive("li-data");</script>
+<script type="text/javascript">
+	setActive("li-data");
+	
+	//putting icons before error messages
+	$('.feed-info').find('.text').before($('<div class="icon pull-left"><i class="fa fa-thumbs-o-up"></i></div>'));
+	$('.feed-warning').find('.text').before($('<div class="icon pull-left"><i class="fa fa-exclamation"></i></div>'));
+	$('.feed-danger').find('.text').before($('<div class="icon pull-left"><i class="fa fa-ban"></i></div>'));
+</script>
 <?php include("foot.php"); ?>

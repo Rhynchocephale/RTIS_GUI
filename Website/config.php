@@ -8,12 +8,13 @@
 	<div class="panel-body">
 		<div class="form-group">
 			<label>Choose your model</label>
-			<select class="form-control">
-				<option>Config file 1</option>
-				<option>Config file 2</option>
-				<option>Config file 3</option>
-				<option>Config file 4</option>
-				<option>Config file 5</option>
+			<select id="selectConfig" class="form-control" onchange="prefillForm()">
+				<option value="0">Active config file</option>
+				<option value="1">Config file 1</option>
+				<option value="2">Config file 2</option>
+				<option value="3">Config file 3</option>
+				<option value="4">Config file 4</option>
+				<option value="5">Config file 5</option>
 			</select>
 			<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#confirmDelete"><i class="fa fa-trash"></i> Irreversibly delete this file</button>
 		</div>
@@ -41,7 +42,7 @@
 				
 				<div class="form-group">
 					<label>Write stuff below</label>
-					<input class="form-control">
+					<input id="name" class="form-control">
 				</div>
 
 				<div class="form-group">
@@ -90,8 +91,14 @@
 				</div>
 
 				<div class="form-group">
-					<label>Write more stuff here</label>
-					<input class="form-control">
+					<label>Select stuff</label>
+					<select class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
 				</div>
 				
 			</div>
@@ -124,5 +131,8 @@
 	</div>
 </div>
 
-<script>setActive("li-config");</script>
+<script>
+	setActive("li-config");
+	prefillForm();
+</script>
 <?php include("foot.php"); ?>
