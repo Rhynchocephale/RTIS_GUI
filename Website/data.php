@@ -9,7 +9,8 @@
 			<h3 class="panel-title pull-left">
 				<i class="fa fa-list"></i> List of active processes
 			</h3>
-			<div class="form-group input-group col-lg-2 pull-right">
+			<div class="form-group input-group col-lg-3 pull-right">				
+				<span class="input-group-addon input-sm"><input type="checkbox" aria-label="ProcessYN" checked></span>
 				<input type="text" class="form-control input-sm" placeholder="Refresh frequency">
 				<span class="input-group-addon input-sm">seconds</span>
 			</div>
@@ -46,8 +47,9 @@
 			<h3 class="panel-title pull-left">
 				<i class="fa fa-list"></i> Monitoring table
 			</h3>
-			<div class="form-group input-group col-lg-2 pull-right">
-				<input type="text" class="form-control input-sm" placeholder="Refresh frequency">
+			<div class="form-group input-group col-lg-3 pull-right">				
+				<span class="input-group-addon input-sm"><input type="checkbox" aria-label="MonitorYN" checked></span>
+				<input type="text" class="form-control input-sm" placeholder="Monitoring frequency">
 				<span class="input-group-addon input-sm">seconds</span>
 			</div>
 		</div>

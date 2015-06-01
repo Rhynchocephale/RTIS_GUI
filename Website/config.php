@@ -15,9 +15,33 @@
 </div>
 
 <div class="panel panel-primary">
+	<div class="panel-heading">
+		  <h3 class="panel-title">Load a file</h3>
+	</div>
+	<div class="panel-body">
+		<form role="form">
+			
+			<div class="col-lg-12">
+				<div class="form-group">
+					<label>Select your file</label>
+					<input type="file">
+				</div>
+			</div>
+			
+			<div class="pull-right">
+				<button name="save" type="button" class="btn btn-primary">Save</button>
+				<button name="saveSend" type="button" class="btn btn-success">Save & send</button>
+				<button name="send" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>
+			</div>
+			
+		</form>
+	</div>
+</div>
+
+<div class="panel panel-primary">
 	
 	<div class="panel-heading">
-		  <h3 class="panel-title">Edit a configuration file</h3>
+		  <h3 class="panel-title">Make your own configuration file</h3>
 	</div>
 	<div class="panel-body">
 		<div class="form-group">
@@ -59,7 +83,7 @@
 				
 						<div class="form-group">
 							<label>SeverityFilter</label>
-							<select class="form-control">
+							<select id="RCFSeverityFilter"class="form-control">
 								<option value="0">No error message</option>
                                 <option value="1">Fatal</option>
                                 <option value="3">Error</option>
@@ -72,50 +96,53 @@
 
 						<div class="form-group">
 							<label>StationId</label>
-							<input class="form-control">
+							<input id="RCFStationId" class="form-control" onchange="validateUint('RCFStationId');">
 						</div>
 						
 						<div class="form-group">
 							<label>RxIP_Address</label>
-							<input class="form-control">
+							<input id="RCFRxIP_Address" class="form-control"  onchange="validateIp('RCFRxIP_Address');">
 						</div>
 						
 						<div class="form-group">
 							<label>RxPortNo</label>
-							<input class="form-control">
+							<input id="RCFRxPortNo" class="form-control" onchange="validateUint('RCFRxPortNo');">
 						</div>
 						
 						<div class="form-group">
 							<label>RxSocketType</label>
-							<input class="form-control">
+							<input id="RCFRxSocketType" class="form-control" onchange="validateUint('RCFRxSocketType');">
 						</div>
 						
 						<label>RxIOTimeout</label>
 						<div class="form-group input-group">
-							<input type="text" class="form-control">
+							<input type="text" id="RCFRxIOTimeout" class="form-control" onchange="validateUint('RCFRxIOTimeout');">
                             <span class="input-group-addon">sec</span>
 						</div>
 						
 						<label>RxConnectionTimeout</label>
 						<div class="form-group input-group">
-							<input type="text" class="form-control">
+							<input type="text" id="RCFRxConnectionTimeout" class="form-control" onchange="validateUint('RCFRxConnectionTimeout');">
                             <span class="input-group-addon">sec</span>
 						</div>
 						
 						<label>RxRetryDelay</label>
 						<div class="form-group input-group">
-							<input type="text" class="form-control">
+							<input type="text" id="RCFRxRetryDelay" class="form-control" onchange="validateUint('RCFRxRetryDelay');">
                             <span class="input-group-addon">sec</span>
 						</div>
 						
 						<div class="form-group">
 							<label>StationShortName</label>
-							<input class="form-control">
+							<input id="RCFStationShortName" class="form-control">
 						</div>
 						
-						<div class="form-group">
-							<label>ReceiverPosition</label>
-							<input class="form-control">
+						<label>ReceiverPosition</label>
+						<div class="form-group input-group">
+							<input id="RCFReceiverPositionX" class="form-control" placeholder="X" onchange="validateFloat('RCFReceiverPositionX');">
+							<input id="RCFReceiverPositionY" class="form-control" placeholder="Y" onchange="validateFloat('RCFReceiverPositionY');">
+							<input id="RCFReceiverPositionZ" class="form-control" placeholder="Z" onchange="validateFloat('RCFReceiverPositionZ');">
+							<span class="input-group-addon">m</span>
 						</div>				
 					</div>
 				</div>
@@ -127,7 +154,7 @@
 					<div class="panel-footer">
 						<div class="form-group">
 							<label>SeverityFilter</label>
-							<select class="form-control">
+							<select id="GRCSMSeverityFilter" class="form-control">
 								<option value="0">No error message</option>
                                 <option value="1">Fatal</option>
                                 <option value="3">Error</option>
@@ -145,7 +172,7 @@
 					<div class="panel-footer">
 						<div class="form-group">
 							<label>SeverityFilter</label>
-							<select class="form-control">
+							<select id="GRDSMSeverityFilter" class="form-control">
 								<option value="0">No error message</option>
                                 <option value="1">Fatal</option>
                                 <option value="3">Error</option>
@@ -158,7 +185,7 @@
 						
 						<label>SampleRate</label>
 						<div class="form-group input-group">
-                            <select class="form-control">
+                            <select id="GRDSMSampleRate" class="form-control">
 								<option value="10">10</option>
                                 <option value="20">20</option>
                                 <option value="40">40</option>
@@ -179,7 +206,7 @@
 					<div class="panel-footer">
 						<div class="form-group">
 							<label>SeverityFilter</label>
-							<select class="form-control">
+							<select id="GESMSeverityFilter" class="form-control">
 								<option value="0">No error message</option>
                                 <option value="1">Fatal</option>
                                 <option value="3">Error</option>
@@ -198,7 +225,7 @@
 			
 						<div class="form-group">
 							<label>SeverityFilter</label>
-							<select class="form-control">
+							<select id="ProcessingSeverityFilter" class="form-control">
 								<option value="0">No error message</option>
                                 <option value="1">Fatal</option>
                                 <option value="3">Error</option>
@@ -211,12 +238,12 @@
 						
 						<div class="form-group">
 							<label>DopplerTolerance</label>
-							<input class="form-control">
+							<input id="ProcessingDopplerTolerance" class="form-control" onchange="validateFloat('ProcessingDopplerTolerance');">
 						</div>
 						
 						<div class="form-group">
 							<label>FilterFreq</label>
-							<input class="form-control">
+							<input id="ProcessingFilterFreq" class="form-control" onchange="validateFloat('ProcessingFilterFreq');">
 						</div>
 					</div>
 				</div>
@@ -229,7 +256,7 @@
 				
 						<div class="form-group">
 							<label>SeverityFilter</label>
-							<select class="form-control">
+							<select id="ICMSeverityFilter" class="form-control">
 								<option value="0">No error message</option>
                                 <option value="1">Fatal</option>
                                 <option value="3">Error</option>
@@ -242,35 +269,35 @@
 						
 						<div class="form-group">
 							<label>TxIP_Address</label>
-							<input class="form-control">
+							<input id="ICMTxIP_Address" class="form-control" onchange="validateIp('ICMTxIP_Address');">
 						</div>
 						
 						<div class="form-group">
 							<label>TxPortNo</label>
-							<input class="form-control">
+							<input id="ICMTxPortNo" class="form-control" onchange="validateUint('ICMTxPortNo');">
 						</div>
 						
 						<div class="form-group">
 							<label>TxSocketType</label>
-							<input class="form-control">
+							<input id="ICMTxSocketType" class="form-control" onchange="validateUint('ICMTxSocketType');">
 						</div>
 						
 						<label>TxIOTimeout</label>
 						<div class="form-group input-group">
-							<input type="text" class="form-control">
+							<input type="text" id="ICMTxIOTimeout" class="form-control" onchange="validateUint('ICMTxIOTimeout');">
                             <span class="input-group-addon">sec</span>
 						</div>
 						
 						<label>TxConnectionTimeout</label>
 						<div class="form-group input-group">
-							<input type="text" class="form-control">
+							<input type="text" id="ICMTxConnectionTimeout" class="form-control" onchange="validateUint('ICMTxConnectionTimeout');">
                             <span class="input-group-addon">sec</span>
 						</div>
 
 						<label>TxRetryDelay</label>
 						<div class="form-group input-group">
-							<input type="text" class="form-control">
-                            <span class="input-group-addon">sec</span>
+							<input type="text" id="ICMTxRetryDelay" class="form-control" onchange="validateUint('ICMTxRetryDelay');">
+							<span class="input-group-addon">sec</span>
 						</div>
 					</div>
 				</div>
@@ -281,7 +308,7 @@
 			
 						<div class="form-group">
 							<label>SeverityFilter</label>
-							<select class="form-control">
+							<select id="OutputSeverityFilter" class="form-control">
 								<option value="0">No error message</option>
                                 <option value="1">Fatal</option>
                                 <option value="3">Error</option>
@@ -294,14 +321,14 @@
 						
 						<div class="form-group">
 							<label>RootDirectory</label>
-							<input class="form-control">
+							<input id="OutputRootDirectory" class="form-control" onchange="validatePath('OutputRootDirectory');">
 						</div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="pull-right">
-				<button name="save" type="button" class="btn btn-primary">Save</button>
+				<button name="save" type="button" class="btn btn-primary" >Save</button>
 				<button name="saveSend" type="button" class="btn btn-success">Save & send</button>
 				<button name="send" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>
 			</div>
@@ -331,31 +358,9 @@
 	</div> <!-- End of panel-body -->
 </div>
 
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		  <h3 class="panel-title">Load your own file</h3>
-	</div>
-	<div class="panel-body">
-		<form role="form">
-			<div class="col-lg-12">
-				<div class="form-group">
-					<label>Select your file</label>
-					<input type="file">
-				</div>
-				
-			</div>
-			
-			<div class="pull-right">
-				<button name="save" type="button" class="btn btn-primary">Save</button>
-				<button name="saveSend" type="button" class="btn btn-success">Save & send</button>
-				<button name="send" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>
-			</div>
-		</form>
-	</div>
-</div>
-
 <script>
 	setActive("li-config");
 	prefillForm();
 </script>
+<script type="text/javascript" src="js/validateConfig.js"></script>
 <?php include("foot.php"); ?>

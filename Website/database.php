@@ -22,7 +22,7 @@ function connectToDb() {
 						<button type="button" class="close" data-dismiss="alert">&times;</button>
 						<h1><strong>Unable to connect to the database: '.$conn->connect_error.'</strong></h1><br/>
 						<p class="lead">You may still be able to send configuration files to the station, but the database will not
-						keep track of your changes. That will cause problems next time you connect.</p>
+						keep track of your changes. That can cause problems next time you connect.</p>
 					</div>
 				</div>
 			</div>');

@@ -5735,6 +5735,8 @@ table a,
 .has-warning .form-control,
 .has-warning .form-control:focus {
   border-color: #ff8800;
+  border-width: medium;
+  background-color: #ffcf99;
 }
 .has-error .help-block,
 .has-error .control-label {
@@ -5743,6 +5745,8 @@ table a,
 .has-error .form-control,
 .has-error .form-control:focus {
   border-color: #cc0000;
+  border-width: medium;
+  background-color: #ff7070;
 }
 .has-success .help-block,
 .has-success .control-label {
@@ -5751,7 +5755,9 @@ table a,
 .has-success .form-control,
 .has-success .form-control:focus {
   border-color: #77b300;
+  border-width: medium;
 }
+
 legend {
   color: #fff;
 }
