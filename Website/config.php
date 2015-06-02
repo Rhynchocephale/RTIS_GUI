@@ -115,21 +115,27 @@
 						</div>
 						
 						<label>RxIOTimeout</label>
-						<div class="form-group input-group">
-							<input type="text" id="RCFRxIOTimeout" class="form-control" onchange="validateUint('RCFRxIOTimeout');">
-                            <span class="input-group-addon">sec</span>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" id="RCFRxIOTimeout" class="form-control" onchange="validateUint('RCFRxIOTimeout');">
+								<span class="input-group-addon">sec</span>
+							</div>
 						</div>
 						
 						<label>RxConnectionTimeout</label>
-						<div class="form-group input-group">
-							<input type="text" id="RCFRxConnectionTimeout" class="form-control" onchange="validateUint('RCFRxConnectionTimeout');">
-                            <span class="input-group-addon">sec</span>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" id="RCFRxConnectionTimeout" class="form-control" onchange="validateUint('RCFRxConnectionTimeout');">
+								<span class="input-group-addon">sec</span>
+							</div>
 						</div>
 						
 						<label>RxRetryDelay</label>
 						<div class="form-group input-group">
-							<input type="text" id="RCFRxRetryDelay" class="form-control" onchange="validateUint('RCFRxRetryDelay');">
-                            <span class="input-group-addon">sec</span>
+							<div class="input-group">
+								<input type="text" id="RCFRxRetryDelay" class="form-control" onchange="validateUint('RCFRxRetryDelay');">
+								<span class="input-group-addon">sec</span>
+							</div>
 						</div>
 						
 						<div class="form-group">
@@ -138,11 +144,13 @@
 						</div>
 						
 						<label>ReceiverPosition</label>
-						<div class="form-group input-group">
-							<input id="RCFReceiverPositionX" class="form-control" placeholder="X" onchange="validateFloat('RCFReceiverPositionX');">
-							<input id="RCFReceiverPositionY" class="form-control" placeholder="Y" onchange="validateFloat('RCFReceiverPositionY');">
-							<input id="RCFReceiverPositionZ" class="form-control" placeholder="Z" onchange="validateFloat('RCFReceiverPositionZ');">
-							<span class="input-group-addon">m</span>
+						<div class="form-group">
+							<div class="input-group">
+								<input id="RCFReceiverPositionX" class="form-control" placeholder="X" onchange="validateFloat('RCFReceiverPositionX');">
+								<input id="RCFReceiverPositionY" class="form-control" placeholder="Y" onchange="validateFloat('RCFReceiverPositionY');">
+								<input id="RCFReceiverPositionZ" class="form-control" placeholder="Z" onchange="validateFloat('RCFReceiverPositionZ');">
+								<span class="input-group-addon">m</span>
+							</div>				
 						</div>				
 					</div>
 				</div>
@@ -283,21 +291,27 @@
 						</div>
 						
 						<label>TxIOTimeout</label>
-						<div class="form-group input-group">
-							<input type="text" id="ICMTxIOTimeout" class="form-control" onchange="validateUint('ICMTxIOTimeout');">
-                            <span class="input-group-addon">sec</span>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" id="ICMTxIOTimeout" class="form-control" onchange="validateUint('ICMTxIOTimeout');">
+								<span class="input-group-addon">sec</span>
+							</div>
 						</div>
 						
 						<label>TxConnectionTimeout</label>
-						<div class="form-group input-group">
-							<input type="text" id="ICMTxConnectionTimeout" class="form-control" onchange="validateUint('ICMTxConnectionTimeout');">
-                            <span class="input-group-addon">sec</span>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" id="ICMTxConnectionTimeout" class="form-control" onchange="validateUint('ICMTxConnectionTimeout');">
+								<span class="input-group-addon">sec</span>
+							</div>
 						</div>
 
 						<label>TxRetryDelay</label>
-						<div class="form-group input-group">
-							<input type="text" id="ICMTxRetryDelay" class="form-control" onchange="validateUint('ICMTxRetryDelay');">
-							<span class="input-group-addon">sec</span>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" id="ICMTxRetryDelay" class="form-control" onchange="validateUint('ICMTxRetryDelay');">
+								<span class="input-group-addon">sec</span>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -360,7 +374,7 @@
 
 <script>
 	setActive("li-config");
-	prefillForm();
+	//prefillForm();
 </script>
 <script type="text/javascript" src="js/validateConfig.js"></script>
 <?php include("foot.php"); ?>

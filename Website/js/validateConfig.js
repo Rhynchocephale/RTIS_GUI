@@ -1,83 +1,69 @@
 function validateUint(id) {
-	var myClass = document.getElementById(id).parentNode.className;
-	myClass = myClass.replace(" has-success","").replace(" has-error","");
-	
-	if (/^\d+$/.test(document.getElementById(id).value)){  //only digits
-		myClass += " has-success";
-		document.getElementById(id+"_Label").remove();
+	var myElement = $("#"+id);
+	myElement.removeClass("has-error has-success")
+	if (/^\d+$/.test(myElement.val())){  //only digits
+		myElement.addClass("has-success");
+		$("#"+id+'_Label').remove(); //removing the error label
+			
 	} else {
-		myClass += " has-error";
-		if(!document.getElementById(id + "_Label")) {      //if does not already exist
-			var msg = document.createElement("p");
-			msg.className = "label label-danger pull-right";
-			msg.id = id + "_Label";
-			msg.innerHTML = "Not a valid int format";
-			document.getElementById(id).parentNode.appendChild(msg);
+		myElement.addClass("has-error");
+		if (! $("#"+id+'_Label').length) {
+			if(! myElement.parent().hasClass("form-group")) { //going one step higher, in order to get out of input-groups
+				myElement = myElement.parent();
+			}
+			myElement.after( "<div id=\""+id+"_Label\" class=\"label label-danger\">Invalid int</div>" );
 		}
 	}
-	
-	document.getElementById(id).parentNode.className = myClass;
 }
 
 function validateFloat(id) {
-	var myClass = document.getElementById(id).parentNode.className;
-	myClass = myClass.replace(" has-success","").replace(" has-error","");
-	
-	if (/^\d+(\.\d+)?$/.test(document.getElementById(id).value)){  //unsigned float
-		myClass += " has-success";
-		document.getElementById(id+"_Label").remove();
+	var myElement = $("#"+id);
+	myElement.removeClass("has-error has-success")
+	if (/^\d+(\.\d+)?$/.test(myElement.val())){  //only digits
+		myElement.addClass("has-success");
+		$("#"+id+'_Label').remove(); //removing the error label
+			
 	} else {
-		myClass += " has-error";
-		if(!document.getElementById(id + "_Label")) {      //if does not already exist
-			var msg = document.createElement("span");
-			msg.className = "label label-danger";
-			msg.id = id + "_Label";
-			msg.innerHTML = "Not a valid float format";
-			document.getElementById(id).parentNode.appendChild(msg);
+		myElement.addClass("has-error");
+		if (! $("#"+id+'_Label').length) {
+			if(! myElement.parent().hasClass("form-group")) { //going one step higher, in order to get out of input-groups
+				myElement = myElement.parent();
+			}
+			if(! myElement.next().hasClass("label label-danger")){ //if no label is already present (special case for ReceiverPosition)
+				myElement.after( "<div id=\""+id+"_Label\" class=\"label label-danger\">Invalid float</div>" );
+			}
 		}
 	}
-	document.getElementById(id).parentNode.className = myClass;
-}
+}	
 
 function validatePath(id) {
-	var myClass = document.getElementById(id).parentNode.className;
-	myClass = myClass.replace(" has-success","").replace(" has-warning","");
-	
-	if (/^\/.+/.test(document.getElementById(id).value)){  // starting with a slash
-		myClass += " has-success";
-		document.getElementById(id+"_Label").remove();
+	var myElement = $("#"+id);
+	myElement.removeClass("has-warning has-success")
+	if (/^\//.test(myElement.val())){  //only digits
+		myElement.addClass("has-success");
+		$("#"+id+'_Label').remove(); //removing the error label
+			
 	} else {
-		myClass += " has-warning";
-		if(!document.getElementById(id + "_Label")) {      //if does not already exist
-			var msg = document.createElement("span");
-			msg.className = "label label-danger";
-			msg.id = id + "_Label";
-			msg.innerHTML = "Absolute paths start with /";
-			document.getElementById(id).parentNode.appendChild(msg);
+		myElement.addClass("has-warning");
+		if (! $("#"+id+'_Label').length) {
+			myElement.after( "<div id=\""+id+"_Label\" class=\"label label-warning\">Should start with /</div>" );
 		}
 	}
-	document.getElementById(id).parentNode.className = myClass;
 }
 
 function validateIp(id) {
-	var myClass = document.getElementById(id).parentNode.className;
-	myClass = myClass.replace(" has-success","").replace(" has-error","");
-	myRegex = /^(((1?\d{1,2})|(2[0-4]\d)|(25[0-5]))\.){3}((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))$/;
+	var myElement = $("#"+id);
+	var myRegex = /^(((1?\d{1,2})|(2[0-4]\d)|(25[0-5]))\.){3}((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))$/;
 	
-	
-	if (myRegex.test(document.getElementById(id).value)){  // four int in the range 0-255 separated by dots
-		myClass += " has-success";
-		document.getElementById(id+"_Label").remove();
+	myElement.removeClass("has-error has-success")
+	if (myRegex.test(myElement.val())){  //only digits
+		myElement.addClass("has-success");
+		$("#"+id+'_Label').remove(); //removing the error label
+			
 	} else {
-		myClass += " has-error";
-		if(!document.getElementById(id + "_Label")) {      //if does not already exist
-			var msg = document.createElement("span");
-			msg.className = "label label-danger";
-			msg.id = id + "_Label";
-			msg.innerHTML = "An IP consists of four INT in the range 0-255 separated by dots";
-			document.getElementById(id).parentNode.appendChild(msg);
+		myElement.addClass("has-error");
+		if (! $("#"+id+'_Label').length) {
+			myElement.after( "<div id=\""+id+"_Label\" class=\"label label-danger\">Invalid IP</div>" );
 		}
 	}
-	
-	document.getElementById(id).parentNode.className = myClass;
 }
