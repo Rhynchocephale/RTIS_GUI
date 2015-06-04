@@ -1,4 +1,4 @@
-<?php include("head.php"); ?>
+<?php include("headIndex.php"); ?>
 			
 <div class="col-lg-4">
 	<h1>Hello. This is the index page.</h1>

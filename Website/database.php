@@ -1,14 +1,12 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "myDB";
-
 //connection to the database
-function connectToDb() {
+function dbConnect() {
 	
-	global $servername, $username, $password, $dbname;
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "myDB";
 	
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -28,33 +26,8 @@ function connectToDb() {
 			</div>');
 	}
 	
-	$conn->close();
-}
+	return $conn;
 
-function insertInDb() {
-	global $servername, $username, $password, $dbname;
-	
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	
-	$sql = "INSERT INTO test (station, text)
-	VALUES ("."a".","."b".")";
-
-	if ($conn->query($sql) === TRUE) {
-		echo "New record created successfully";
-	} else {
-		echo "Error: " . $sql . "<br>" . $conn->error;
-	}	
-	
-	$conn->close();
-}
-
-function saveInDb() {
-	echo 1;
-}
-
-function deleteFromDb() {
-	echo 1;
 }
 
 ?>

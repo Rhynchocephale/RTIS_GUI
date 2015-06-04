@@ -6,14 +6,15 @@
 	<!-- LIST OF PROCESS -->
 	<div class="panel panel-primary">
 		<div class="panel-heading clearfix" data-toggle="collapse" data-target="#listOfProcess">
-			<h3 class="panel-title pull-left">
+			<h3 class="panel-title pull-left" style="padding-top: 7.5px; overflow: hidden;">
 				<i class="fa fa-list"></i> List of active processes
 			</h3>
-			<div class="form-group input-group col-lg-3 pull-right">				
-				<span class="input-group-addon input-sm"><input type="checkbox" aria-label="ProcessYN" checked></span>
-				<input type="text" class="form-control input-sm" placeholder="Refresh frequency">
-				<span class="input-group-addon input-sm">seconds</span>
+			<div class="form-group input-group input-group-sm col-lg-3 pull-right">				
+				<span class="input-group-addon"><input type="checkbox" aria-label="ProcessYN" checked></span>
+				<input type="text" class="form-control" placeholder="Refresh frequency">
+				<span class="input-group-addon">seconds</span>
 			</div>
+			
 		</div>
 		<div id="listOfProcess" class="table-responsive collapse in">
 			<table class="table table-striped table-bordered table-hover">
@@ -44,7 +45,7 @@
 	<!-- MONITORING TABLE -->
 	<div class="panel panel-primary">
 		<div class="panel-heading clearfix" data-toggle="collapse" data-target="#monitoringTable">
-			<h3 class="panel-title pull-left">
+			<h3 class="panel-title pull-left" style="padding-top: 7.5px; overflow: hidden;">
 				<i class="fa fa-list"></i> Monitoring table
 			</h3>
 			<div class="form-group input-group col-lg-3 pull-right">				

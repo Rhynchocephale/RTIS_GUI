@@ -12,3 +12,7 @@ add the following in /etc/apache2/apache2.conf :
 
 
 change directory in /etc/apache"2/sites-available/000-default.conf
+
+
+php logs:
+cd /var/log/apache2 && tail -f error.log

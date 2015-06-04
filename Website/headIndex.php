@@ -42,21 +42,6 @@
 				</button>
 				
 				<a class="navbar-brand" href="index.php">RTIS GUI</a>
-				<ul class="navbar-nav nav nav-pills">
-					<li id="li-data"><a href="data.php?sta=<?php echo $_GET["sta"]; ?>">Data</a></li>
-					<li id="li-plots"><a href="plots.php?sta=<?php echo $_GET["sta"]; ?>">Plots</a></li>
-					<li id="li-config"><a href="config.php?sta=<?php echo $_GET["sta"]; ?>">Config</a></li>
-					<li class="dropdown">
-						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
-							Actions <span class="caret"></span>
-						</a>
-						<ul class="dropdown-menu">
-							<li class="li-warning"><a href="#">Disconnect</a></li>
-							<li class="divider"></li>
-							<li class="li-danger"><a href="#"><button type="button" class="btn btn-danger btn-block">REBOOT</button></a></li>
-						</ul>
-					</li>
-				</ul>
 			</div>
 			
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
