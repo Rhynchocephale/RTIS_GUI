@@ -1,4 +1,5 @@
 <?php
+include("database.php");
 
 $conn = dbConnect();
 $sql = "SELECT * FROM configFiles WHERE station = " . $_GET["sta"] . ";";
@@ -30,4 +31,6 @@ if ($result->num_rows > 0) {
 } else {
 	$listOfValues = "<option value=\"-1\">No file found</option>\n";
 }
+
+echo $listOfValues;
 ?>

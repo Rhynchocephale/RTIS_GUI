@@ -1,14 +1,20 @@
 <?php
-$fileToDelete = $_POST['selectConfig'];
+function deleteFileFromDb() {
 
-$conn = dbConnect();
-if( $fileToDelete >= 0 ) { // prevents from erasing things like "No files found"
+	$fileToDelete = $_POST['selectConfig'];
+
 	$conn = dbConnect();
-	$sql = "DELETE FROM configFiles WHERE id = " . $fileToDelete . ";";
-	$result = $conn->query($sql);
+	if( $fileToDelete >= 0 ) { // prevents from erasing things like "No files found"
+		$conn = dbConnect();
+		$sql = "DELETE FROM configFiles WHERE id = " . $fileToDelete . ";";
+		$result = $conn->query($sql);
+	}
+	$conn->close();
+
+	getList();
 }
-$conn->close();
 
-include("getDropdownListOfConfigFiles.php");
-
+if(isset($_POST['deleteButton'])) {
+   deleteFileFromDb();
+} 
 ?>
