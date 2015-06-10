@@ -1,20 +1,8 @@
 <?php
-function deleteFileFromDb() {
-
-	$fileToDelete = $_POST['selectConfig'];
+	include("database.php");
 
 	$conn = dbConnect();
-	if( $fileToDelete >= 0 ) { // prevents from erasing things like "No files found"
-		$conn = dbConnect();
-		$sql = "DELETE FROM configFiles WHERE id = " . $fileToDelete . ";";
-		$result = $conn->query($sql);
-	}
-	$conn->close();
-
-	getList();
-}
-
-if(isset($_POST['deleteButton'])) {
-   deleteFileFromDb();
-} 
+	$sql = "DELETE FROM configFiles WHERE id = " .  $_GET['selectedOption'] . ";";
+	mysqli_query($conn, $sql);
+	mysqli_close($conn);
 ?>

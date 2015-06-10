@@ -1,5 +1,5 @@
 function validateUint(id) {
-	var myElement = $("#"+id);
+	var myElement = $("[name="+id+"]");
 	myElement.removeClass("has-error has-success");
 	$("#"+id+'_Label').remove();   //removing the error label if present
 	if( myElement.val() ) { //if is not empty
@@ -16,7 +16,7 @@ function validateUint(id) {
 }
 
 function validateFloat(id) {
-	var myElement = $("#"+id);
+	var myElement = $("[name="+id+"]");
 	myElement.removeClass("has-error has-success")
 	$("#"+id+'_Label').remove();   //removing the error label if present
 	if( myElement.val() ) { //if is not empty
@@ -35,7 +35,7 @@ function validateFloat(id) {
 }	
 
 function validatePath(id) {
-	var myElement = $("#"+id);
+	var myElement = $("[name="+id+"]");
 	myElement.removeClass("has-warning has-success");
 	$("#"+id+'_Label').remove();   //removing the error label if present
 	if( myElement.val() ) { //if is not empty
@@ -49,7 +49,7 @@ function validatePath(id) {
 }
 
 function validateIp(id) {
-	var myElement = $("#"+id);
+	var myElement = $("[name="+id+"]");
 	var myRegex = /^(((1?\d{1,2})|(2[0-4]\d)|(25[0-5]))\.){3}((\d{1,2})|(1\d{2})|(2[0-4]\d)|(25[0-5]))$/;
 	
 	myElement.removeClass("has-error has-success");
@@ -65,8 +65,8 @@ function validateIp(id) {
 }
 
 function checkAllValid() {
-	isOk = true;
-	$('.form-control').each( function (index, data) {
+	var isOk = true;
+	$('#manualConfigForm.form-control').each( function (index, data) {
 		var currentElement = $(this);
 		if(currentElement.hasClass("has-error") ) { //if wrong value
 			isOk = false;

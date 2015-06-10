@@ -19,7 +19,7 @@
 		  <h3 class="panel-title">Load a file</h3>
 	</div>
 	<div class="panel-body">
-		<form role="form">
+		<form role="form" name="fileUpload" id="fileUpload">
 
 			<div class="col-lg-12">
 				<div class="form-group">
@@ -27,11 +27,35 @@
 					<input type="file">
 				</div>
 			</div>
+			
+			<input type="hidden" name="saveInDb" value="true">
 
 			<div class="pull-right">
-				<button name="saveSend" type="button" class="btn btn-success">Save & send</button>
-				<button name="save" type="button" class="btn btn-primary">Save</button>
-				<button name="send" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>
+				<button name="saveSendFileButton" type="button" class="btn btn-success" onclick="checkAndSubmitFile('both');">Save & send</button>
+				<button name="saveFileButton" type="button" class="btn btn-primary" onclick="checkAndSubmitFile('save');">Save</button>
+				<button name="sendFileButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSaveFile">Send (but don't save)</button>
+			</div>
+
+			<!-- Send (no save) -->
+			<div class="modal fade" id="confirmNoSaveFile" tabindex="-1" role="dialog" aria-labelledby="confirmNoSaveFile" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h2 class="modal-title">Are you sure you want to do this?</h2>
+						</div>
+						<div class="modal-body">
+							<h3>This new file will be sent to the server, but will not be saved in the database.
+							The current active file will still be considered as active by this interface only.
+							This means the current file will still display next time, even if your new file really
+							is the active one.
+							</h3>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="checkAndSubmitFile('send');">I know what I'm doing.</button>
+							<button type="button" class="btn btn-success" data-dismiss="modal">I changed my mind.</button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</form>
@@ -44,7 +68,7 @@
 		  <h3 class="panel-title">Make your own configuration file</h3>
 	</div>
 	<div class="panel-body">
-		<form role="form" name="filesDropdown" id="filesDropdown" method="post" action="deleteFileFromDb();">
+		<form role="form" name="filesDropdown" id="filesDropdown">
 			<div class="form-group">
 				<label>Choose your model</label>
 				<select id="selectConfig" name="selectConfig" class="form-control" onchange="prefillFields();" required>
@@ -61,10 +85,12 @@
 							<h2 class="modal-title">Are you sure you want to do this?</h2>
 						</div>
 						<div class="modal-body">
-							<h3>This file will be deleted from the database, with no possible recovery. Do you really want to continue?</h3>
+							<h3>This file will be deleted from the database only, with no possible recovery.
+							Please note that this will not affect the remote station at all.
+							Do you really want to continue?</h3>
 						</div>
 						<div class="modal-footer">
-							<button type="submit" name="deleteButton" class="btn btn-danger" data-dismiss="modal">Yep, sure.</button>
+							<button type="button" name="deleteButton" class="btn btn-danger" data-dismiss="modal" onclick="deleteFileFromDb();">Yep, sure.</button>
 							<button type="button" class="btn btn-success" data-dismiss="modal">Well, not really.</button>
 						</div>
 					</div>
@@ -72,11 +98,13 @@
 			</div>
 		</form>
 
-		<form role="form" name="manualConfigForm" id="manualConfigForm" method="post" action="">
+		<form role="form" name="manualConfigForm" id="manualConfigForm">
 			<div class="form-group">
-				<label>Name of the new file (optionnal)</label>
+				<label>Name of the new file (optional)</label>
 				<input name="fileName" class="form-control optional">
 			</div>
+
+			<input type="hidden" name="station" value="<?php echo $_GET["sta"] ?>">
 
 			<div class="col-lg-4">
 				<div class="panel panel-default">
@@ -344,8 +372,6 @@
 				<button name="sendButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>
 			</div>
 
-			<!-- ALL THE POSSIBLE MODALS TO INFORM OF THE OUTPUT OF BUTTON PRESSING ARE STORED HERE -->
-
 			<!-- Send (no save) -->
 			<div class="modal fade" id="confirmNoSave" tabindex="-1" role="dialog" aria-labelledby="confirmNoSave" aria-hidden="true">
 				<div class="modal-dialog">
@@ -376,63 +402,76 @@
 	setActive("li-config");
 	getList();
 
-	function submitForm(formName, action) //changes the action to be made by the button
-	{
-		document.getElementById(formName).action = action;
-		document.getElementById(formName).submit();
-	}
-
 	function getList() {
 		$.ajax({
-				url: "getDropdownListOfConfigFiles.php?sta=<?php echo $_GET["sta"] ?>",
-				type: "GET",
-				data: $(this).serialize(), //sending all values at once
-				success: function(data) {
-					$('#selectConfig').html(data);
-				}
-			});
-		
-		prefillFields();
+			url: "getDropdownListOfConfigFiles.php?sta=<?php echo $_GET["sta"] ?>",
+			type: "GET",
+			data: $(this).serialize(), //sending all values at once
+			success: function(data) {
+				$('#selectConfig').html(data);
+			}, 
+			complete : function(result, status){
+				prefillFields();
+			}
+		});
 	}
 
 	function prefillFields() {
 		var selectedOption = $("#selectConfig").val();
-		if(selectedOption != "-1") {
+		if(selectedOption != "-1") { //if file found
 			$.ajax({
-				url: 'prefillFields.php?selectConfig='.concat(selectedOption),
-				type: 'POST',
-				data: $(this).serialize(), //sending all values at once
+				url: 'prefillFields.php',
+				type: 'GET',
+				data: 'selectedOption='+selectedOption,
 				dataType: 'json',
 				success: function(data) {
 					<?php 
 						foreach($listOfFields as $field) { //filling each value
-							echo "\t\t\t\t\t$(\"[name=".$field."]\").val(data[\"".$field."\"]);\n";
+							if($field != "station") {
+								echo "\t\t\t\t\t$(\"[name=".$field."]\").val(decodeURI(data[\"".$field."\"]));\n";
+							}
 						}
 					?>
 				}
 			});
-		} else { // THIS IS ONLY FOR TESTS. SHOULD BE REMOVED.
-			<?php 
-				$i = 0;
-				foreach($listOfFields as $field) { //filling each value
-					echo "$(\"[name=".$field."]\").val(\"".$i."\");\n";
-					$i++;
+		}
+	}
+	
+	function deleteFileFromDb() {
+		var selectedOption = $("#selectConfig").val();
+		if(selectedOption != "-1") { //if file found
+			$.ajax({
+				url: 'deleteFileFromDb.php',
+				type: 'GET',
+				data: 'selectedOption='+selectedOption,
+				complete : function(result, status){
+					getList();
 				}
-			?>
+			});
 		}
 	}
 
-	function checkAndSubmit(action) {
-		if (!checkAllValid()){
-			return false;
-		}
-		
+	function checkAndSubmitFile(action) {
+		$this = $("#uploadFile");
+		$.ajax({
+			url: 'parseFile.php',
+			type: 'POST',
+			data: $this.serialize(),    //sending all values at once
+			success: function(answer) { //getting answer from php
+				if(answer == "Success") {
+					location.reload(true); //reload page 
+				} else {
+					alert(answer); // printing error
+				}
+			}
+		});
+			
 		if(action == "save" || action == "both") {
-			var $this = $(this);
+			$this = $("#manualConfigForm");
 			$.ajax({
-				url: $this.attr('saveConfigInDb.php'),
-				type: $this.attr('post'),
-				data: $this.serialize(), //sending all values at once
+				url: 'saveConfigInDb.php',
+				type: 'GET',
+				data: $this.serialize(),    //sending all values at once
 				success: function(answer) { //getting answer from php
 					if(answer == "Success") {
 						location.reload(true); //reload page 
@@ -444,6 +483,32 @@
 		}
 		
 		if(action == "send" || action == "both") {
+			//TO DO
+		}
+	}
+	
+	function checkAndSubmit(action) {
+		if (!checkAllValid()){
+			return false;
+		}
+		
+		if(action == "save") {
+			$this = $("#manualConfigForm");
+			$.ajax({
+				url: 'saveConfigInDb.php',
+				type: 'GET',
+				data: $this.serialize(),    //sending all values at once
+				success: function(answer) { //getting answer from php
+					if(answer == "Success") {
+						location.reload(true); //reload page 
+					} else {
+						alert(answer); // printing error
+					}
+				}
+			});
+		}
+		
+		if(action == "send") {
 			//TO DO
 		}
 	}
