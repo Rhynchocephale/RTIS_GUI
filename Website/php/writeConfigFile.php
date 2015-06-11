@@ -1,5 +1,5 @@
 <?php
-//CREATION OF THE CONFIGURATION FILE
+//CREATION OF THE CONFIGURATION FILE. Not used.
 var conf = "; **************************************
 ; RTIM Configuration file
 ; Version 0.0.1

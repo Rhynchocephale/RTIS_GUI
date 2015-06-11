@@ -1,6 +1,6 @@
 <?php
 	include("head.php"); 
-	include("database.php");
+	include("php/database.php");
 
 	$listOfFields = ["fileName", "station", "RCFSeverityFilter", "RCFRxIP_Address", "RCFRxPortNo", "RCFRxSocketType", "RCFRxIOTimeout", "RCFRxConnectionTimeout", "RCFRxRetryDelay", "RCFStationShortName", "RCFReceiverPositionX", "RCFReceiverPositionY", "RCFReceiverPositionZ", "GRCSMSeverityFilter", "GRDSMSeverityFilter", "GRDSMSampleRate", "GESMSeverityFilter", "ICMSeverityFilter", "ICMTxIP_Address", "ICMTxPortNo", "ICMTxSocketType", "ICMTxIOTimeout", "ICMTxConnectionTimeout", "ICMTxRetryDelay", "ProcessingSeverityFilter", "ProcessingDopplerTolerance", "ProcessingFilterFreq", "OutputSeverityFilter", "OutputRootDirectory"];
 ?> 
@@ -19,16 +19,14 @@
 		  <h3 class="panel-title">Load a file</h3>
 	</div>
 	<div class="panel-body">
-		<form role="form" name="fileUpload" id="fileUpload">
+		<form role="form" name="fileUpload" id="fileUpload" action="" method="post" enctype="multipart/form-data">
 
 			<div class="col-lg-12">
 				<div class="form-group">
 					<label>Select your file</label>
-					<input type="file">
+					<input type="file" name="fileToUpload" id="fileToUpload">
 				</div>
 			</div>
-			
-			<input type="hidden" name="saveInDb" value="true">
 
 			<div class="pull-right">
 				<button name="saveSendFileButton" type="button" class="btn btn-success" onclick="checkAndSubmitFile('both');">Save & send</button>
@@ -101,7 +99,7 @@
 		<form role="form" name="manualConfigForm" id="manualConfigForm">
 			<div class="form-group">
 				<label>Name of the new file (optional)</label>
-				<input name="fileName" class="form-control optional">
+				<input name="fileName" class="form-control optional" onchange="validateStr('fileName');">
 			</div>
 
 			<input type="hidden" name="station" value="<?php echo $_GET["sta"] ?>">
@@ -165,7 +163,7 @@
 
 						<div class="form-group">
 							<label>StationShortName</label>
-							<input name="RCFStationShortName" class="form-control" required>
+							<input name="RCFStationShortName" class="form-control" onchange="validateStr('RCFStationShortName');" required>
 						</div>
 
 						<label>ReceiverPosition</label>
@@ -401,118 +399,8 @@
 <script>
 	setActive("li-config");
 	getList();
-
-	function getList() {
-		$.ajax({
-			url: "getDropdownListOfConfigFiles.php?sta=<?php echo $_GET["sta"] ?>",
-			type: "GET",
-			data: $(this).serialize(), //sending all values at once
-			success: function(data) {
-				$('#selectConfig').html(data);
-			}, 
-			complete : function(result, status){
-				prefillFields();
-			}
-		});
-	}
-
-	function prefillFields() {
-		var selectedOption = $("#selectConfig").val();
-		if(selectedOption != "-1") { //if file found
-			$.ajax({
-				url: 'prefillFields.php',
-				type: 'GET',
-				data: 'selectedOption='+selectedOption,
-				dataType: 'json',
-				success: function(data) {
-					<?php 
-						foreach($listOfFields as $field) { //filling each value
-							if($field != "station") {
-								echo "\t\t\t\t\t$(\"[name=".$field."]\").val(decodeURI(data[\"".$field."\"]));\n";
-							}
-						}
-					?>
-				}
-			});
-		}
-	}
 	
-	function deleteFileFromDb() {
-		var selectedOption = $("#selectConfig").val();
-		if(selectedOption != "-1") { //if file found
-			$.ajax({
-				url: 'deleteFileFromDb.php',
-				type: 'GET',
-				data: 'selectedOption='+selectedOption,
-				complete : function(result, status){
-					getList();
-				}
-			});
-		}
-	}
-
-	function checkAndSubmitFile(action) {
-		$this = $("#uploadFile");
-		$.ajax({
-			url: 'parseFile.php',
-			type: 'POST',
-			data: $this.serialize(),    //sending all values at once
-			success: function(answer) { //getting answer from php
-				if(answer == "Success") {
-					location.reload(true); //reload page 
-				} else {
-					alert(answer); // printing error
-				}
-			}
-		});
-			
-		if(action == "save" || action == "both") {
-			$this = $("#manualConfigForm");
-			$.ajax({
-				url: 'saveConfigInDb.php',
-				type: 'GET',
-				data: $this.serialize(),    //sending all values at once
-				success: function(answer) { //getting answer from php
-					if(answer == "Success") {
-						location.reload(true); //reload page 
-					} else {
-						alert(answer); // printing error
-					}
-				}
-			});
-		}
-		
-		if(action == "send" || action == "both") {
-			//TO DO
-		}
-	}
-	
-	function checkAndSubmit(action) {
-		if (!checkAllValid()){
-			return false;
-		}
-		
-		if(action == "save") {
-			$this = $("#manualConfigForm");
-			$.ajax({
-				url: 'saveConfigInDb.php',
-				type: 'GET',
-				data: $this.serialize(),    //sending all values at once
-				success: function(answer) { //getting answer from php
-					if(answer == "Success") {
-						location.reload(true); //reload page 
-					} else {
-						alert(answer); // printing error
-					}
-				}
-			});
-		}
-		
-		if(action == "send") {
-			//TO DO
-		}
-	}
-	
+	<?php include("js/ajaxSubmissions.php"); ?>
 </script>
 <script type="text/javascript" src="js/validateConfig.js"></script>
 <?php include("foot.php"); ?>

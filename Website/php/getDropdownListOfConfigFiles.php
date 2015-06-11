@@ -1,6 +1,9 @@
 <?php
+//getting the list of the database entries where "station" equals the desired station, to put them in a dropdown list
+
 include("database.php");
 
+//connecting to the db
 $conn = dbConnect();
 $sql = "SELECT * FROM configFiles WHERE station = " . $_GET["sta"] . ";";
 $result = mysqli_query($conn, $sql);
@@ -11,8 +14,13 @@ if($result) {
 		// looking for the active file, putting it first
 		while($row = mysqli_fetch_assoc($result)) {
 			if($row["active"]) {
+				//setting the string to display
 				$listOfValues .= "<option value=\"" . $row["id"] . "\" selected=\"selected\">(ACTIVE) ". $row["fileName"]. ($row["fileName"]?", ":"") . $row["date"] . "</option>\n";
+				
+				//setting the selected option to match the one we found (on page load)
 				$_GET["selectedOption"] = $row["id"];
+				
+				//only one active file exists
 				break;
 			}
 		}
@@ -21,8 +29,8 @@ if($result) {
 		mysqli_data_seek($result, 0);
 		// looping again, for the other files
 		while($row = mysqli_fetch_assoc($result)) {
-			if(!$row["active"]) {
-				if(!isset($_GET["selectedOption"])) { //if no active config file is found, take the first file in the list				
+			if(!$row["active"]) { 						//only unactive files, as the active one has already been found
+				if(!isset($_GET["selectedOption"])) { 	//if no active config file has been found, take the first file in the list				
 					$_GET["selectedOption"] = $row["id"];
 					$listOfValues .= "<option value=\"" . $row["id"] . "\" selected=\"selected\">". $row["fileName"]. ($row["fileName"]?", ":"") . $row["date"] . "</option>\n";
 				} else {

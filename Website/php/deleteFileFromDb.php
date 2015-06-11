@@ -1,4 +1,5 @@
 <?php
+	//connects to the database, and delete specified file
 	include("database.php");
 
 	$conn = dbConnect();
