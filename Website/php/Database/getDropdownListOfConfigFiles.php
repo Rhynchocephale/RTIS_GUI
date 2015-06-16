@@ -5,7 +5,7 @@ include("database.php");
 
 //connecting to the db
 $conn = dbConnect();
-$sql = "SELECT * FROM configFiles WHERE station = " . $_GET["sta"] . ";";
+$sql = "SELECT * FROM configFiles WHERE station = " . $_GET["sta"] . " ORDER BY date DESC;";
 $result = mysqli_query($conn, $sql);
 
 if($result) {

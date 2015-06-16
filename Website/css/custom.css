@@ -10,15 +10,28 @@
 	color: red;
 }
 
+.feed-notice {
+	/*color: #9933CC;*/
+	color: #ffffff;
+}
+
+.feed-debug {
+	color: #3C763D;
+}
+
 .feed-info {
 	color: #2a9fd6;
 }
 
 .feed-warning {
+	color:  #F8DE7E;
+}
+
+.feed-error {
 	color: #ff8800;
 }
 
-.feed-danger {
+.feed-fatal {
 	color: #cc0000;
 }
 

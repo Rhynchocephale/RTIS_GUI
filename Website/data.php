@@ -5,16 +5,10 @@
 
 	<!-- LIST OF PROCESS -->
 	<div class="panel panel-primary">
-		<div class="panel-heading clearfix" data-toggle="collapse" data-target="#listOfProcess">
-			<h3 class="panel-title pull-left" style="padding-top: 7.5px; overflow: hidden;">
+		<div class="panel-heading" data-toggle="collapse" data-target="#listOfProcess">
+			<h3 class="panel-title">
 				<i class="fa fa-list"></i> List of active processes
 			</h3>
-			<div class="form-group input-group input-group-sm col-lg-3 pull-right">				
-				<span class="input-group-addon"><input type="checkbox" aria-label="ProcessYN" checked></span>
-				<input type="text" class="form-control" placeholder="Refresh frequency">
-				<span class="input-group-addon">seconds</span>
-			</div>
-			
 		</div>
 		<div id="listOfProcess" class="table-responsive collapse in">
 			<table class="table table-striped table-bordered table-hover">
@@ -24,122 +18,195 @@
 						<th>Process name</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td>mainProcess.cpp</td>
-					</tr>
-					<tr>
-						<td>2</td>
-						<td>firstSubProcess.cpp</td>
-					</tr>
-					<tr>
-						<td>3</td>
-						<td>yetAnotherSubProcess.py</td>
-					</tr>
+				<tbody id="processBody">
 				</tbody>
 			</table>
 		</div>
-	</div>
-	
-	<!-- MONITORING TABLE -->
-	<div class="panel panel-primary">
-		<div class="panel-heading clearfix" data-toggle="collapse" data-target="#monitoringTable">
-			<h3 class="panel-title pull-left" style="padding-top: 7.5px; overflow: hidden;">
-				<i class="fa fa-list"></i> Monitoring table
-			</h3>
-			<div class="form-group input-group col-lg-3 pull-right">				
-				<span class="input-group-addon input-sm"><input type="checkbox" aria-label="MonitorYN" checked></span>
-				<input type="text" class="form-control input-sm" placeholder="Monitoring frequency">
+		<div id="processFooter" class="panel-footer">
+			<label>Update?</label>
+			<label class="radio-inline">
+				<input type="radio" name="update_processRadio" id="processYes" onclick="$('#processValue').removeAttr('disabled');updateValue('process');">
+				Yes
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="update_processRadio" id="processNo" onclick="$('#processValue').attr('disabled','disabled');stopUpdate('process');" checked>
+				No
+			</label>
+			<div class="input-group col-lg-3">
+				<input type="number" min="1" value="600" id="processValue" class="form-control input-sm" placeholder="Refresh frequency" onchange="updateValue('process');" disabled="disabled">
 				<span class="input-group-addon input-sm">seconds</span>
 			</div>
 		</div>
-		<div id="monitoringTable" class="table-responsive collapse in">
+	</div>
+	
+		<!-- MONITORING TABLE -->
+	<div class="panel panel-primary">
+		<div class="panel-heading" data-toggle="collapse" data-target="#monitorTable">
+			<h3 class="panel-title">
+				<i class="fa fa-list"></i> Monitoring Table
+			</h3>
+		</div>
+		<div id="monitorTable" class="table-responsive collapse in">
 			<table class="table table-striped table-bordered table-hover">
 				<thead>
 					<tr>
-						<th>Parametre</th>
+						<th>Parameter</th>
 						<th>Value</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>Number of stuff</td>
-						<td>23</td>
-					</tr>
-					<tr>
-						<td>Number of other stuff</td>
-						<td>2</td>
-					</tr>
-					<tr>
-						<td>Index of thing</td>
-						<td>13</td>
-					</tr>
+				<tbody id="monitorBody">
 				</tbody>
 			</table>
+		</div>
+		<div id="monitorFooter" class="panel-footer">
+			<label>Update?</label>
+			<label class="radio-inline">
+				<input type="radio" name="update_monitorRadio" id="monitorYes" onclick="$('#monitorValue').removeAttr('disabled');updateValue('monitor');" checked>
+				Yes
+			</label>
+			<label class="radio-inline">
+				<input type="radio" name="update_monitorRadio" id="monitorNo" onclick="$('#monitorValue').attr('disabled','disabled');stopUpdate('monitor');" >
+				No
+			</label>
+			<div class="input-group col-lg-3">
+				<input type="number" min="1" value="1" id="monitorValue" class="form-control input-sm" placeholder="Refresh frequency" onchange="updateValue('monitor');">
+				<span class="input-group-addon input-sm">seconds</span>
+			</div>
 		</div>
 	</div>
 		
 	<!-- ALARM MESSAGES -->
 	<div class="panel panel-primary">
-		<div class="panel-heading" data-toggle="collapse" data-target="#errorMessages">
+		<div class="panel-heading clearfix" data-toggle="collapse" data-target="#messagesBody">
 			<h3 class="panel-title"><i class="fa fa-rss"></i> Application messages </h3>
 		</div>
-		<div id="errorMessages" class="panel-body collapse in">
-			<section class="feed-item feed-info">
-				<div class="feed-item-body">
-					<div class="text">
-						This is an informative message.
-					</div>
-					<div class="time pull-left">
-						10:45:34,657
-					</div>
-				</div>
-			</section>
-						
-			<section class="feed-item feed-warning">
-				<div class="feed-item-body">
-					<div class="text">
-						This is a warning message.
-					</div>
-					<div class="time pull-left">
-						10:45:34,317
-					</div>
-				</div>
-			</section>
-						
-			<section class="feed-item feed-danger">
-				<div class="feed-item-body">
-					<div class="text">
-						This is a critical failure message.
-					</div>
-					<div class="time pull-left">
-						10:45:32,543
-					</div>
-				</div>
-			</section>
-							
-			<section class="feed-item feed-info">
-				<div class="feed-item-body">
-					<div class="text">
-						This is another informative message.
-					</div>
-					<div class="time pull-left">
-						10:45:31,965
-					</div>
-				</div>
-			</section>
-						
+		<div class="panel-footer form-group form-inline">
+			<label>Severity filter</label>
+			<select id="messagesValue" onchange="updateMessagesValue();">
+				<option value="1">Fatal</option>
+				<option value="3">Error and all above</option>
+				<option value="7">Warning and all above</option>
+				<option value="15" selected="selected">Info and all above</option>
+				<option value="0">No error message</option>
+			</select>
+			
+			<div class="checkbox">
+				<label>
+					<input id="messagesDebug" type="checkbox" onchange="updateMessagesValue();">
+					Debug
+				</label>
+			</div>
+			
+			<div class="checkbox">
+				<label>
+					<input id="messagesNotice" type="checkbox" onchange="updateMessagesValue();">
+					Notice
+				</label>
+			</div>
+			
+		</div>
+		<div id="messagesBody" class="panel-body collapse in">						
 		</div>
 	</div>
 </div>
 
 <script type="text/javascript">
 	setActive("li-data");
+		
+	var corres =	{"process":{"script":"php/C_connection/sendProcess.php?param=","param":600},
+					"monitor":{"script":"php/C_connection/sendProcess.php?param=","param":31},
+					"messages":{"script":"php/C_connection/sendMessages.php?param=","param":31}};
+					
+	var isEventSupported;
+	//check for browser support
+	if(typeof(EventSource)!=="undefined") {
+		var isEventSupported = true;
+		var maxMessageLength = 7;
+		
+		//on page load
+		getInfoOnce('process');
+		updateValue('monitor');
+		updateMessagesValue();
+
+	}
+	else {
+		var isEventSupported = false;
+		for (var key in corres) {
+			if (corres.hasOwnProperty(key)) {  //avoiding inherited properties
+				$("#"+key+"Body").html("Oops! Your browser doesn't receive server-sent events.");
+			}
+		}	
+	}
 	
-	//putting icons before error messages
-	$('.feed-info').find('.text').before($('<div class="icon pull-left"><i class="fa fa-thumbs-o-up"></i></div>'));
-	$('.feed-warning').find('.text').before($('<div class="icon pull-left"><i class="fa fa-exclamation"></i></div>'));
-	$('.feed-danger').find('.text').before($('<div class="icon pull-left"><i class="fa fa-ban"></i></div>'));
+	function updateValue(param) {
+		if(!isEventSupported) {
+			return false;
+		}
+		
+		corres[param]["param"] = $("#"+param+"Value").val();
+		stopUpdate(param);
+		//create an object, passing it the name and location of the server side script
+		corres[param]["eSource"] = new EventSource(corres[param]["script"]+corres[param]["param"]);
+		//detect message receipt
+		corres[param]["eSource"].onmessage = function(event) {
+		//write the received data to the page
+			$("#"+param+"Body").html(event.data);
+		};
+		return true;
+	}
+	
+	function updateMessagesValue() {
+		if(!isEventSupported) {
+			return false;
+		}
+		
+		var finalValue = +$("#messagesValue").val(); //unary + casts to int
+		if($('#messagesNotice').is(":checked")) {
+			finalValue += 16;
+		}
+		if($('#messagesDebug').is(":checked")) {
+			finalValue += 128;
+		}
+		
+		corres["messages"]["param"] = finalValue;
+		stopUpdate("messages");
+		//create an object, passing it the name and location of the server side script
+		corres["messages"]["eSource"] = new EventSource(corres["messages"]["script"]+corres["messages"]["param"]);
+		//detect message receipt
+		corres["messages"]["eSource"].onmessage = function(event) {
+		//write the received data to the page
+			if($("#messagesBody .feed-item").length >= maxMessageLength) {
+				$("#messagesBody .feed-item:last-child").remove();
+			}
+			$("#messagesBody").html(event.data + $("#messagesBody").html());
+		};
+		return true;
+	}
+	
+	function getInfoOnce(param) {
+		//create an object, passing it the name and location of the server side script
+		corres[param]["eSource"] = new EventSource(corres[param]["script"]+corres[param]["param"]);
+		//detect message receipt
+		corres[param]["eSource"].onmessage = function(event) {
+		//write the received data to the page
+			$("#"+param+"Body").html(event.data);
+			stopUpdate(param);
+		};
+		return true;
+	}
+	
+	function stopUpdate(param){
+		if(!isEventSupported) {
+			return false;
+		}
+		
+		if(corres[param]["eSource"]) {
+			corres[param]["eSource"].close();
+			return true;
+		}
+		
+		return false;
+	}
+	
 </script>
 <?php include("foot.php"); ?>

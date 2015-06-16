@@ -1,6 +1,6 @@
 <?php
 	include("head.php"); 
-	include("php/database.php");
+	include("php/Database/database.php");
 
 	$listOfFields = ["fileName", "station", "RCFSeverityFilter", "RCFRxIP_Address", "RCFRxPortNo", "RCFRxSocketType", "RCFRxIOTimeout", "RCFRxConnectionTimeout", "RCFRxRetryDelay", "RCFStationShortName", "RCFReceiverPositionX", "RCFReceiverPositionY", "RCFReceiverPositionZ", "GRCSMSeverityFilter", "GRDSMSeverityFilter", "GRDSMSampleRate", "GESMSeverityFilter", "ICMSeverityFilter", "ICMTxIP_Address", "ICMTxPortNo", "ICMTxSocketType", "ICMTxIOTimeout", "ICMTxConnectionTimeout", "ICMTxRetryDelay", "ProcessingSeverityFilter", "ProcessingDopplerTolerance", "ProcessingFilterFreq", "OutputSeverityFilter", "OutputRootDirectory"];
 ?> 
@@ -116,10 +116,25 @@
 								<option value="1">Fatal</option>
 								<option value="3">Error</option>
 								<option value="7">Warning</option>
-								<option value="15">Info</option>
-								<option value="31" selected="selected">All</option>
-								<option value="159">Debug</option>
+								<option value="15" selected="selected">Info</option>
 							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="RCFSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="RCFSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
+							
 						</div>
 
 						<div class="form-group">
@@ -190,10 +205,25 @@
 								<option value="1">Fatal</option>
 								<option value="3">Error</option>
 								<option value="7">Warning</option>
-								<option value="15">Info</option>
-								<option value="31" selected="selected">All</option>
-								<option value="159">Debug</option>
+								<option value="15" selected="selected">Info</option>
 							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="GRCSMSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="GRCSMSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
+							
 						</div>
 					</div>
 				</div>
@@ -208,10 +238,24 @@
 								<option value="1">Fatal</option>
 								<option value="3">Error</option>
 								<option value="7">Warning</option>
-								<option value="15">Info</option>
-								<option value="31" selected="selected">All</option>
-								<option value="159">Debug</option>
+								<option value="15" selected="selected">Info</option>
 							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="GRDSMSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="GRDSMSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
 						</div>
 
 						<label>SampleRate</label>
@@ -242,10 +286,25 @@
 								<option value="1">Fatal</option>
 								<option value="3">Error</option>
 								<option value="7">Warning</option>
-								<option value="15">Info</option>
-								<option value="31" selected="selected">All</option>
-								<option value="159">Debug</option>
+								<option value="15" selected="selected">Info</option>
 							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="GESMSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="GESMSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+								
+							</div>
 						</div>
 					</div>
 				</div>
@@ -261,10 +320,25 @@
 								<option value="1">Fatal</option>
 								<option value="3">Error</option>
 								<option value="7">Warning</option>
-								<option value="15">Info</option>
-								<option value="31" selected="selected">All</option>
-								<option value="159">Debug</option>
+								<option value="15" selected="selected">Info</option>
 							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="ProcessingSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="ProcessingSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
+								
 						</div>
 
 						<div class="form-group">
@@ -292,10 +366,25 @@
 								<option value="1">Fatal</option>
 								<option value="3">Error</option>
 								<option value="7">Warning</option>
-								<option value="15">Info</option>
-								<option value="31" selected="selected">All</option>
-								<option value="159">Debug</option>
+								<option value="15" selected="selected">Info</option>
 							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="ICMSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="ICMSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
+								
 						</div>
 
 						<div class="form-group">
@@ -350,10 +439,25 @@
 								<option value="1">Fatal</option>
 								<option value="3">Error</option>
 								<option value="7">Warning</option>
-								<option value="15">Info</option>
-								<option value="31" selected="selected">All</option>
-								<option value="159">Debug</option>
+								<option value="15" selected="selected">Info</option>
 							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="OutputSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="OutputSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
+								
 						</div>
 
 						<div class="form-group">

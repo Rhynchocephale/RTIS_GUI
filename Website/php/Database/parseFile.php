@@ -212,7 +212,7 @@ function commonChecks($fp, $type) {
 		return false;
 	}
 
-	$tmp = explode("=",$line);
+	$tmp = explode("=",explode(";",$line)[0]); //removing comments, and splitting along the =
 	
 	if(!isset($tmp[0])) {  		//if parameter does not exist
 		$errorMsg = "Error when parsing for $type: " . ($line != "" ? $line : "empty line") . " found.";
