@@ -87,8 +87,10 @@ function checkAndSubmitFile(action) {
 		processData:false,        				// To send DOMDocument or non processed data file it is set to false
 		success: function(answer, status) { 	// To get an answer from php
 			if(answer.charAt(0) === "{") { 		//if answer is a json string
-				if(action == "save" || action == "both") {
-					submitJson(answer); 		//saving in the db
+				if(action == "save") {
+					submitJson(answer,false); 		//saving in the db
+				} else if(action == "both") {
+					submitJson(answer,true); 		//saving in the db
 				}
 			} else {
 				alert(answer);
@@ -97,9 +99,9 @@ function checkAndSubmitFile(action) {
 	});
 		
 	//saves the parsed config file in the db
-	function submitJson(jsonString) {
+	function submitJson(jsonString,isActive) {
 		dataToSend = jsonString2getString(jsonString);							  //converting to a "url" format
-		dataToSend += "fileName=uploadedFile&station=<?php echo $_GET["sta"] ?>"; //adding missing information
+		dataToSend += "&active="+isActive+"&fileName=uploadedFile&station=<?php echo $_GET["sta"] ?>"; //adding missing information
 		
 		$.ajax({
 			url: '../php/Database/saveConfigInDb.php',
@@ -126,11 +128,27 @@ function checkAndSubmit(action) {
 		$this = $("#manualConfigForm");
 		$.ajax({
 			url: '../php/Database/saveConfigInDb.php',
-			type: 'POST',
-			data: $this.serialize(),		//sending all values at once
-			success: function(answer) { 	//getting answer from php
+			type: 'GET',
+			data: $this.serialize() + "&active=false",		//sending all values at once
+			success: function(answer) { 						//getting answer from php
 				if(answer == "Success") {
-					location.reload(true); 	//reload page 
+					location.reload(true); 						//reload page 
+				} else {
+					alert(answer); // printing error
+				}
+			}
+		});
+	}
+	
+	if(action == "both") {
+		$this = $("#manualConfigForm");
+		$.ajax({
+			url: '../php/Database/saveConfigInDb.php',
+			type: 'GET',
+			data: $this.serialize() + "&active=true",		//sending all values at once
+			success: function(answer) { 						//getting answer from php
+				if(answer == "Success") {
+					location.reload(true); 						//reload page 
 				} else {
 					alert(answer); // printing error
 				}
