@@ -74,6 +74,7 @@ function deleteFileFromDb() {
 }
 
 //if user wants to upload its own file, checks that the file is correctly formatted, and adds it to the database
+//possible values for action: 0 save only, 1 save & send, 2 send only
 function checkAndSubmitFile(action) {
 	// Create a formdata object and add the file
 	var stuffToSend = new FormData(document.forms.namedItem("fileUpload"));
@@ -87,10 +88,10 @@ function checkAndSubmitFile(action) {
 		processData:false,        				// To send DOMDocument or non processed data file it is set to false
 		success: function(answer, status) { 	// To get an answer from php
 			if(answer.charAt(0) === "{") { 		//if answer is a json string
-				if(action == "save") {
-					submitJson(answer,false); 		//saving in the db
-				} else if(action == "both") {
-					submitJson(answer,true); 		//saving in the db
+				if(action == 2) { 				//save only
+					submitJson(answer,false); 	//saving in the db
+				} else if(action == 1) {		//save&send
+					submitJson(answer,true); 	//saving in the db
 				}
 			} else {
 				alert(answer);
@@ -119,46 +120,48 @@ function checkAndSubmitFile(action) {
 }
 
 //saving in database for forms manually filled in by user
+//possible values for action: 0 save only, 1 save & send, 2 send only
 function checkAndSubmit(action) {
 	if (!checkAllValid()){				//if any wrongly filled field
 		return false;
 	}
 	
-	if(action == "save") {
-		$this = $("#manualConfigForm");
+	var failureMessage = "";
+	$this = $("#manualConfigForm").serialize();
+	
+	if(action < 2) { 										//save
 		$.ajax({
 			url: '../php/Database/saveConfigInDb.php',
 			type: 'GET',
-			data: $this.serialize() + "&active=false",		//sending all values at once
-			success: function(answer) { 						//getting answer from php
-				if(answer == "Success") {
-					location.reload(true); 						//reload page 
-				} else {
-					alert(answer); // printing error
+			data: $this + "&active=" + (action==0?"false":"true"),		//sending all values at once, and setting active attribute
+			success: function(answer) { 					//getting answer from php
+				if(answer != "Success") {
+					failureMessage += answer;
 				}
 			}
 		});
 	}
 	
-	if(action == "both") {
-		$this = $("#manualConfigForm");
+	
+	if(action > 0) {
 		$.ajax({
-			url: '../php/Database/saveConfigInDb.php',
-			type: 'GET',
-			data: $this.serialize() + "&active=true",		//sending all values at once
-			success: function(answer) { 						//getting answer from php
-				if(answer == "Success") {
-					location.reload(true); 						//reload page 
-				} else {
-					alert(answer); // printing error
-				}
+			url: '../php/C_connection/sendConfig.php',
+			type: 'POST',
+			data: "array="+$this.split("&").join(","),		//sending all values at once & replacing "&" with "," to avoid weird behaviours
+			success: function(answer) { 					//getting answer from php
+				/*if(answer != "Success") {
+					failureMessage += answer;
+				}*/
+				alert(answer);
 			}
 		});
 	}
 	
-	if(action == "send") {
-		//TO DO
-	}
+	/*if(!failureMessage) {						//if no error, then success
+		location.reload(true); 					//reload page 
+	} else {
+		alert(failureMessage);					//prints error message
+	}*/
 }
 
 //converting a json string to a "url" format

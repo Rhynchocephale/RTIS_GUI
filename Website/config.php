@@ -29,8 +29,8 @@
 			</div>
 
 			<div class="pull-right">
-				<button name="saveSendFileButton" type="button" class="btn btn-success" onclick="checkAndSubmitFile('both');">Save & send</button>
-				<button name="saveFileButton" type="button" class="btn btn-primary" onclick="checkAndSubmitFile('save');">Save</button>
+				<button name="saveSendFileButton" type="button" class="btn btn-success" onclick="checkAndSubmitFile(1);">Save & send</button>
+				<button name="saveFileButton" type="button" class="btn btn-primary" onclick="checkAndSubmitFile(0);">Save</button>
 				<button name="sendFileButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSaveFile">Send (but don't save)</button>
 			</div>
 
@@ -49,7 +49,7 @@
 							</h3>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="checkAndSubmitFile('send');">I know what I'm doing.</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="checkAndSubmitFile(2);">I know what I'm doing.</button>
 							<button type="button" class="btn btn-success" data-dismiss="modal">I changed my mind.</button>
 						</div>
 					</div>
@@ -469,8 +469,8 @@
 			</div>
 
 			<div class="pull-right">
-				<button name="saveSendButton" type="button" class="btn btn-success" onclick="checkAndSubmit('both');">Save & send</button>
-				<button name="saveButton" type="button" class="btn btn-primary" onclick="checkAndSubmit('save');">Save</button>
+				<button name="saveSendButton" type="button" class="btn btn-success" onclick="checkAndSubmit(1);">Save & send</button>
+				<button name="saveButton" type="button" class="btn btn-primary" onclick="checkAndSubmit(0);">Save</button>
 				<button name="sendButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>
 			</div>
 
@@ -489,7 +489,7 @@
 							</h3>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="checkAndSubmit('send');">I know what I'm doing.</button>
+							<button type="button" class="btn btn-danger" data-dismiss="modal" onclick="checkAndSubmit(2);">I know what I'm doing.</button>
 							<button type="button" class="btn btn-success" data-dismiss="modal">I changed my mind.</button>
 						</div>
 					</div>

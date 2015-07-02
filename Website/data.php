@@ -114,7 +114,7 @@
 	setActive("li-data");
 		
 	var corres =	{"process":{"script":"php/C_connection/sendProcess.php?param=","param":600},
-					"monitor":{"script":"php/C_connection/sendProcess.php?param=","param":31},
+					"monitor":{"script":"php/C_connection/sendMonitor.php?param=","param":1},
 					"messages":{"script":"php/C_connection/sendMessages.php?param=","param":31}};
 					
 	var isEventSupported;
