@@ -38,8 +38,8 @@
 			</div>
 		</div>
 	</div>
-	
-		<!-- MONITORING TABLE -->
+		
+	<!-- MONITORING TABLE -->
 	<div class="panel panel-primary">
 		<div class="panel-heading" data-toggle="collapse" data-target="#monitorTable">
 			<h3 class="panel-title">
@@ -112,10 +112,12 @@
 
 <script type="text/javascript">
 	setActive("li-data");
-		
-	var corres =	{"process":{"script":"php/C_connection/sendProcess.php?param=","param":600},
-					"monitor":{"script":"php/C_connection/sendMonitor.php?param=","param":1},
-					"messages":{"script":"php/C_connection/sendMessages.php?param=","param":31}};
+	
+	var station = <?php echo $_GET["sta"]; ?>;
+				
+	var corres =	{"process":{"script":"php/C_connection/sendProcess.php","param":600},
+					"monitor":{"script":"php/C_connection/sendMonitor.php","param":1},
+					"messages":{"script":"php/C_connection/sendMessages.php","param":31}};
 					
 	var isEventSupported;
 	//check for browser support
@@ -146,7 +148,7 @@
 		corres[param]["param"] = $("#"+param+"Value").val();
 		stopUpdate(param);
 		//create an object, passing it the name and location of the server side script
-		corres[param]["eSource"] = new EventSource(corres[param]["script"]+corres[param]["param"]);
+		corres[param]["eSource"] = new EventSource(corres[param]["script"]+"?mon="+corres["monitor"]["param"]+"&proc="+corres["process"]["param"]+"&err="+corres["messages"]["param"]+"&sta="+station);
 		//detect message receipt
 		corres[param]["eSource"].onmessage = function(event) {
 		//write the received data to the page
@@ -171,7 +173,7 @@
 		corres["messages"]["param"] = finalValue;
 		stopUpdate("messages");
 		//create an object, passing it the name and location of the server side script
-		corres["messages"]["eSource"] = new EventSource(corres["messages"]["script"]+corres["messages"]["param"]);
+		corres["messages"]["eSource"] = new EventSource(corres["messages"]["script"]+"?mon="+corres["monitor"]["param"]+"&proc="+corres["process"]["param"]+"&err="+corres["messages"]["param"]+"&sta="+sta);
 		//detect message receipt
 		corres["messages"]["eSource"].onmessage = function(event) {
 		//write the received data to the page
@@ -185,7 +187,7 @@
 	
 	function getInfoOnce(param) {
 		//create an object, passing it the name and location of the server side script
-		corres[param]["eSource"] = new EventSource(corres[param]["script"]+corres[param]["param"]);
+		corres[param]["eSource"] = new EventSource(corres[param]["script"]+"?mon="+corres["monitor"]["param"]+"&proc="+corres["process"]["param"]+"&err="+corres["messages"]["param"]+"&sta="+sta);
 		//detect message receipt
 		corres[param]["eSource"].onmessage = function(event) {
 		//write the received data to the page

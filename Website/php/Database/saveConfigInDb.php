@@ -16,6 +16,13 @@ foreach($severityFilters as $key) {
 	}
 }
 
+//dealing with the checkboxes
+$listOfCheckboxes = ["GASMLog", "GASMConsole", "GASMGui"];
+foreach($listOfCheckboxes as $key) {
+	$_GET[$key] = isset($_GET[$key]) ?: 0; //if not set, set it to 0.
+}
+
+
 //creation of the first SQL query, that will check that no other identical config already exists in the database
 //basically, it checks all the relevant fields
 $firstOne = true;
@@ -50,7 +57,7 @@ if ($result) {
 		$sql = "UPDATE configFiles SET active = true WHERE id = ".$row["id"].";";
 	} else {
 		//a similar file has not been found. Inserting our new file
-		$sql = "INSERT INTO configFiles(fileName, active, station, RCFSeverityFilter, RCFRxIP_Address, RCFRxPortNo, RCFRxSocketType, RCFRxIOTimeout, RCFRxConnectionTimeout, RCFRxRetryDelay, RCFStationShortName, RCFReceiverPositionX, RCFReceiverPositionY, RCFReceiverPositionZ, GRCSMSeverityFilter, GRDSMSeverityFilter, GRDSMSampleRate, GESMSeverityFilter, ICMSeverityFilter, ICMTxIP_Address, ICMTxPortNo, ICMTxSocketType, ICMTxIOTimeout, ICMTxConnectionTimeout, ICMTxRetryDelay, ProcessingSeverityFilter, ProcessingDopplerTolerance, ProcessingFilterFreq, OutputSeverityFilter, OutputRootDirectory) VALUES ("."'".$_GET['fileName']."'".", ".$_GET['active'].", ".$_GET['station'].", ".$_GET['RCFSeverityFilter'].", "."'".$_GET['RCFRxIP_Address']."'".", ".$_GET['RCFRxPortNo'].", ".$_GET['RCFRxSocketType'].", ".$_GET['RCFRxIOTimeout'].", ".$_GET['RCFRxConnectionTimeout'].", ".$_GET['RCFRxRetryDelay'].", "."'".$_GET['RCFStationShortName']."'".", ".$_GET['RCFReceiverPositionX'].", ".$_GET['RCFReceiverPositionY'].", ".$_GET['RCFReceiverPositionZ'].", ".$_GET['GRCSMSeverityFilter'].", ".$_GET['GRDSMSeverityFilter'].", ".$_GET['GRDSMSampleRate'].", ".$_GET['GESMSeverityFilter'].", ".$_GET['ICMSeverityFilter'].", "."'".$_GET['ICMTxIP_Address']."'".", ".$_GET['ICMTxPortNo'].", ".$_GET['ICMTxSocketType'].", ".$_GET['ICMTxIOTimeout'].", ".$_GET['ICMTxConnectionTimeout'].", ".$_GET['ICMTxRetryDelay'].", ".$_GET['ProcessingSeverityFilter'].", ".$_GET['ProcessingDopplerTolerance'].", ".$_GET['ProcessingFilterFreq'].", ".$_GET['OutputSeverityFilter'].", "."'".$_GET['OutputRootDirectory']."'".");";
+		$sql = "INSERT INTO configFiles(active, ".implode(", ", $listOfFields).") VALUES (".$_GET['active'].", ".$_GET['station'].", "."'".$_GET['fileName']."'".", ".$_GET['RCFSeverityFilter'].", "."'".$_GET['RCFRxIP_Address']."'".", ".$_GET['RCFRxPortNo'].", ".$_GET['RCFRxSocketType'].", ".$_GET['RCFRxIOTimeout'].", ".$_GET['RCFRxConnectionTimeout'].", ".$_GET['RCFRxRetryDelay'].", "."'".$_GET['RCFStationShortName']."'".", ".$_GET['RCFReceiverPositionX'].", ".$_GET['RCFReceiverPositionY'].", ".$_GET['RCFReceiverPositionZ'].", ".$_GET['GASMSeverityFilter'].", ".$_GET['GASMLog'].", ".$_GET['GASMConsole'].", ".$_GET['GASMGui'].", ".$_GET['ICMSeverityFilter'].", "."'".$_GET['ICMTxIP_Address']."'".", ".$_GET['ICMTxPortNo'].", ".$_GET['ICMTxSocketType'].", ".$_GET['ICMTxIOTimeout'].", ".$_GET['ICMTxConnectionTimeout'].", ".$_GET['ICMTxRetryDelay'].", ".$_GET['GRCSMSeverityFilter'].", ".$_GET['GRDSMSeverityFilter'].", ".$_GET['GRDSMSampleRate'].", ".$_GET['GESMSeverityFilter'].", ".$_GET['ProcessingSeverityFilter'].", ".$_GET['ProcessingDopplerTolerance'].", ".$_GET['ProcessingFilterFreq'].", ".$_GET['OutputSeverityFilter'].", "."'".$_GET['OutputRootDirectory']."'".");";
 	}
 	
 	$result = mysqli_query($conn, $sql);

@@ -59,6 +59,11 @@ function parseValues($fp){
 	$data = getStrLine($data,"RCF","StationShortName");
 	$data = getTripleLine($data,"RCF","ReceiverPosition");
 	
+	$data = getIntLine($data,"GASM","SeverityFilter");
+	$data = getBoolLine($data,"GASM","Log");
+	$data = getBoolLine($data,"GASM","Console");
+	$data = getBoolLine($data,"GASM","Gui");
+	
 	$data = getIntLine($data,"GRCSM","SeverityFilter");
 	
 	$data = getIntLine($data,"GRDSM","SeverityFilter");
@@ -94,6 +99,24 @@ function getIntLine($data,$section,$type) {
 	
 	if(!ctype_digit($value)) {   	//if value not an int
 		$errorMsg = "Error when parsing for $type: " . ($value != "" ? $value : "NULL") . " is not a valid INT." ;
+		return false;
+	}
+	
+	$data[$section.$type] = $value; //everything is fine, then.
+	return $data;
+}
+
+function getBoolLine($data,$section,$type) {
+	global $fp, $errorMsg;
+	static $validBooleans = ["0","1","false","true","FALSE","TRUE","False","True","on","off","ON","OFF","On","Off"];
+		
+	$value = commonChecks($fp, $type);
+	if($value === false) {
+		return false;
+	}
+	
+	if(!in_array($value,$validBooleans)) {   	//if value not a boolean
+		$errorMsg = "Error when parsing for $type: " . ($value != "" ? $value : "NULL") . " is not a valid boolean." ;
 		return false;
 	}
 	

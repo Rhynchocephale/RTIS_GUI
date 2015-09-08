@@ -1,7 +1,7 @@
 //gets the dropdown list of entries in the database
 function getList() {
 	$.ajax({
-		url: "../php/Database/getDropdownListOfConfigFiles.php?sta=<?php echo $_GET["sta"] ?>",
+		url: "../php/Database/getDropdownListOfConfigFiles.php?sta=<?php echo $_GET['sta'] ?>",
 		type: "GET",
 		success: function(data) {
 			$('#selectConfig').html(data);
@@ -22,8 +22,9 @@ function prefillFields() {
 			data: 'selectedOption='+selectedOption,
 			dataType: 'json',
 			success: function(data) {
-				var listOfFields = ["station", "fileName", "RCFSeverityFilter", "RCFRxIP_Address", "RCFRxPortNo", "RCFRxSocketType", "RCFRxIOTimeout", "RCFRxConnectionTimeout", "RCFRxRetryDelay", "RCFStationShortName", "RCFReceiverPositionX", "RCFReceiverPositionY", "RCFReceiverPositionZ", "GRCSMSeverityFilter", "GRDSMSeverityFilter", "GRDSMSampleRate", "GESMSeverityFilter", "ICMSeverityFilter", "ICMTxIP_Address", "ICMTxPortNo", "ICMTxSocketType", "ICMTxIOTimeout", "ICMTxConnectionTimeout", "ICMTxRetryDelay", "ProcessingSeverityFilter", "ProcessingDopplerTolerance", "ProcessingFilterFreq", "OutputSeverityFilter", "OutputRootDirectory"];
-				var severityFiltersFull = ["RCFSeverityFilter","GRCSMSeverityFilter","GRDSMSeverityFilter","GESMSeverityFilter","ICMSeverityFilter","ProcessingSeverityFilter","OutputSeverityFilter"];
+				var listOfFields = ["station", "fileName", "RCFSeverityFilter", "RCFRxIP_Address", "RCFRxPortNo", "RCFRxSocketType", "RCFRxIOTimeout", "RCFRxConnectionTimeout", "RCFRxRetryDelay", "RCFStationShortName", "RCFReceiverPositionX", "RCFReceiverPositionY", "RCFReceiverPositionZ", "GASMSeverityFilter", "GASMLog", "GASMConsole", "GASMGui", "GRCSMSeverityFilter", "GRDSMSeverityFilter", "GRDSMSampleRate", "GESMSeverityFilter", "ICMSeverityFilter", "ICMTxIP_Address", "ICMTxPortNo", "ICMTxSocketType", "ICMTxIOTimeout", "ICMTxConnectionTimeout", "ICMTxRetryDelay", "ProcessingSeverityFilter", "ProcessingDopplerTolerance", "ProcessingFilterFreq", "OutputSeverityFilter", "OutputRootDirectory"];
+				var severityFiltersFull = ["RCFSeverityFilter","GASMSeverityFilter","ICMSeverityFilter","GRCSMSeverityFilter","GRDSMSeverityFilter","GESMSeverityFilter","ProcessingSeverityFilter","OutputSeverityFilter"];
+				var listOfCheckboxes = ["GASMLog", "GASMConsole", "GASMGui"];
 				var i;
 				var tmpVal;
 				
@@ -48,7 +49,10 @@ function prefillFields() {
 								$("[name=" + element + "Notice]").prop("checked", false);
 							}
 							$("[name=" + element + "]").val(tmpVal);
-						} else {
+						} //special case for checkboxes
+						else if(listOfCheckboxes.indexOf(element) > -1) {
+							$("[name=" + element + "]").prop("checked", +decodeURI(data[element]));
+						} else	{
 							$("[name=" + element + "]").val(decodeURI(data[element]));
 						}
 					}
@@ -78,13 +82,14 @@ function deleteFileFromDb() {
 function checkAndSubmitFile(action) {
 	// Create a formdata object and add the file
 	var stuffToSend = new FormData(document.forms.namedItem("fileUpload"));
+	var parsedFileArray;
 	
 	$.ajax({
 		url: '../php/Database/parseFile.php',
 		type: 'POST',
 		data: stuffToSend, 	  					// Create a formdata object and add the files
 		contentType: false,       				// The content type used when sending data to the server.
-		cache: false,             				// To unable request pages to be cached
+		cache: false,             				// To enable request pages to be cached
 		processData:false,        				// To send DOMDocument or non processed data file it is set to false
 		success: function(answer, status) { 	// To get an answer from php
 			if(answer.charAt(0) === "{") { 		//if answer is a json string
@@ -93,11 +98,32 @@ function checkAndSubmitFile(action) {
 				} else if(action == 1) {		//save&send
 					submitJson(answer,true); 	//saving in the db
 				}
+				
+				parsedFileArray = jsonString2getString(answer);
 			} else {
 				alert(answer);
 			}
 		}
 	});
+								
+	if(action > 0) {								//sending
+		isOk = false;
+		while(!isOk){
+			$.ajax({
+				url: '../php/C_connection/sendConfig.php',
+				type: 'POST',
+				data: "array="+parsedFileArray,		//sending all values at once & replacing "&" with "," to avoid weird behaviours
+				success: function(answer) { 		//getting answer from php
+					if(answer != "Success") {
+						failureMessage += answer;
+						alert(failureMessage);
+					} else {
+						isOk = true;
+					}
+				}
+			});
+		}
+	}
 		
 	//saves the parsed config file in the db
 	function submitJson(jsonString,isActive) {
@@ -134,34 +160,37 @@ function checkAndSubmit(action) {
 			url: '../php/Database/saveConfigInDb.php',
 			type: 'GET',
 			data: $this + "&active=" + (action==0?"false":"true"),		//sending all values at once, and setting active attribute
-			success: function(answer) { 					//getting answer from php
+			success: function(answer) { 								//getting answer from php
 				if(answer != "Success") {
 					failureMessage += answer;
 				}
 			}
 		});
 	}
-	
-	
+		
 	if(action > 0) {
-		$.ajax({
-			url: '../php/C_connection/sendConfig.php',
-			type: 'POST',
-			data: "array="+$this.split("&").join(","),		//sending all values at once & replacing "&" with "," to avoid weird behaviours
-			success: function(answer) { 					//getting answer from php
-				/*if(answer != "Success") {
-					failureMessage += answer;
-				}*/
-				alert(answer);
-			}
-		});
+		isOk = false;
+		while(!isOk){
+			$.ajax({
+				url: '../php/C_connection/sendConfig.php',
+				type: 'POST',
+				data: "array="+$this.split("&").join(","),		//sending all values at once & replacing "&" with "," to avoid weird behaviours
+				success: function(answer) { 					//getting answer from php
+					if(answer != "Success") {
+						failureMessage += answer;
+					} else {
+						isOk = true;
+					}
+				}
+			});
+		}
 	}
 	
-	/*if(!failureMessage) {						//if no error, then success
+	if(!failureMessage) {						//if no error, then success
 		location.reload(true); 					//reload page 
 	} else {
 		alert(failureMessage);					//prints error message
-	}*/
+	}
 }
 
 //converting a json string to a "url" format
@@ -174,4 +203,4 @@ function jsonString2getString(jsonString) {
 	}
 	return getString;
 }
-
+	

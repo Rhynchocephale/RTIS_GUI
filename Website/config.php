@@ -196,6 +196,136 @@
 
 			<div class="col-lg-4">
 				<div class="panel panel-default">
+					<div class="panel-heading">Alarm Server Module</div>
+					<div class="panel-footer">
+						<div class="form-group">
+							<label>SeverityFilter</label>
+							<select name="GASMSeverityFilter" class="form-control">
+								<option value="0">No error message</option>
+								<option value="1">Fatal</option>
+								<option value="3">Error</option>
+								<option value="7">Warning</option>
+								<option value="15" selected="selected">Info</option>
+							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="GASMSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="GASMSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label><br/>Display</label>
+								
+								<div class="checkbox">
+									<label>
+										<input name="GASMLog" type="checkbox" value="1" checked>
+										Log
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="GASMConsole" type="checkbox" value="1">
+										Console
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="GASMGui" type="checkbox" value="1">
+										GUI
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
+					<div class="panel-heading">Index Client Module</div>
+					<div class="panel-footer">
+
+						<div class="form-group">
+							<label>SeverityFilter</label>
+							<select name="ICMSeverityFilter" class="form-control">
+								<option value="0">No error message</option>
+								<option value="1">Fatal</option>
+								<option value="3">Error</option>
+								<option value="7">Warning</option>
+								<option value="15" selected="selected">Info</option>
+							</select>
+							
+							<div class="form-inline">
+								<div class="checkbox">
+									<label>
+										<input name="ICMSeverityFilterDebug" type="checkbox" value="1">
+										Debug
+									</label>
+								</div>
+								
+								<div class="checkbox">
+									<label>
+										<input name="ICMSeverityFilterNotice" type="checkbox" value="1" checked>
+										Notice
+									</label>
+								</div>
+							</div>
+								
+						</div>
+
+						<div class="form-group">
+							<label>TxIP_Address</label>
+							<input name="ICMTxIP_Address" class="form-control" onchange="validateIp('ICMTxIP_Address');" required>
+						</div>
+
+						<div class="form-group">
+							<label>TxPortNo</label>
+							<input name="ICMTxPortNo" class="form-control" onchange="validateUint('ICMTxPortNo');" required>
+						</div>
+
+						<div class="form-group">
+							<label>TxSocketType</label>
+							<input name="ICMTxSocketType" class="form-control" onchange="validateUint('ICMTxSocketType');" required>
+						</div>
+
+						<label>TxIOTimeout</label>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" name="ICMTxIOTimeout" class="form-control" onchange="validateUint('ICMTxIOTimeout');" required>
+								<span class="input-group-addon">sec</span>
+							</div>
+						</div>
+
+						<label>TxConnectionTimeout</label>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" name="ICMTxConnectionTimeout" class="form-control" onchange="validateUint('ICMTxConnectionTimeout');" required>
+								<span class="input-group-addon">sec</span>
+							</div>
+						</div>
+
+						<label>TxRetryDelay</label>
+						<div class="form-group">
+							<div class="input-group">
+								<input type="text" name="ICMTxRetryDelay" class="form-control" onchange="validateUint('ICMTxRetryDelay');" required>
+								<span class="input-group-addon">sec</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="panel panel-default">
 					<div class="panel-heading">GNSS Receiver Command Server Module</div>
 					<div class="panel-footer">
 						<div class="form-group">
@@ -227,7 +357,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
 
+			<div class="col-lg-4">
 				<div class="panel panel-default">
 					<div class="panel-heading">GNSS RawData Server Module</div>
 					<div class="panel-footer">
@@ -352,81 +484,8 @@
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="col-lg-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">Index Client Module</div>
-					<div class="panel-footer">
-
-						<div class="form-group">
-							<label>SeverityFilter</label>
-							<select name="ICMSeverityFilter" class="form-control">
-								<option value="0">No error message</option>
-								<option value="1">Fatal</option>
-								<option value="3">Error</option>
-								<option value="7">Warning</option>
-								<option value="15" selected="selected">Info</option>
-							</select>
-							
-							<div class="form-inline">
-								<div class="checkbox">
-									<label>
-										<input name="ICMSeverityFilterDebug" type="checkbox" value="1">
-										Debug
-									</label>
-								</div>
-								
-								<div class="checkbox">
-									<label>
-										<input name="ICMSeverityFilterNotice" type="checkbox" value="1" checked>
-										Notice
-									</label>
-								</div>
-							</div>
-								
-						</div>
-
-						<div class="form-group">
-							<label>TxIP_Address</label>
-							<input name="ICMTxIP_Address" class="form-control" onchange="validateIp('ICMTxIP_Address');" required>
-						</div>
-
-						<div class="form-group">
-							<label>TxPortNo</label>
-							<input name="ICMTxPortNo" class="form-control" onchange="validateUint('ICMTxPortNo');" required>
-						</div>
-
-						<div class="form-group">
-							<label>TxSocketType</label>
-							<input name="ICMTxSocketType" class="form-control" onchange="validateUint('ICMTxSocketType');" required>
-						</div>
-
-						<label>TxIOTimeout</label>
-						<div class="form-group">
-							<div class="input-group">
-								<input type="text" name="ICMTxIOTimeout" class="form-control" onchange="validateUint('ICMTxIOTimeout');" required>
-								<span class="input-group-addon">sec</span>
-							</div>
-						</div>
-
-						<label>TxConnectionTimeout</label>
-						<div class="form-group">
-							<div class="input-group">
-								<input type="text" name="ICMTxConnectionTimeout" class="form-control" onchange="validateUint('ICMTxConnectionTimeout');" required>
-								<span class="input-group-addon">sec</span>
-							</div>
-						</div>
-
-						<label>TxRetryDelay</label>
-						<div class="form-group">
-							<div class="input-group">
-								<input type="text" name="ICMTxRetryDelay" class="form-control" onchange="validateUint('ICMTxRetryDelay');" required>
-								<span class="input-group-addon">sec</span>
-							</div>
-						</div>
-					</div>
-				</div>
+				
+				
 
 				<div class="panel panel-default">
 					<div class="panel-heading">Output</div>
