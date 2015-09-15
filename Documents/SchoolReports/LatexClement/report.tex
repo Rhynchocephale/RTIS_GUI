@@ -13,7 +13,8 @@
 \usepackage{lastpage}
 \usepackage[inline]{enumitem} % horizontal enumerations
 \usepackage{tikz-uml} % UML
-\usepackage{algpseudocode} % pseudo code
+\usepackage{color} % pseudo code
+\usepackage[procnames]{listings}
 \usepackage{listings} % source code
  
 \pagestyle{fancy}
@@ -394,31 +395,73 @@ For configuration files, the contents of the message are converted to C variable
 
 The tricky part here was for the error messages. Indeed, and unlike the other messages, what these commands ask for not is not a "once only" behaviour. A single command asking for ERR means fetching it for the next 2 minutes. If it was left in the same flow of execution as the command reader, that would interrupt its normal behaviour and prevent it from reading any other command from the GUI while the errors are fetched.
 Moreover, the method for storing and reading the error messages within the RTIS software is a bit special. They are stored in a ringbuffer, which means that if the messages are not read quickly enough, they will get erased by new ones. To read that, a function exists within the RTIS libraries: once more, it is set to a "blocked" mode, which means that it will read new messages when they come, remove them from the ringbuffer, and go back to sleep immediately after.
-To deal with the problem of the infinite loop of waiting for error messages within the infinite loop of waiting for GUI commands, I have resorted to a fork of the \textit{Command Sender} program. I detail the general idea in the following figure.
+To deal with the problem of the infinite loop of waiting for error messages within the infinite loop of waiting for GUI commands, I have resorted to a fork of the \textit{Command Sender} program. The general idea is detailed in the following figure.
 
 
 \begin{figure}[!ht]
 	\centering
-	\begin{algorithmic}
-		\State $hasForked \gets False$
-		\While{True}
-			\State $message \gets listenMessages(blocked=True)$
+	\lstset{language=Python}'
+	\definecolor{keywords}{RGB}{255,0,90}
+	\definecolor{comments}{RGB}{0,0,113}
+	\definecolor{red}{RGB}{160,0,0}
+	\definecolor{green}{RGB}{0,150,0}
+ 
+	\lstset{language=Python, 
+	        basicstyle=\ttfamily\small, 
+	        keywordstyle=\color{keywords},
+	        commentstyle=\color{comments},
+	        stringstyle=\color{red},
+	        showstringspaces=false,
+	        identifierstyle=\color{green},
+	        procnamekeys={def,class}}
+	\begin{lstlisting}[frame=single]
+hasForked = false
+#Beginning of the infinite message-reading loop
+while(True)	
+	message = listenMessages(blocked=True)
+	
+	#If the message asks for error messages
+	if(message.Type == errType)
+		#If the fork has not been done yet
+		if(!hasForked)	
+			hasForked = true
 			
-			\If{$message.Type == errType$}
-				\If{$!hasForked$}	
-					\State $hasForked sgets true$
-					\State $pid \gets fork()$
-				\EndIf
-				\If{$pid == 0$}
-					\While{True}
-						\State DO STUFF
-					\EndWhile
-				\EndIf
-			\EndIf
-		\EndWhile	
+			#Creation of a pipe, to communicate
+			#between the two processes that
+			#will result of the fork
+			pipe = pipe()
+			
+			#Creates a duplicate of this
+			#very program
+			pid = fork()
+			
+		#If this is the child program
+		#(child and parents are the 
+		#same, but we still need to
+		#tell them appart)
+		if(pid == 0)
+		
+			#The child enters this
+			#infinite loop, and will
+			#never leave it
+			while(true)
+				date = now()
 				
+				#reads messages for two minutes
+				while(now()-date < 2 minutes)
+					read & send error messages
+					
+				#Pipe communications are in 
+				#"blocked" mode. The child goes
+				#to sleep and waits for further
+				#instructions.
+				read(pipe)
 				
-	\end{algorithmic}
+		#If this is the parent
+		else
+			#awakens the child
+			write(pipe, 1)				
+	\end{lstlisting}
 	\caption{Explanation of the algorithm}
 \end{figure}
 

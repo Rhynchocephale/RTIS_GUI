@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.29)  15 SEP 2015 18:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.29)  15 SEP 2015 19:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1199,43 +1199,24 @@ arkings.code.tex))
 \tikzuml@AC@ybrc=\skip123
 \tikzuml@AC@middleArm=\skip124
 )
-(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
-Package: algpseudocode 
-
-(/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
-Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
-
-Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count193
-\c@ALG@rem=\count194
-\c@ALG@nested=\count195
-\ALG@tlm=\skip125
-\ALG@thistlm=\skip126
-\c@ALG@Lnr=\count196
-\c@ALG@blocknr=\count197
-\c@ALG@storecount=\count198
-\c@ALG@tmpcounter=\count199
-\ALG@tmplength=\skip127
-)
-Document Style - pseudocode environments for use with the `algorithmicx' style
-) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count200
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count193
 \lst@gtempboxa=\box106
 \lst@token=\toks44
-\lst@length=\count201
+\lst@length=\count194
 \lst@currlwidth=\dimen197
-\lst@column=\count202
-\lst@pos=\count203
+\lst@column=\count195
+\lst@pos=\count196
 \lst@lostspace=\dimen198
 \lst@width=\dimen199
-\lst@newlines=\count204
-\lst@lineno=\count205
+\lst@newlines=\count197
+\lst@lineno=\count198
 \lst@maxwidth=\dimen200
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count206
-\lst@skipnumbers=\count207
+\c@lstnumber=\count199
+\lst@skipnumbers=\count200
 \lst@framebox=\box107
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -1251,7 +1232,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/12/03 3.9h Babel common definitions
-\babel@savecnt=\count208
+\babel@savecnt=\count201
 \U@D=\dimen201
 )
 \l@canadian = a dialect from \language\l@american 
@@ -1260,61 +1241,61 @@ File: babel.def 2013/12/03 3.9h Babel common definitions
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
 Language: frenchb 2013/12/30 v2.6g French support from the babel system
-\FB@interchartokenstateORI=\count209
+\FB@interchartokenstateORI=\count202
 Package babel Info: Making : an active character on input line 244.
 Package babel Info: Making ; an active character on input line 245.
 Package babel Info: Making ! an active character on input line 246.
 Package babel Info: Making ? an active character on input line 247.
 \FB@Mht=\dimen202
-\std@mcc=\count210
-\dec@mcc=\count211
+\std@mcc=\count203
+\dec@mcc=\count204
 
 
 Package frenchb.ldf Warning: Please load the "caption" package
 (frenchb.ldf)                AFTER babel/frenchb; reported on input line 661.
 
-\listindentFB=\skip128
-\labelwidthFB=\skip129
-\leftmarginFB=\skip130
+\listindentFB=\skip125
+\labelwidthFB=\skip126
+\leftmarginFB=\skip127
 \parindentFFN=\dimen203
 )) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 
 Package hyperref Warning: Option `backref' has already been used,
-(hyperref)                setting the option has no effect on input line 54.
+(hyperref)                setting the option has no effect on input line 55.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 54.
+(hyperref)                setting the option has no effect on input line 55.
 
 
 Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 54.
+(hyperref)                setting the option has no effect on input line 55.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 54.
-Package hyperref Info: Option `breaklinks' set `true' on input line 54.
+Package hyperref Info: Option `colorlinks' set `true' on input line 55.
+Package hyperref Info: Option `breaklinks' set `true' on input line 55.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 54.
+(hyperref)                setting the option has no effect on input line 55.
 
-\longest=\skip131
+\longest=\skip128
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
-LaTeX Font Info:    ... okay on input line 72.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 72.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
+LaTeX Font Info:    ... okay on input line 73.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 73.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1322,16 +1303,16 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count212
+\scratchcounter=\count205
 \scratchdimen=\dimen204
 \scratchbox=\box109
-\nofMPsegments=\count213
-\nofMParguments=\count214
+\nofMPsegments=\count206
+\nofMParguments=\count207
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count215
+\MPscratchCnt=\count208
 \MPscratchDim=\dimen205
-\MPnumerator=\count216
-\makeMPintoPDFobject=\count217
+\MPnumerator=\count209
+\makeMPintoPDFobject=\count210
 \everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1348,7 +1329,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 72.
+Package hyperref Info: Link coloring ON on input line 73.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1356,11 +1337,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count218
+\c@section@level=\count211
 )
-LaTeX Info: Redefining \ref on input line 72.
-LaTeX Info: Redefining \pageref on input line 72.
-LaTeX Info: Redefining \nameref on input line 72.
+LaTeX Info: Redefining \ref on input line 73.
+LaTeX Info: Redefining \pageref on input line 73.
+LaTeX Info: Redefining \nameref on input line 73.
 
 (./report.out) (./report.out)
 \@outlinefile=\write5
@@ -1372,7 +1353,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 72.
+(lastpage)             ! on input line 73.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1412,60 +1393,60 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count219
-LaTeX Info: Redefining \degres on input line 72.
-LaTeX Info: Redefining \dots on input line 72.
+\c@lstlisting=\count212
+LaTeX Info: Redefining \degres on input line 73.
+LaTeX Info: Redefining \dots on input line 73.
 
 
 Package frenchb.ldf Warning: Setting StandardItemizeEnv=true for
 (frenchb.ldf)                compatibility with enumitem package,
-(frenchb.ldf)                 on input line 72.
+(frenchb.ldf)                 on input line 73.
 
 
 Package frenchb.ldf Warning: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)                compatibility with enumitem package,
-(frenchb.ldf)                 on input line 72.
+(frenchb.ldf)                 on input line 73.
 
-LaTeX Info: Redefining \up on input line 72.
+LaTeX Info: Redefining \up on input line 73.
 <images/logos/ensg_logo.png, id=123, 672.5125pt x 714.67pt>
 File: images/logos/ensg_logo.png Graphic file (type png)
 
 <use images/logos/ensg_logo.png>
-Package pdftex.def Info: images/logos/ensg_logo.png used on input line 79.
+Package pdftex.def Info: images/logos/ensg_logo.png used on input line 80.
 (pdftex.def)             Requested size: 113.81102pt x 120.93613pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 80.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 81.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 80.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 81.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 80.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 81.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 80.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 81.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 80.
+(Font)              <12> on input line 81.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 80.
+(Font)              <8> on input line 81.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 80.
-LaTeX Font Info:    Try loading font information for U+msa on input line 80.
+(Font)              <6> on input line 81.
+LaTeX Font Info:    Try loading font information for U+msa on input line 81.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 80.
+LaTeX Font Info:    Try loading font information for U+msb on input line 81.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1474,11 +1455,11 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 File: images/logos/kartverket_logo.png Graphic file (type png)
 
 <use images/logos/kartverket_logo.png>
-Package pdftex.def Info: images/logos/kartverket_logo.png used on input line 83
+Package pdftex.def Info: images/logos/kartverket_logo.png used on input line 84
 .
 (pdftex.def)             Requested size: 113.81102pt x 90.85483pt.
 
-Overfull \hbox (20.23589pt too wide) in paragraph at lines 78--85
+Overfull \hbox (20.23589pt too wide) in paragraph at lines 79--86
 []$[]$ $[]$ 
  []
 
@@ -1487,10 +1468,10 @@ File: images/Aurora_Borealis_Norway.jpg Graphic file (type jpg)
 
 <use images/Aurora_Borealis_Norway.jpg>
 Package pdftex.def Info: images/Aurora_Borealis_Norway.jpg used on input line 9
-1.
+2.
 (pdftex.def)             Requested size: 365.16234pt x 241.84842pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 93.
+(Font)              <10.95> on input line 94.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logos/ensg_logo.p
@@ -1526,12 +1507,12 @@ File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 42.
-\c@x=\count220
+\c@x=\count213
 ) [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 114.
+(Font)              <17.28> on input line 115.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 114.
+(Font)              <10> on input line 115.
  [4
 
 ] [5
@@ -1541,17 +1522,17 @@ LaTeX Font Info:    External font `lmex10' loaded for size
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.143 \end{abstract}
+l.144 \end{abstract}
                      [1]pdfTeX warning (ext4): destination with the same identi
 fier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.157 \end{abstract}
+l.158 \end{abstract}
                      [1]pdfTeX warning (ext4): destination with the same identi
 fier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.163 \newevenpage
+l.164 \newevenpage
                    [2] (./report.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <14.4> on input line 28.
@@ -1565,12 +1546,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.166 \newevenpage
+l.167 \newevenpage
                    [3]pdfTeX warning (ext4): destination with the same identifi
 er (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.166 \newevenpage
+l.167 \newevenpage
                    [4] (./report.lof)
 \tf@lof=\write7
 \openout7 = `report.lof'.
@@ -1579,7 +1560,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.169 \newevenpage
+l.170 \newevenpage
                    [5] [6] (./report.lot)
 \tf@lot=\write8
 \openout8 = `report.lot'.
@@ -1590,12 +1571,12 @@ l.169 \newevenpage
 
 ] [12]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 211.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 212.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 211--211
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 212--212
 [][] 
  []
 
@@ -1603,22 +1584,22 @@ Overfull \hbox (41.6248pt too wide) in paragraph at lines 211--211
 File: images/rtis_mon.png Graphic file (type png)
 
 <use images/rtis_mon.png>
-Package pdftex.def Info: images/rtis_mon.png used on input line 228.
+Package pdftex.def Info: images/rtis_mon.png used on input line 229.
 (pdftex.def)             Requested size: 227.62206pt x 152.9647pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 235--236
 
  []
 
 [13
 
  <./images/rtis_mon.png>] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 275--275
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
  [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 275--275
+Underfull \hbox (badness 10000) in paragraph at lines 276--276
  [][][][] 
  []
 
@@ -1626,14 +1607,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--275
 File: images/RtisMap.jpg Graphic file (type jpg)
 
 <use images/RtisMap.jpg>
-Package pdftex.def Info: images/RtisMap.jpg used on input line 296.
+Package pdftex.def Info: images/RtisMap.jpg used on input line 297.
 (pdftex.def)             Requested size: 227.62206pt x 145.55789pt.
 
 <images/bearIsland.png, id=299, 1013.7875pt x 1271.75125pt>
 File: images/bearIsland.png Graphic file (type png)
 
 <use images/bearIsland.png>
-Package pdftex.def Info: images/bearIsland.png used on input line 304.
+Package pdftex.def Info: images/bearIsland.png used on input line 305.
 (pdftex.def)             Requested size: 227.62206pt x 285.53012pt.
  [15]
 Underfull \vbox (badness 5652) has occurred while \output is active []
@@ -1641,7 +1622,7 @@ Underfull \vbox (badness 5652) has occurred while \output is active []
  [16 <./images/RtisMap.jpg> <./images/bearIsland.png>] [17] [18]
 Chapter 2.
 
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 320--320
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 321--321
 [][] 
  []
 
@@ -1649,7 +1630,7 @@ Overfull \hbox (41.6248pt too wide) in paragraph at lines 320--320
 File: images/global_flowchart.png Graphic file (type png)
 
 <use images/global_flowchart.png>
-Package pdftex.def Info: images/global_flowchart.png used on input line 338.
+Package pdftex.def Info: images/global_flowchart.png used on input line 339.
 (pdftex.def)             Requested size: 364.19667pt x 495.2918pt.
  [19
 
@@ -1658,10 +1639,21 @@ Package pdftex.def Info: images/global_flowchart.png used on input line 338.
 File: images/detailed_flowchart2.png Graphic file (type png)
 
 <use images/detailed_flowchart2.png>
-Package pdftex.def Info: images/detailed_flowchart2.png used on input line 368.
+Package pdftex.def Info: images/detailed_flowchart2.png used on input line 369.
 
 (pdftex.def)             Requested size: 455.24411pt x 482.79652pt.
- [21] [22 <./images/detailed_flowchart2.png>] [23] [24] [25
+ [21] [22 <./images/detailed_flowchart2.png>] (/usr/share/texlive/texmf-dist/te
+x/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+) [23]
+
+LaTeX Warning: Text page 24 contains only floats.
+
+
+Overfull \vbox (3.38295pt too high) has occurred while \output is active []
+
+
+[24] [25
 
 ] [26] [27
 
@@ -1674,7 +1666,7 @@ Package pdftex.def Info: images/detailed_flowchart2.png used on input line 368.
 ] [30]
 Appendix A.
 
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 452--452
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 495--495
 [][] 
  []
 
@@ -1685,7 +1677,7 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 File: lstlang2.sty 2013/08/26 1.5b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 455.
+nput line 498.
 
 (./resources/rtis_config.cfg
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
@@ -1702,38 +1694,37 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 AED: lastpage setting LastPage
 [33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 460.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 460.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 503.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 503.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 460.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 460.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 503.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 503.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 6868AF6256F5E919B49775F60BB600B0;1898.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 460.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 503.
  ) 
 Here is how much of TeX's memory you used:
- 26135 strings out of 493304
- 468987 string characters out of 6139871
- 659896 words of memory out of 5000000
- 28839 multiletter control sequences out of 15000+600000
- 106573 words of font info for 80 fonts, out of 8000000 for 9000
+ 25916 strings out of 493304
+ 465308 string characters out of 6139871
+ 666716 words of memory out of 5000000
+ 28577 multiletter control sequences out of 15000+600000
+ 107210 words of font info for 82 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,12n,75p,900b,2375s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathit.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share
-/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm
-/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/tex
-mf/fonts/type1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr
-10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/font
-s/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></
-usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/
-public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on report.pdf (39 pages, 9089340 bytes).
+ 63i,12n,75p,900b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/s
+hare/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+r8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/ty
+pe1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msam10.pfb>
+Output written on report.pdf (39 pages, 9110221 bytes).
 PDF statistics:
- 585 PDF objects out of 1000 (max. 8388607)
- 499 compressed objects within 5 object streams
- 188 named destinations out of 1000 (max. 500000)
+ 640 PDF objects out of 1000 (max. 8388607)
+ 553 compressed objects within 6 object streams
+ 235 named destinations out of 1000 (max. 500000)
  349 words of extra memory for PDF output out of 10000 (max. 10000000)
 
