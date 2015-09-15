@@ -1,10 +1,8 @@
 #define GL_PC_LINUX
-#define CONFIG_FILE_SIZE 		335
-#define HEADER_SIZE				20
-#define CMD_CONFIG_MSG_TYPE  	10
 #define NB_OF_FIELDS 			34
 #define TIMEOUT 				20
 #define DEFAULT_CONNECTION_PORT 20000
+#define	FIRST_MSG_TYPE			20
 
 #include <gl_App.h>
 #include <rtis_App.h>
@@ -17,7 +15,7 @@ INT32 main(int argc, char *argv[])
 	char 					szFunctionName[]="main";
 	
 	INT8					ucMsgClass = 26;
-	INT8					ucMsgType = 20;
+	INT8					ucMsgType = FIRST_MSG_TYPE;
 	INT16					sRefId = 120;
 	INT32					iStatus;
 	INT32					i;

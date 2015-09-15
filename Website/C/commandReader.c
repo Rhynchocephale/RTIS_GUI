@@ -1,9 +1,12 @@
 #define GL_PC_LINUX
-#define CONFIG_FILE_SIZE = 335
-#define HEADER_SIZE = 20
-#define ERROR_FETCH_TIME_LENGTH = 300
-#define CONFIG_FILE = "config.conf"
+#define ERROR_FETCH_TIME_LENGTH 300
+#define CONFIG_FILE 			"config.conf"
+#define TIMEOUT 				20
+#define DEFAULT_CONNECTION_PORT 20000
+#define FIRST_MSG_TYPE			20
+
 #include <gl_App.h>
+#include <rtis_App.h>
 #include <stdio.h>
 
 
@@ -14,23 +17,31 @@ INT32 main(int argc, char *argv[])
 	char 					szProcessName[]="";
 	char 					szFunctionName[]="main";
 	
-	INT32					i;
 	INT32					n;
 	INT8					hasForked=0;
 	INT8					fetchError;
+	INT8					ucMsgType;
+	INT8					ucMsgClass = 26;
+	INT32					iStatus;
 	INT32					fd[2];
 	
+	FILE					fp;
+
+	gl_TpShm 				pProcTbl;
+	gl_TpShm 				pMonTbl;
+	gl_TpShm 				pInterfaceTbl;
+	gl_TpShm 				monTableInfo;
+	gl_TpShm 				procTableInfo;
+	gl_TpShm 				interfaceTableInfo;
+
 	gl_TSatrefExtMsg		satrefMsg;
-	gl_TSatrefExtHeader		msgHead;
-	UINT8*					msgBody;
-	UINT8*					msgContent;
+	UINT8					ucBuf[GL_SATREF_DATA_BUFFER_SIZE];  //NOT SURE
 	
-	pid_t 					pid;
 	pid_t					myPid;
 	
 	gl_TError 				Error;
 	gl_TDevice 				ErrDev[RTIS_MAX_NO_OF_ERROR_DEV];
-	gl_TDevice 				Dev;
+	gl_TDevice 				Socket;
 	
 	GL_DLL_CALL_TYPE_INT32	serverHandle;
 	
@@ -38,11 +49,9 @@ INT32 main(int argc, char *argv[])
 		
 	/*
 	*********************************************************************
-	Initialize the alarm system
+	Initialise the alarm system
 	*********************************************************************
 	*/
-	pid = getpid();
-
 	gl_Device_Clear(RTIS_MAX_NO_OF_ERROR_DEV,&ErrDev[0]);
 	gl_Error_Clear(&Error);
 
@@ -58,6 +67,7 @@ INT32 main(int argc, char *argv[])
 	ErrDev[0].iProtocol = GL_DEVICE_PROTOCOL_NONE;
 	ErrDev[0].iFormat = GL_DEVICE_FORMAT_TEXT;
 	ErrDev[0].iHandle = -1;
+	strcpy(ErrDev[0].szAlarmLogDir,"./"); //CHANGE THAT PATH
 
 	gl_Error_SetDevice(1, &ErrDev[0], &Error);
 	/*
@@ -70,40 +80,40 @@ INT32 main(int argc, char *argv[])
 
 	/*
 	*********************************************************************
-	Connecting to socket
-	*********************************************************************
-	*/
-	serverHandle = gl_Socket_Server_Start(gl_TDevice *ListenSocket, INT32 iSocketType, char  *szHost,  char *szService, INT32 iProtocol, INT32 iFormat, 
-INT32 iConnectTimeout, INT32 iBlocked, INT32 iBackLog, gl_TError *Error);
-
-	/*
-	*********************************************************************
 	Connecting to the different tables
 	*********************************************************************
 	*/
-	iProcStatus = gl_Shm_Open(RTIS_KEY_PROC_TABLE, &pProcTbl, &Error);
-	while (iProcStatus == GL_ERROR)
+	iStatus = gl_Shm_Open(RTIS_KEY_PROC_TABLE, &pProcTbl, &Error);
+	while (iStatus == GL_ERROR)
 	{
 		gl_Error_Set(szFunctionName,GL_SEVERITY_ERROR,GL_APPLICATION_ERROR,"DDS_001_02","Unable to open process table. Waiting...", &Error);
 		gl_Sleep(5,0);
-		iProcStatus = gl_Shm_Open(RTIS_KEY_PROC_TABLE, &pProcTbl, &Error);
+		iStatus = gl_Shm_Open(RTIS_KEY_PROC_TABLE, &pProcTbl, &Error);
 	}
 	
-	iMonStatus = gl_Shm_Open(RTIS_KEY_MON_TABLE, &pMonTbl, &Error);
-	while (iMonStatus == GL_ERROR)
+	iStatus = gl_Shm_Open(RTIS_KEY_MON_TABLE, &pMonTbl, &Error);
+	while (iStatus == GL_ERROR)
 	{
 		gl_Error_Set(szFunctionName,GL_SEVERITY_ERROR,GL_APPLICATION_ERROR,"DDS_001_02","Unable to open monitor table. Waiting..", &Error);
 		gl_Sleep(5,0);
-		iMonStatus = gl_Shm_Open(RTIS_KEY_MON_TABLE, &pMonTbl, &Error);
+		iStatus = gl_Shm_Open(RTIS_KEY_MON_TABLE, &pMonTbl, &Error);
 	}
 	
-	iInterStatus = gl_Shm_Open(RTIS_KEY_INTERFACE_TABLE, &pInterfaceTbl, &Error);
-	while (iInterStatus == GL_ERROR)
+	iStatus = gl_Shm_Open(RTIS_KEY_INTERFACE_TABLE, &pInterfaceTbl, &Error);
+	while (iStatus == GL_ERROR)
 	{
 		gl_Error_Set(szFunctionName,GL_SEVERITY_ERROR,GL_APPLICATION_ERROR,"DDS_001_02","Unable to open interface table. Waiting ...", &Error);
 		gl_Sleep(1,0);
-		iInterStatus = gl_Shm_Open(RTIS_KEY_INTERFACE_TABLE, &pInterfaceTbl, &Error);
+		iStatus = gl_Shm_Open(RTIS_KEY_INTERFACE_TABLE, &pInterfaceTbl, &Error);
 	}
+
+
+	/*
+	*********************************************************************
+	Connecting to socket
+	*********************************************************************
+	*/
+	iStatus = gl_Socket_Server_Connect(&Socket, GL_DEVICE_TYPE_TCP_CLIENT_SOCKET, ipAdressIWantToConnectTo, DEFAULT_CONNECTION_PORT, GL_DEVICE_PROTOCOL_SATREF, GL_DEVICE_FORMAT_BINARY, TIMEOUT, GL_DEVICE_BLOCKED, &Error);
 
 	/*
 	*********************************************************************
@@ -111,22 +121,37 @@ INT32 iConnectTimeout, INT32 iBlocked, INT32 iBackLog, gl_TError *Error);
 	*********************************************************************
 	*/
 	while(1){
-		msgContent = read(serverHandle);
+		//TODO: CLEAR SATREFMSG
+		iStatus = gl_Satref_ReadMsg(&Socket, &satrefMsg, &Error);
+		if(iStatus != GL_OK){
+			//TODO: write a proper error message
+			printf("Communication error");
+			continue;
+		}
 		
-		READ MESSAGE TYPE
+		if(satrefMsg.HeaderData.sLen == 0){
+			//TODO: write a proper error message
+			printf("Reception error");
+			continue;
+		}
 		
-		
+		ucMsgType = satrefMsg.HeaderData.ucMsgType;
+
 		/*
 		*********************************************************************
-		Config file
+		Configuration file
 		*********************************************************************
 		*/
-		if(msgType == 10){		
+		if(ucMsgType == FIRST_MSG_TYPE){
 			
 			fp=fopen(CONFIG_FILE, "w");
 			if(fp == NULL)
 				exit(-1);
 			
+			n=0;
+
+			PROBLEM WITH LENGTH OF STRINGS
+
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "; RTIM Configuration file\n");
 			fprintf(fp, "; Version 0.0.1\n");
@@ -142,35 +167,35 @@ INT32 iConnectTimeout, INT32 iBlocked, INT32 iBackLog, gl_TError *Error);
 			fprintf(fp, ";		Add 128(0x80) to the above = D\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "[MAIN]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "StationId=%d\n",			msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "RxIP_Address=%s\n",		msgContent[iOffset]);			iOffset += 15*sizeof(UINT8);
-			fprintf(fp, "RxPortNo=%d\n",			msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "RxSocketType=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "RxIOTimeout=%d\n",			msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "RxConnectionTimeout=%d\n",	msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "RxRetryDelay=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "StationShortName=%s\n",	msgContent[iOffset]);			iOffset += 3*sizeof(UINT8);
-			fprintf(fp, "ReceiverPosition=%.3f,",	msgContent[iOffset]);			iOffset += sizeof(DOUBLE64);
-			fprintf(fp, "%.3f,",					msgContent[iOffset]);			iOffset += sizeof(DOUBLE64);
-			fprintf(fp, "%.3f\n",					msgContent[iOffset]);			iOffset += sizeof(DOUBLE64);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "StationId=%d\n",			satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "RxIP_Address=%s\n",		satrefMsg.ucData[n]);			n += 15*sizeof(UINT8);
+			fprintf(fp, "RxPortNo=%d\n",			satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "RxSocketType=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "RxIOTimeout=%d\n",			satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "RxConnectionTimeout=%d\n",	satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "RxRetryDelay=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "StationShortName=%s\n",	satrefMsg.ucData[n]);			n += 3*sizeof(UINT8);
+			fprintf(fp, "ReceiverPosition=%.3f,",	satrefMsg.ucData[n]);			n += sizeof(FLOAT64);
+			fprintf(fp, "%.3f,",					satrefMsg.ucData[n]);			n += sizeof(FLOAT64);
+			fprintf(fp, "%.3f\n",					satrefMsg.ucData[n]);			n += sizeof(FLOAT64);
 			fprintf(fp, ";\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "; GNSS Alarm Server Module\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "[GNSS_ALARM_SRV]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "Log=%s\n",					msgContent[iOffset]?"on":"off");iOffset += sizeof(UINT8);
-			fprintf(fp, "Console=%s\n",				msgContent[iOffset]?"on":"off");iOffset += sizeof(UINT8);
-			fprintf(fp, "Gui=%s\n",					msgContent[iOffset]?"on":"off");iOffset += sizeof(UINT8);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "Log=%s\n",					satrefMsg.ucData[n]?"on":"off");n += sizeof(UINT8);
+			fprintf(fp, "Console=%s\n",				satrefMsg.ucData[n]?"on":"off");n += sizeof(UINT8);
+			fprintf(fp, "Gui=%s\n",					satrefMsg.ucData[n]?"on":"off");n += sizeof(UINT8);
 			fprintf(fp, ";\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "; GNSS Receiver Command Server Module\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "[GNSS_RXCMD_SRV]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
 			fprintf(fp, ";\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "; GNSS RawData Server Module\n");
@@ -180,8 +205,8 @@ INT32 iConnectTimeout, INT32 iBlocked, INT32 iBackLog, gl_TError *Error);
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "[GNSS_RAWDATA_SRV]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "SampleRate=%d\n",			msgContent[iOffset]);			iOffset += sizeof(UINT16);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "SampleRate=%d\n",			satrefMsg.ucData[n]);			n += sizeof(UINT16);
 			fprintf(fp, ";\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "; **************************************\n");
@@ -189,114 +214,127 @@ INT32 iConnectTimeout, INT32 iBlocked, INT32 iBackLog, gl_TError *Error);
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "[GNSS_EPH_SRV]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
 			fprintf(fp, ";\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "; Index Client Module\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "[INDEX_CLIENT]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "TxIP_Address=%s\n",		msgContent[iOffset]);			iOffset += 15*sizeof(UINT8);
-			fprintf(fp, "TxPortNo=%d\n",			msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "TxSocketType=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "TxIOTimeout=%d\n",			msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "TxConnectionTimeout=%d\n",	msgContent[iOffset]);			iOffset += sizeof(UINT16);
-			fprintf(fp, "TxRetryDelay=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT16);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "TxIP_Address=%s\n",		satrefMsg.ucData[n]);			n += 15*sizeof(UINT8);
+			fprintf(fp, "TxPortNo=%d\n",			satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "TxSocketType=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "TxIOTimeout=%d\n",			satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "TxConnectionTimeout=%d\n",	satrefMsg.ucData[n]);			n += sizeof(UINT16);
+			fprintf(fp, "TxRetryDelay=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT16);
 			fprintf(fp, ";\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "; Processing\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "[PROCESSING]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "DopplerTolerance=%.1f\n",	msgContent[iOffset]);			iOffset += sizeof(DOUBLE64);
-			fprintf(fp, "FilterFreq=%.1f\n",		msgContent[iOffset]);			iOffset += sizeof(DOUBLE64);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "DopplerTolerance=%.1f\n",	satrefMsg.ucData[n]);			n += sizeof(FLOAT64);
+			fprintf(fp, "FilterFreq=%.1f\n",		satrefMsg.ucData[n]);			n += sizeof(FLOAT64);
 			fprintf(fp, ";\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, "; Output\n");
 			fprintf(fp, "; **************************************\n");
 			fprintf(fp, ";\n");
 			fprintf(fp, "[OUTPUT]\n");
-			fprintf(fp, "SeverityFilter=%d\n",		msgContent[iOffset]);			iOffset += sizeof(UINT8);
-			fprintf(fp, "RootDirectory=%s\n",		msgContent[iOffset]);			iOffset += 255*sizeof(UINT8);
+			fprintf(fp, "SeverityFilter=%d\n",		satrefMsg.ucData[n]);			n += sizeof(UINT8);
+			fprintf(fp, "RootDirectory=%s\n",		satrefMsg.ucData[n]);			n += 255*sizeof(UINT8);
 			fprintf(fp, "\n");
 			
 			fclose(fp);
+
+			/*
+			*********************************************************************
+			Sending confirmation message
+			*********************************************************************
+			*/
+			//TODO: CLEAR SATREFMSG
+			/*
+			*********************************************************************
+			Making header
+			*********************************************************************
+			*/
+			INT16_BIT16(&satrefMsg.HeaderData.sRefId,sRefId);
+			satrefMsg.HeaderData.ucMsgClass = ucMsgClass;
+			satrefMsg.HeaderData.ucMsgType = ucMsgType+6;
+			INT32_BIT32(&satrefMsg.HeaderData.lGpsSec,time(NULL));
+			INT16_BIT16(&satrefMsg.HeaderData.sGpsmSec,0);
+			INT16_BIT16(&satrefMsg.HeaderData.sLen,0);
 					
 		/*
 		*********************************************************************
 		Processes
 		*********************************************************************
 		*/
-		} else if(msgType == 11){
+		} else if(ucMsgType == FIRST_MSG_TYPE+1){
 			
-			iProcStatus = system("clear");
+			iStatus = system("clear");
 			for(n=0; n<RTIS_MAX_NO_OF_MAIN_PROC;n++)
 			{
-				iProcStatus = gl_Shm_Get(pProcTbl, &ProcessTableInfo, n, &Error);
-				if (iProcStatus == GL_ERROR)
-					goto Proc_Init;
+				iStatus = gl_Shm_Get(pProcTbl, &procTableInfo, n, &Error);
+				if (iStatus == GL_ERROR)
+					goto Proc_Init; //TODO
 
-				if (ProcessTableInfo.Pid > 0)
-					rtis_PrintTableRow(n, RTIS_PROC_TABLE, &ProcessTableInfo, "");  //WHAT IS THIS FUNCTION? REPLACE THAT WITH MESSAGE
+				if (tableInfo.Pid > 0)
+					rtis_PrintTableRow(n, RTIS_PROC_TABLE, &tableInfo, "");  //TODO: WHAT IS THIS FUNCTION? REPLACE THAT WITH MESSAGE
 			}
-			iProcStatus = system("clear");
+			iStatus = system("clear");
 		
 		/*
 		*********************************************************************
 		Monitor
 		*********************************************************************
 		*/	
-		} else if(msgType == 12){
+		} else if(ucMsgType == FIRST_MSG_TYPE+2){
 
-			iInterStatus = gl_Shm_Get(pInterfaceTbl, &InterfaceTbl, GL_SHM_SINGLE, &Error);
+			iStatus = system("clear");
+			iStatus = gl_Shm_Get(pMonTbl, &monTableInfo, GL_SHM_SINGLE, &Error);
 			if (iStatus == GL_ERROR)
-				goto Monitor_Init;
+				goto Monitor_Init; //TODO
+
+			iStatus = gl_Shm_Get(pInterfaceTbl, &interfaceTableInfo, GL_SHM_SINGLE, &Error);
+			if (iStatus == GL_ERROR)
+				goto Monitor_Init; //TODO
 
 			iStatus = system("clear");
 
-			iNoOfEpochs = 0;
-			iMonStatus = gl_Shm_Get(pMonTbl, &MonTbl, GL_SHM_SINGLE, &Error);
-			if (iMonStatus == GL_ERROR)
-				goto Monitor_Init;
 
-			iInterStatus = gl_Shm_Get(pInterfaceTbl, &InterfaceTbl, GL_SHM_SINGLE, &Error);
-			if (iInterStatus == GL_ERROR)
-				goto Monitor_Init;
-
-			iInterStatus = system("clear");
-
-			n=0;
-
+			//TODO: CLEAR SATREFMSG
 			/*
 			*********************************************************************
 			Making header
 			*********************************************************************
 			*/
-			INT16_BIT16(&msgHead[n],sRefId);  n +=sizeof(INT16);
-			msgHead[n] = ucMsgClass; n +=sizeof(UINT8);
-			msgHead[n] = CMD_CONFIG_MSG_TYPE; n +=sizeof(UINT8);
-			INT32_BIT32(&msgHead[n],lGpsSec); n +=sizeof(INT32); //???
-			INT16_BIT16(&msgHead[n],sGpsmSec); n +=sizeof(INT16); //???
-			INT16_BIT16(&msgHead[n],2*sizeof(INT16)+4*sizeof(INT32)+4*sizeof(MYSTERY)); n +=sizeof(INT16);
+			INT16_BIT16(&satrefMsg.HeaderData.sRefId,sRefId);
+			satrefMsg.HeaderData.ucMsgClass = ucMsgClass;
+			satrefMsg.HeaderData.ucMsgType = CMD_CONFIG_MSG_TYPE;
+			INT32_BIT32(&satrefMsg.HeaderData.lGpsSec,time(NULL));
+			INT16_BIT16(&satrefMsg.HeaderData.sGpsmSec,0);
+			INT16_BIT16(&satrefMsg.HeaderData.sLen,2*sizeof(INT16)+4*sizeof(INT32)+4*sizeof(MYSTERY)); n +=sizeof(INT16);
 			
-				/*
+			/*
 			*********************************************************************
 			Making body
 			*********************************************************************
 			*/
-			monitorBody[n] = InterfaceTbl.szIPAddress; n += //MYSTERY;
-			INT16_BIT16(&monitorBody[n],InterfaceTbl.iPortNo);  n +=sizeof(INT16);
-			monitorBody[n] = InterfaceTbl.szCmdInterfaceModule; n += //MYSTERY;
-			monitorBody[n] = InterfaceTbl.szRawDataInterfaceModule; n += //MYSTERY;
-			monitorBody[n] = InterfaceTbl.szEphDataInterfaceModule; n += //MYSTERY;
-			INT16_BIT16(&monitorBody[n],InterfaceTbl.iSampleRate);  n +=sizeof(INT16);
-			INT32_BIT32(&monitorBody[n],MonTbl.iNoOfRawMeas);  n +=sizeof(INT32);
-			INT32_BIT32(&monitorBody[n],MonTbl.iNoOfLostRawMeas);  n +=sizeof(INT32);
-			INT32_BIT32(&monitorBody[n],MonTbl.iNoOfIQMeas);  n +=sizeof(INT32);
-			INT32_BIT32(&monitorBody[n],MonTbl.iNoOfLostIQMeas);  n +=sizeof(INT32);
-			INT32_BIT32(&monitorBody[n],MonTbl.iOther);  n +=sizeof(INT32);
+			n=0;
+			satrefMsg.ucData[n] = interfaceTableInfo.szIPAddress; n += //MYSTERY;
+			INT16_BIT16(&satrefMsg.ucData[n],interfaceTableInfo.iPortNo);  n +=sizeof(INT16);
+			satrefMsg.ucData[n] = interfaceTableInfo.szCmdInterfaceModule; n += //MYSTERY;
+			satrefMsg.ucData[n] = interfaceTableInfo.szRawDataInterfaceModule; n += //MYSTERY;
+			satrefMsg.ucData[n] = interfaceTableInfo.szEphDataInterfaceModule; n += //MYSTERY;
+			INT16_BIT16(&satrefMsg.ucData[n],interfaceTableInfo.iSampleRate);  n +=sizeof(INT16);
+			INT32_BIT32(&satrefMsg.ucData[n],monTableInfo.iNoOfRawMeas);  n +=sizeof(INT32);
+			INT32_BIT32(&satrefMsg.ucData[n],monTableInfo.iNoOfLostRawMeas);  n +=sizeof(INT32);
+			INT32_BIT32(&satrefMsg.ucData[n],monTableInfo.iNoOfIQMeas);  n +=sizeof(INT32);
+			INT32_BIT32(&satrefMsg.ucData[n],monTableInfo.iNoOfLostIQMeas);  n +=sizeof(INT32);
+			INT32_BIT32(&satrefMsg.ucData[n],monTableInfo.iOther);  n +=sizeof(INT32);
 			
 			monitorMsg = gl_Satref_PackMsg(gl_TSatrefExtMsg *SatrefExtMsg, UINT8 *ucBuf, INT32 *iLen,  gl_TError *Error);
 		
