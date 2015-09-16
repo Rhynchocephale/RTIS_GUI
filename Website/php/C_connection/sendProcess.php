@@ -9,11 +9,11 @@ while(true) {
 	$returnValue = 1;
 	while($returnValue != 0) {
 		if(time() - $now > $timeout){
-			echo "data: TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS\n\n";
+			//echo "data: TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS\n\n";
 			ob_flush();
 			flush();
 		}
-		exec("cd ../../C && ./commandSenderData ".$_GET["sta"]." 0",$output,$returnValue);
+		//exec("cd ../../C && ./commandSenderData ".$_GET["sta"]." 0",$output,$returnValue);
 	}
 	
 	$fileContents = file_get_contents("./process.txt");

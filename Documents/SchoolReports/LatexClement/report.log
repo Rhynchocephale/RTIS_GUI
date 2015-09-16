@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.29)  15 SEP 2015 19:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.29)  17 SEP 2015 01:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1224,6 +1224,24 @@ File: listings.cfg 2013/08/26 1.5b listings configuration
 ))
 Package: listings 2013/08/26 1.5b (Carsten Heinz)
 
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
+Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
+
+(/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count201
+\l_MT_multwidth_dim=\dimen201
+\origjot=\skip125
+\l_MT_shortvdotswithinadjustabove_dim=\dimen202
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen203
+\l_MT_above_intertext_sep=\dimen204
+\l_MT_below_intertext_sep=\dimen205
+\l_MT_above_shortintertext_sep=\dimen206
+\l_MT_below_shortintertext_sep=\dimen207
+)
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2013/12/03 3.9h The Babel package
 
@@ -1232,8 +1250,8 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/12/03 3.9h Babel common definitions
-\babel@savecnt=\count201
-\U@D=\dimen201
+\babel@savecnt=\count202
+\U@D=\dimen208
 )
 \l@canadian = a dialect from \language\l@american 
 \l@australian = a dialect from \language\l@british 
@@ -1241,61 +1259,61 @@ File: babel.def 2013/12/03 3.9h Babel common definitions
 )
 (/usr/share/texlive/texmf-dist/tex/generic/babel-french/frenchb.ldf
 Language: frenchb 2013/12/30 v2.6g French support from the babel system
-\FB@interchartokenstateORI=\count202
+\FB@interchartokenstateORI=\count203
 Package babel Info: Making : an active character on input line 244.
 Package babel Info: Making ; an active character on input line 245.
 Package babel Info: Making ! an active character on input line 246.
 Package babel Info: Making ? an active character on input line 247.
-\FB@Mht=\dimen202
-\std@mcc=\count203
-\dec@mcc=\count204
+\FB@Mht=\dimen209
+\std@mcc=\count204
+\dec@mcc=\count205
 
 
 Package frenchb.ldf Warning: Please load the "caption" package
 (frenchb.ldf)                AFTER babel/frenchb; reported on input line 661.
 
-\listindentFB=\skip125
-\labelwidthFB=\skip126
-\leftmarginFB=\skip127
-\parindentFFN=\dimen203
+\listindentFB=\skip126
+\labelwidthFB=\skip127
+\leftmarginFB=\skip128
+\parindentFFN=\dimen210
 )) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 
 Package hyperref Warning: Option `backref' has already been used,
-(hyperref)                setting the option has no effect on input line 55.
+(hyperref)                setting the option has no effect on input line 57.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 55.
+(hyperref)                setting the option has no effect on input line 57.
 
 
 Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 55.
+(hyperref)                setting the option has no effect on input line 57.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 55.
-Package hyperref Info: Option `breaklinks' set `true' on input line 55.
+Package hyperref Info: Option `colorlinks' set `true' on input line 57.
+Package hyperref Info: Option `breaklinks' set `true' on input line 57.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 55.
+(hyperref)                setting the option has no effect on input line 57.
 
-\longest=\skip128
+\longest=\skip129
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 73.
-LaTeX Font Info:    ... okay on input line 73.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 73.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
+LaTeX Font Info:    ... okay on input line 75.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 75.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1303,16 +1321,16 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count205
-\scratchdimen=\dimen204
+\scratchcounter=\count206
+\scratchdimen=\dimen211
 \scratchbox=\box109
-\nofMPsegments=\count206
-\nofMParguments=\count207
+\nofMPsegments=\count207
+\nofMParguments=\count208
 \everyMPshowfont=\toks45
-\MPscratchCnt=\count208
-\MPscratchDim=\dimen205
-\MPnumerator=\count209
-\makeMPintoPDFobject=\count210
+\MPscratchCnt=\count209
+\MPscratchDim=\dimen212
+\MPnumerator=\count210
+\makeMPintoPDFobject=\count211
 \everyMPtoPDFconversion=\toks46
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1329,7 +1347,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 73.
+Package hyperref Info: Link coloring ON on input line 75.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1337,11 +1355,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count211
+\c@section@level=\count212
 )
-LaTeX Info: Redefining \ref on input line 73.
-LaTeX Info: Redefining \pageref on input line 73.
-LaTeX Info: Redefining \nameref on input line 73.
+LaTeX Info: Redefining \ref on input line 75.
+LaTeX Info: Redefining \pageref on input line 75.
+LaTeX Info: Redefining \nameref on input line 75.
 
 (./report.out) (./report.out)
 \@outlinefile=\write5
@@ -1353,7 +1371,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 73.
+(lastpage)             ! on input line 75.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1393,85 +1411,85 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count212
-LaTeX Info: Redefining \degres on input line 73.
-LaTeX Info: Redefining \dots on input line 73.
+\c@lstlisting=\count213
+LaTeX Info: Redefining \degres on input line 75.
+LaTeX Info: Redefining \dots on input line 75.
 
 
 Package frenchb.ldf Warning: Setting StandardItemizeEnv=true for
 (frenchb.ldf)                compatibility with enumitem package,
-(frenchb.ldf)                 on input line 73.
+(frenchb.ldf)                 on input line 75.
 
 
 Package frenchb.ldf Warning: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)                compatibility with enumitem package,
-(frenchb.ldf)                 on input line 73.
+(frenchb.ldf)                 on input line 75.
 
-LaTeX Info: Redefining \up on input line 73.
-<images/logos/ensg_logo.png, id=123, 672.5125pt x 714.67pt>
+LaTeX Info: Redefining \up on input line 75.
+<images/logos/ensg_logo.png, id=139, 672.5125pt x 714.67pt>
 File: images/logos/ensg_logo.png Graphic file (type png)
 
 <use images/logos/ensg_logo.png>
-Package pdftex.def Info: images/logos/ensg_logo.png used on input line 80.
+Package pdftex.def Info: images/logos/ensg_logo.png used on input line 82.
 (pdftex.def)             Requested size: 113.81102pt x 120.93613pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 81.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 83.
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 81.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 83.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 81.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 83.
 
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 81.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 83.
 
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 81.
+(Font)              <12> on input line 83.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 81.
+(Font)              <8> on input line 83.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 81.
-LaTeX Font Info:    Try loading font information for U+msa on input line 81.
+(Font)              <6> on input line 83.
+LaTeX Font Info:    Try loading font information for U+msa on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 81.
+LaTeX Font Info:    Try loading font information for U+msb on input line 83.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/logos/kartverket_logo.png, id=124, 482.80376pt x 385.44pt>
+<images/logos/kartverket_logo.png, id=140, 482.80376pt x 385.44pt>
 File: images/logos/kartverket_logo.png Graphic file (type png)
 
 <use images/logos/kartverket_logo.png>
-Package pdftex.def Info: images/logos/kartverket_logo.png used on input line 84
+Package pdftex.def Info: images/logos/kartverket_logo.png used on input line 86
 .
 (pdftex.def)             Requested size: 113.81102pt x 90.85483pt.
 
-Overfull \hbox (20.23589pt too wide) in paragraph at lines 79--86
+Overfull \hbox (20.23589pt too wide) in paragraph at lines 81--88
 []$[]$ $[]$ 
  []
 
-<images/Aurora_Borealis_Norway.jpg, id=126, 4651.3775pt x 3080.50874pt>
+<images/Aurora_Borealis_Norway.jpg, id=142, 4651.3775pt x 3080.50874pt>
 File: images/Aurora_Borealis_Norway.jpg Graphic file (type jpg)
 
 <use images/Aurora_Borealis_Norway.jpg>
 Package pdftex.def Info: images/Aurora_Borealis_Norway.jpg used on input line 9
-2.
+4.
 (pdftex.def)             Requested size: 365.16234pt x 241.84842pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 94.
+(Font)              <10.95> on input line 96.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logos/ensg_logo.p
@@ -1501,43 +1519,47 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 42.
-(/usr/share/texmf/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 42.
-\c@x=\count213
+\c@x=\count214
 ) [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 115.
+(Font)              <17.28> on input line 117.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 115.
+(Font)              <10> on input line 117.
  [4
 
-] [5
+]
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 131--132
+
+ []
+
+[5
 
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.144 \end{abstract}
+l.146 \end{abstract}
                      [1]pdfTeX warning (ext4): destination with the same identi
 fier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.158 \end{abstract}
+l.160 \end{abstract}
                      [1]pdfTeX warning (ext4): destination with the same identi
 fier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.164 \newevenpage
+l.166 \newevenpage
                    [2] (./report.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 28.
+(Font)              <14.4> on input line 32.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 28.
+(Font)              <7> on input line 32.
 )
 \tf@toc=\write6
 \openout6 = `report.toc'.
@@ -1546,12 +1568,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.167 \newevenpage
+l.169 \newevenpage
                    [3]pdfTeX warning (ext4): destination with the same identifi
 er (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.167 \newevenpage
+l.169 \newevenpage
                    [4] (./report.lof)
 \tf@lof=\write7
 \openout7 = `report.lof'.
@@ -1560,113 +1582,353 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.170 \newevenpage
-                   [5] [6] (./report.lot)
-\tf@lot=\write8
-\openout8 = `report.lot'.
+l.174 \newevenpage
+                   [5] [6] [7
 
- [7] [8] [9
+] [8] [9
 
-] [10] [11
-
-] [12]
+] [10]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 212.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 218.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 212--212
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 218--218
 [][] 
  []
 
-<images/rtis_mon.png, id=278, 997.7275pt x 670.505pt>
+<images/auroral_oval.jpg, id=308, 1240.635pt x 730.73pt>
+File: images/auroral_oval.jpg Graphic file (type jpg)
+
+<use images/auroral_oval.jpg>
+Package pdftex.def Info: images/auroral_oval.jpg used on input line 229.
+(pdftex.def)             Requested size: 318.66948pt x 187.6884pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
+
+ []
+
+<images/frequencyOfScintillation.png, id=309, 913.63556pt x 635.70833pt>
+File: images/frequencyOfScintillation.png Graphic file (type png)
+
+<use images/frequencyOfScintillation.png>
+Package pdftex.def Info: images/frequencyOfScintillation.png used on input line
+ 237.
+(pdftex.def)             Requested size: 455.24411pt x 316.75726pt.
+ [11
+
+ <./images/auroral_oval.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 244--246
+
+ []
+
+<images/rtisMap.png, id=316, 1051.93pt x 738.76pt>
+File: images/rtisMap.png Graphic file (type png)
+ <use images/rtisMap.png>
+Package pdftex.def Info: images/rtisMap.png used on input line 249.
+(pdftex.def)             Requested size: 455.24411pt x 319.7122pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
+
+ []
+
+[12 <./images/frequencyOfScintillation.png (PNG copy)>] [13 <./images/rtisMap.p
+ng>]
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+<images/rtis_mon.png, id=336, 997.7275pt x 670.505pt>
 File: images/rtis_mon.png Graphic file (type png)
 
 <use images/rtis_mon.png>
-Package pdftex.def Info: images/rtis_mon.png used on input line 229.
+Package pdftex.def Info: images/rtis_mon.png used on input line 275.
 (pdftex.def)             Requested size: 227.62206pt x 152.9647pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
-[13
 
- <./images/rtis_mon.png>] [14]
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 292--293
+
+ []
+
+[14
+
+ <./images/rtis_mon.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 296--297
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 308--309
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
  [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 276--276
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
  [][][][] 
  []
 
-<images/RtisMap.jpg, id=298, 701.62125pt x 448.67625pt>
-File: images/RtisMap.jpg Graphic file (type jpg)
 
-<use images/RtisMap.jpg>
-Package pdftex.def Info: images/RtisMap.jpg used on input line 297.
-(pdftex.def)             Requested size: 227.62206pt x 145.55789pt.
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
-<images/bearIsland.png, id=299, 1013.7875pt x 1271.75125pt>
-File: images/bearIsland.png Graphic file (type png)
+ []
 
-<use images/bearIsland.png>
-Package pdftex.def Info: images/bearIsland.png used on input line 305.
-(pdftex.def)             Requested size: 227.62206pt x 285.53012pt.
- [15]
-Underfull \vbox (badness 5652) has occurred while \output is active []
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
- [16 <./images/RtisMap.jpg> <./images/bearIsland.png>] [17] [18]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+[17] [18]
 Chapter 2.
 
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 321--321
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 355--355
 [][] 
  []
 
-<images/global_flowchart.png, id=321, 566.115pt x 769.87625pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 361--363
+
+ []
+
+<images/global_flowchart.png, id=368, 566.115pt x 769.87625pt>
 File: images/global_flowchart.png Graphic file (type png)
 
 <use images/global_flowchart.png>
-Package pdftex.def Info: images/global_flowchart.png used on input line 339.
+Package pdftex.def Info: images/global_flowchart.png used on input line 371.
 (pdftex.def)             Requested size: 364.19667pt x 495.2918pt.
- [19
 
-] [20 <./images/global_flowchart.png>]
-<images/detailed_flowchart2.png, id=334, 862.22125pt x 914.41624pt>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--383
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--385
+
+ []
+
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 390--392
+
+ []
+
+[20 <./images/global_flowchart.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+ []
+
+<images/detailed_flowchart2.png, id=382, 862.22125pt x 914.41624pt>
 File: images/detailed_flowchart2.png Graphic file (type png)
 
 <use images/detailed_flowchart2.png>
-Package pdftex.def Info: images/detailed_flowchart2.png used on input line 369.
+Package pdftex.def Info: images/detailed_flowchart2.png used on input line 404.
 
 (pdftex.def)             Requested size: 455.24411pt x 482.79652pt.
- [21] [22 <./images/detailed_flowchart2.png>] (/usr/share/texlive/texmf-dist/te
-x/latex/listings/lstlang1.sty
-File: lstlang1.sty 2013/08/26 1.5b listings language file
-) [23]
 
-LaTeX Warning: Text page 24 contains only floats.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
+
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
+
+ []
+
+[22 <./images/detailed_flowchart2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--430
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--435
+
+ []
+
+[23] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+Underfull \hbox (badness 10000) in paragraph at lines 507--509
+
+ []
+
+[24]
+
+LaTeX Warning: Text page 25 contains only floats.
 
 
 Overfull \vbox (3.38295pt too high) has occurred while \output is active []
 
 
-[24] [25
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 516--517
 
-] [26] [27
+ []
 
-] [28] (./report.ann)
-\tf@ann=\write9
-\openout9 = `report.ann'.
 
- [29
+Underfull \hbox (badness 10000) in paragraph at lines 518--519
 
-] [30]
+ []
+
+<images/Screenshot_Pinta.png, id=461, 2569.6pt x 1395.2125pt>
+File: images/Screenshot_Pinta.png Graphic file (type png)
+
+<use images/Screenshot_Pinta.png>
+Package pdftex.def Info: images/Screenshot_Pinta.png used on input line 522.
+(pdftex.def)             Requested size: 455.24411pt x 247.16762pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 526--528
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--530
+
+ []
+
+[26
+
+ <./images/Screenshot_Pinta.png>]
+<images/gui_mobile.png, id=469, 1735.48375pt x 1174.3875pt>
+File: images/gui_mobile.png Graphic file (type png)
+
+<use images/gui_mobile.png>
+Package pdftex.def Info: images/gui_mobile.png used on input line 533.
+(pdftex.def)             Requested size: 455.24411pt x 308.05734pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--542
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+[27 <./images/gui_mobile.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 545--546
+
+ []
+
+<images/errPanel.png, id=476, 2091.815pt x 973.6375pt>
+File: images/errPanel.png Graphic file (type png)
+
+<use images/errPanel.png>
+Package pdftex.def Info: images/errPanel.png used on input line 549.
+(pdftex.def)             Requested size: 455.24411pt x 211.8833pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 553--554
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 555--556
+
+ []
+
+<images/minimised.png, id=477, 2073.7475pt x 205.76875pt>
+File: images/minimised.png Graphic file (type png)
+
+<use images/minimised.png>
+Package pdftex.def Info: images/minimised.png used on input line 559.
+(pdftex.def)             Requested size: 455.24411pt x 45.17192pt.
+ [28 <./images/errPanel.png> <./images/minimised.png>] <images/screenshotConfig
+.png, id=483, 1284.8pt x 722.7pt>
+File: images/screenshotConfig.png Graphic file (type png)
+
+<use images/screenshotConfig.png>
+Package pdftex.def Info: images/screenshotConfig.png used on input line 570.
+(pdftex.def)             Requested size: 455.24411pt x 256.06956pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
+
+ []
+
+[29 <./images/screenshotConfig.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 587--588
+
+ []
+
+<images/saveConfigInDb.png, id=490, 655.44875pt x 693.59125pt>
+File: images/saveConfigInDb.png Graphic file (type png)
+
+<use images/saveConfigInDb.png>
+Package pdftex.def Info: images/saveConfigInDb.png used on input line 591.
+(pdftex.def)             Requested size: 455.24411pt x 481.74289pt.
+ [30 <./images/saveConfigInDb.png>] [31]
+[32] [33
+
+] [34] (./report.ann)
+\tf@ann=\write8
+\openout8 = `report.ann'.
+
+ [35
+
+] [36]
 Appendix A.
 
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 495--495
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 609--609
 [][] 
  []
 
@@ -1677,54 +1939,67 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 File: lstlang2.sty 2013/08/26 1.5b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 498.
+nput line 612.
 
 (./resources/rtis_config.cfg
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1.
+ (/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
 (Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1.
 
 Underfull \vbox (badness 2277) has occurred while \output is active []
 
- [31
+ [37
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32])
+ [38])
 
 AED: lastpage setting LastPage
-[33]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 503.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 503.
+[39]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 617.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 617.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 503.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 503.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 617.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 617.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 6868AF6256F5E919B49775F60BB600B0;1898.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 503.
+(rerunfilecheck)             Checksum: 19AA0C3E1692058937F44C082CF84E34;2205.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 617.
  ) 
 Here is how much of TeX's memory you used:
- 25916 strings out of 493304
- 465308 string characters out of 6139871
- 666716 words of memory out of 5000000
- 28577 multiletter control sequences out of 15000+600000
- 107210 words of font info for 82 fonts, out of 8000000 for 9000
+ 26456 strings out of 493304
+ 474976 string characters out of 6139871
+ 675244 words of memory out of 5000000
+ 29078 multiletter control sequences out of 15000+600000
+ 110198 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,12n,75p,900b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
-ips/lm/lm-mathsy.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/s
-hare/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/publ
-ic/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/t
-exmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-r8.pfb></usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fon
-ts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/symbols/msam10.pfb>
-Output written on report.pdf (39 pages, 9110221 bytes).
+ 63i,12n,75p,990b,2345s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{page.41} has been referenced but does not exist, 
+replaced by a fixed one
+
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/
+dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/sha
+re/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/
+lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/type1/public/lm/lm
+r10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
+/usr/share/texmf/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1
+/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/publ
+ic/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msam10.pfb>
+Output written on report.pdf (45 pages, 10320624 bytes).
 PDF statistics:
- 640 PDF objects out of 1000 (max. 8388607)
- 553 compressed objects within 6 object streams
- 235 named destinations out of 1000 (max. 500000)
- 349 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 746 PDF objects out of 1000 (max. 8388607)
+ 640 compressed objects within 7 object streams
+ 262 named destinations out of 1000 (max. 500000)
+ 416 words of extra memory for PDF output out of 10000 (max. 10000000)
 

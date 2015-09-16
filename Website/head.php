@@ -14,14 +14,6 @@
 
 	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-	<!-- you need to include the shieldui css and js assets in order for the charts to work -->
-	<!-- <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/shieldui-all.min.css" />
-	<link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
-	<link id="gridcss" rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/dark-bootstrap/all.min.css" /> 
-
-	<script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
-	<script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script> -->
 	
 	<script type="text/javascript" src="js/custom.js"></script>
 </head>
@@ -32,19 +24,10 @@
 		  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			  
 			<div class="navbar-header">
-				
-				<!-- Mini menu for small screens -->
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				
+						
 				<a class="navbar-brand" href="index.php">RTIS GUI</a>
 				<ul class="navbar-nav nav nav-pills">
 					<li id="li-data"><a href="data.php?sta=<?php echo $_GET["sta"]; ?>">Data</a></li>
-					<li id="li-plots"><a href="plots.php?sta=<?php echo $_GET["sta"]; ?>">Plots</a></li>
 					<li id="li-config"><a href="config.php?sta=<?php echo $_GET["sta"]; ?>">Config</a></li>
 					<li class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">
@@ -57,22 +40,30 @@
 						</ul>
 					</li>
 				</ul>
+				
+				<!-- Mini menu for small screens -->
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
 			</div>
 			
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul id="active" class="nav navbar-nav side-nav">
-					<li id="sta1"><a href="data.php?sta=1"><i class="fa fa-circle-o station-up"></i> Station 1</a></li>
-					<li id="sta2"><a href="data.php?sta=2"><i class="fa fa-circle-o station-down"></i> Station 2</a></li>
-					<li id="sta3"><a href="data.php?sta=3"><i class="fa fa-circle-o station-unknown"></i> Station 3</a></li>
-					<li id="sta4"><a href="data.php?sta=4"><i class="fa fa-circle-o station-up"></i> Station 4</a></li>
-					<li id="sta5"><a href="data.php?sta=5"><i class="fa fa-circle-o station-up"></i> Station 5</a></li>
-					<li id="sta6"><a href="data.php?sta=6"><i class="fa fa-circle-o station-up"></i> Station 6</a></li>
-					<li id="sta7"><a href="data.php?sta=7"><i class="fa fa-circle-o station-up"></i> Station 7</a></li>
-					<li id="sta8"><a href="data.php?sta=8"><i class="fa fa-circle-o station-up"></i> Station 8</a></li>
-					<li id="sta9"><a href="data.php?sta=9"><i class="fa fa-circle-o station-up"></i> Station 9</a></li>
-					<li id="sta10"><a href="data.php?sta=10"><i class="fa fa-circle-o station-up"></i> Station 10</a></li>
-					<li id="sta11"><a href="data.php?sta=11"><i class="fa fa-circle-o station-up"></i> Station 11</a></li>
-					<li id="sta12"><a href="data.php?sta=12"><i class="fa fa-circle-o station-up"></i> Station 12</a></li>
+					<li id="sta1"><a href="data.php?sta=1"><i class="fa fa-circle-o station-up"></i> TRO2 (Tromsø)</a></li>
+					<li id="sta2"><a href="data.php?sta=2"><i class="fa fa-circle-o station-down"></i> VEG2 (Vega)</a></li>
+					<li id="sta3"><a href="data.php?sta=3"><i class="fa fa-circle-o station-unknown"></i> NYA2 (Ny-Ålesund)</a></li>
+					<li id="sta4"><a href="data.php?sta=4"><i class="fa fa-circle-o station-up"></i> KAU2 (Kautokeino)</a></li>
+					<li id="sta5"><a href="data.php?sta=5"><i class="fa fa-circle-o station-up"></i> HON2 (Honningsvåg)</a></li>
+					<li id="sta6"><a href="data.php?sta=6"><i class="fa fa-circle-o station-up"></i> HOF2 (Höfn, Iceland)</a></li>
+					<li id="sta7"><a href="data.php?sta=7"><i class="fa fa-circle-o station-up"></i> FAR2 (Faroe Islands)</a></li>
+					<li id="sta8"><a href="data.php?sta=8"><i class="fa fa-circle-o station-up"></i> BJO2 (Bjørnøya)</a></li>
+					<li id="sta9"><a href="data.php?sta=9"><i class="fa fa-circle-o station-up"></i> HOP2 (Hopen)</a></li>
+					<li id="sta10"><a href="data.php?sta=10"><i class="fa fa-circle-o station-up"></i> JAN2 (Jan Mayen)</a></li>
+					<li id="sta11"><a href="data.php?sta=11"><i class="fa fa-circle-o station-up"></i> BOD2 (Bodø)</a></li>
+					<li id="sta12"><a href="data.php?sta=12"><i class="fa fa-circle-o station-up"></i> NMA2 (Hønefoss)</a></li>
 				</ul>
 			</div>
 		</nav>

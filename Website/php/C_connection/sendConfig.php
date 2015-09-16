@@ -12,7 +12,7 @@ $now = time();
 $returnValue = 1;
 while($returnValue != 0) {
 	if(time() - $now > $timeout){
-		echo "TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS";
+		//echo "TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS";
 		ob_flush();
 		flush();
 	}

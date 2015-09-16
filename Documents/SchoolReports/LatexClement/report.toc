@@ -2,15 +2,18 @@
 \select@language {english}
 \select@language {frenchb}
 \select@language {english}
-\contentsline {chapter}{Glossary and useful acronyms}{9}{chapter*.4}
-\contentsline {chapter}{Introduction}{11}{chapter*.5}
-\contentsline {chapter}{\numberline {1}Definition of the objectives}{13}{chapter.1}
-\contentsline {section}{\numberline {1.1}What RTIS is: a brief overview}{13}{section.1.1}
-\contentsline {section}{\numberline {1.2}What exists to monitor it: description of the existing}{13}{section.1.2}
-\contentsline {section}{\numberline {1.3}What needs to be done: goals and expected functionalities}{14}{section.1.3}
-\contentsline {subsection}{\numberline {1.3.1}Visualising data}{14}{subsection.1.3.1}
+\contentsline {chapter}{Glossary and useful acronyms}{7}{chapter*.4}
+\contentsline {chapter}{Introduction}{9}{chapter*.5}
+\contentsline {chapter}{\numberline {1}Definition of the objectives}{11}{chapter.1}
+\contentsline {section}{\numberline {1.1}What RTIS is: a brief overview}{11}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Space weather and scintillations}{11}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}RTIS receivers}{12}{subsection.1.1.2}
+\contentsline {subsection}{\numberline {1.1.3}Operational environment}{12}{subsection.1.1.3}
+\contentsline {section}{\numberline {1.2}What exists to monitor it: description of the existing}{14}{section.1.2}
+\contentsline {section}{\numberline {1.3}What needs to be done: goals and expected functionalities}{15}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Visualising data}{15}{subsection.1.3.1}
 \contentsline {subsection}{\numberline {1.3.2}Modifying the RTIS behaviour}{15}{subsection.1.3.2}
-\contentsline {subsection}{\numberline {1.3.3}The problem of the bandwidth}{15}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.3}The problem of the bandwidth}{16}{subsection.1.3.3}
 \contentsline {subsection}{\numberline {1.3.4}Miscellaneous}{17}{subsection.1.3.4}
 \contentsline {chapter}{\numberline {2}The proposed solution}{19}{chapter.2}
 \contentsline {section}{\numberline {2.1}General considerations}{19}{section.2.1}
@@ -21,9 +24,10 @@
 \contentsline {subsection}{\numberline {2.2.2}In-depth descriptions of the modules}{21}{subsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.2.1}Command senders}{21}{subsubsection.2.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.2.2}Command reader \& data sender}{23}{subsubsection.2.2.2.2}
-\contentsline {subsubsection}{\numberline {2.2.2.3}Data reader}{23}{subsubsection.2.2.2.3}
-\contentsline {section}{\numberline {2.3}The GUI}{25}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}Receiving data: trying to be intuitive}{25}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Sending files}{26}{subsection.2.3.2}
-\contentsline {part}{Conclusion}{27}{chapter*.13}
-\contentsline {chapter}{\numberline {A}Example of a RTIS configuration file}{31}{Appendix.1.A}
+\contentsline {subsubsection}{\numberline {2.2.2.3}Data reader}{24}{subsubsection.2.2.2.3}
+\contentsline {section}{\numberline {2.3}The GUI}{26}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}General presentation}{26}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Receiving data}{27}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Sending \& saving configuration files}{29}{subsection.2.3.3}
+\contentsline {part}{Conclusion}{33}{chapter*.20}
+\contentsline {chapter}{\numberline {A}Example of a RTIS configuration file}{37}{Appendix.1.A}

@@ -123,7 +123,7 @@
 	//check for browser support
 	if(typeof(EventSource)!=="undefined") {
 		var isEventSupported = true;
-		var maxMessageLength = 7;
+		var maxMessageLength = 10; //number of messages to be displayed
 		
 		//on page load
 		getInfoOnce('process');
@@ -173,7 +173,7 @@
 		corres["messages"]["param"] = finalValue;
 		stopUpdate("messages");
 		//create an object, passing it the name and location of the server side script
-		corres["messages"]["eSource"] = new EventSource(corres["messages"]["script"]+"?mon="+corres["monitor"]["param"]+"&proc="+corres["process"]["param"]+"&err="+corres["messages"]["param"]+"&sta="+sta);
+		corres["messages"]["eSource"] = new EventSource(corres["messages"]["script"]+"?mon="+corres["monitor"]["param"]+"&proc="+corres["process"]["param"]+"&err="+corres["messages"]["param"]+"&sta="+station);
 		//detect message receipt
 		corres["messages"]["eSource"].onmessage = function(event) {
 		//write the received data to the page
@@ -187,7 +187,7 @@
 	
 	function getInfoOnce(param) {
 		//create an object, passing it the name and location of the server side script
-		corres[param]["eSource"] = new EventSource(corres[param]["script"]+"?mon="+corres["monitor"]["param"]+"&proc="+corres["process"]["param"]+"&err="+corres["messages"]["param"]+"&sta="+sta);
+		corres[param]["eSource"] = new EventSource(corres[param]["script"]+"?mon="+corres["monitor"]["param"]+"&proc="+corres["process"]["param"]+"&err="+corres["messages"]["param"]+"&sta="+station);
 		//detect message receipt
 		corres[param]["eSource"].onmessage = function(event) {
 		//write the received data to the page
