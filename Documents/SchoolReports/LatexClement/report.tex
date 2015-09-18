@@ -18,6 +18,7 @@
 \usepackage{listings} % source code
 \usepackage{mathtools}
 \usepackage{float} % figures positioning
+\usepackage[bottom]{footmisc}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -90,7 +91,7 @@
 \shorthandoff{:}
 
 %Inclusion du titre
-\maketitle{Internship report \\ Cycle: 3\up{rd} year of engineering, GTSI specialization}
+\maketitle{Internship report \\ Cycle: 3\up{rd} year of engineering, GTSI specialisation}
 {Aurora_Borealis_Norway.jpg}
 
 \infos{Clément Drouadaine}{September 2015}
@@ -126,7 +127,7 @@
 \newevenpage
 \chapter*{Acknowledgements}
 
-I would like to thank my internship supervisor in the NMA, Rune Hanssen, for all the help and support he provided me all along the internship, and his availability whenever I needed him.\\
+I would like to thank my internship supervisor in the Norwegian Mapping Authority (NMA), Rune Hanssen, for all the help and support he provided me all along the internship, and his availability whenever I needed him.\\
 
 Thanks also to the whole of the geodesy department team for their welcome and especially Yngvild Linnea Andalsvik for her help, and Geir Arne Hjelle for the non work-related times we had.\\
 
@@ -138,11 +139,11 @@ Last but not least, I would like to give a big thanks to Zuheir Altamimi to whom
 \thispagestyle{empty}
 	\vspace{1cm}
 
-	
-	
+	Le Moniteur de Scintillation Ionosphérique en Temps Réel (RTIS) est un logiciel développé par l'Autorité  Norvégienne de Cartographie (NMA) pour mesurer et quantifier la scintillation ionosphérique, dont un des effets est de diminuer la qualité des observations GNSS. Il est déployé dans douze stations d'observation, répartis dans toute la Norvège et la Mer de Norvège. \\
+	La but de ce stage était de concevoir et de développer une interface graphique ergonomique qui pourrait être utilisée par la NMA pour surveiller toutes les stations du réseau RTIS en temps réel et modifier ou remplacer leurs fichiers de configuration.
 	\vspace{1.5cm}
 	
-	\textbf{Mots clés :} interface, web.
+	\textbf{Mots clés :} interface, web, surveillance.
 \end{abstract}
 %-----------------------
 
@@ -153,10 +154,11 @@ Last but not least, I would like to give a big thanks to Zuheir Altamimi to whom
 \thispagestyle{empty}
 	\vspace{1cm}
 	
-	
+	The Real-Time Ionospheric Scintillation Monitor (RTIS) is a software developed by the Norwegian Mapping Authority (NMA) to measure and quantify the ionospheric scintillation, whose main effects are to lessen the quality of GNSS observations. It is deployed in twelve observation stations, spread all across Norway and the Norwegian Sea.\\
+	The goal of this internship was to conceive and develop an ergonomic Graphical User Interface (GUI) that could be used in the NMA to monitor all the stations of the RTIS network in real-time and to edit or replace their configuration files.
 	\vspace{1.5cm}
 	
-	\textbf{Key words:} interface, web, 
+	\textbf{Key words:} interface, web, monitoring.
 \end{abstract}
 %----------------------
 
@@ -222,7 +224,7 @@ Last but not least, I would like to give a big thanks to Zuheir Altamimi to whom
 
 \subsection{Space weather and scintillations}
 
-The performance of GNSS systems can be severely affected by space weather. The main effects occurs when the signals pass through the enhanced electron densities in the ionosphere. One of the main effects is a delay of the signal. This can to a certain degree be mitigated by dual frequency positioning. During high solar activity, the ionosphere can be highly variable and the irregularities formed generate rapid fluctuations in the amplitude and phase of signals. This is also known as scintillations. The signal is scattered in random directions while propagating through the ionosphere causing it to interfere with itself. Amplitude scintillation may cause deep signal fades that can interfere with a user’s ability to receive GNSS signals. Phase scintillations can lead to increased phase noise, cycle slips, and even loss of lock if the phase fluctuations are too rapid for the receiver to track.\
+The performance of GNSS systems can be severely affected by space weather. The main effects occur when the signals pass through the enhanced electron densities in the ionosphere. One of the main effects is a delay of the signal. This can to a certain degree be mitigated by dual frequency positioning. During high solar activity, the ionosphere can be highly variable and the formed irregularities generate rapid fluctuations in the amplitude and phase of signals: this is also known as scintillations. The signal is scattered in random directions while propagating through the ionosphere causing it to interfere with itself. Amplitude scintillation may cause deep signal fades that can interfere with a user’s ability to receive GNSS signals. Phase scintillations can lead to increased phase noise, cycle slips, and even loss of lock if the phase fluctuations are too rapid for the receiver to track.\
 
 \begin{figure}[hb]
 	\centering
@@ -230,37 +232,37 @@ The performance of GNSS systems can be severely affected by space weather. The m
 	\caption{Auroral oval (Credit: NASA)}
 \end{figure}
 
-Equatorial latitudes and high latitude-regions are most severely affected by scintillations. Amplitude scintillations occur most commonly at equatorial latitudes in particular the regions 15 degrees north and south of equator, while phase scintillations are more common at high latitudes. At high latitudes, scintillations are associated with processes in the polar cap and auroral oval. While the low latitude scintillations have clear seasonal and daily variations the high latitude scintillations are more directly dependent on solar storms and the ionospheric activity that follows this.\\
+Equatorial latitudes and high latitude-regions are most severely affected by scintillations. Amplitude scintillations occur most commonly at equatorial latitudes, in particular the regions 15 degrees north and south of equator, while phase scintillations are more common at high latitudes. At high latitudes, scintillations are associated with processes in the polar cap and auroral oval. While the low latitude scintillations have clear seasonal and daily variations, the high latitude scintillations are more directly dependent on solar storms and the ionospheric activity that follows them.\\
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{frequencyOfScintillation}
 	\caption{Frequency of scintillations (P. Kintner, 2009)}
+	\label{map}
 \end{figure}
 
 The scintillations are often quantified by the scintillation indices $\text{S}_{\text{4}}$ and $\sigma_\varphi$ for amplitude and phase scintillations respectively.
 
 \subsection{RTIS receivers} 
-The Real-Time Ionospheric Scintillation Monitor (RTIS) at the NMA is capable of detecting the occurrence of both amplitude and phase scintillation by providing numerical data and maps of the $\text{S}_{\text{4}}$ and $\sigma_\varphi$ indexes. Currently, the NMA operates 12 Septentrio PolaRxS scintillation receivers, spread around the Norwegian mainland and the Norwegian islands in the North Sea. The receivers support multi-constellation and multi frequency measurements, so that scintillation indexes are determined for both GPS and GLONASS data. Raw data measurements necessary for determining the scintillation indexes, such as signal phase, Doppler values, signal intensity and signal-to-noise ratio are carried out using a sampling rate of 100Hz.
-Currently 11 Septentrio PolaRxS receivers are deployed in Norway, on Iceland and on Faroe Islands. The receivers have a 100 Hz sampling rate. Additionally, one receiver is located at Hønefoss for testing purposes. \\
-
-\begin{figure}[h]
+The Real-Time Ionospheric Scintillation Monitor (RTIS) at the NMA is capable of detecting the occurrence of both amplitude and phase scintillation by providing numerical data and maps of the $\text{S}_{\text{4}}$ and $\sigma_\varphi$ indexes. Currently, the NMA operates 11 Septentrio PolaRxS scintillation receivers, deployed in Norway, in Iceland and in Faroe Islands. Additionally, one receiver is located at Hønefoss (NMA headquarters) for testing purposes. The receivers support multi-constellation and multi-frequency measurements, so that scintillation indexes are determined for both GPS and GLONASS data. Raw data measurements necessary for determining the scintillation indexes, such as signal phase, Doppler values, signal intensity and signal-to-noise ratio are carried out using a sampling rate of 100 Hz. \\
+ 
+\begin{figure}[!hb]
 	\centering
-	\includegraphics[width=\textwidth]{rtisMap}
-	\caption{NMA scintillation receivers}
+	\includegraphics[width=0.9\textwidth]{rtisMap}
+	\caption{Map of NMA scintillation receivers}
 \end{figure}
 
 \subsection{Operational environment}
-The software is running on Lenovo PCs with a Linux Lubuntu 32bit environment. In addition, an external USB hard drive (of at least 2TB) is connected to the PC. The external hard drive is used for the raw data transport to NMA.\\
+The software is running on Lenovo PCs with Linux Lubuntu 32 bit environments. In addition, an external USB hard drive (of at least 2TB) is connected to the PC. The external hard drive is used for the raw data transport to NMA.\\
 
 The RTIS software stores the raw data from the receiver and calculates the scintillation indices $\text{S}_{\text{4}}$ and $\sigma_\varphi$ in real time. 
 The software tool performs the following main tasks:
 \begin{itemize}
 \item Calculate the scintillation indices $\text{S}_{\text{4}}$ and $\sigma_\varphi$ indices in one minute resolution.
-\item Produce a SATREF\footnote{These messages are a NMA standard, can convey any kind of information, and aim to be as small as possible by converting all the values it contains in binary format. The NMA has developed high-level C libraries to write and read these messages.} message with 1Hz observation data and send to Hønefoss.
+\item Produce a SATREF\footnote{These messages are a NMA standard, can convey any kind of information, and aim to be as small as possible by converting all the values it contains in binary format. The NMA has developed high-level C libraries to write and read these messages.} message with 1 Hz observation data and send it to Hønefoss.
 \item Produce raw data files necessary for the determination of scintillation parameters.
 \item Produce output files containing the scintillation indices. 
-\item Produce and send SATREF message containing the scintillation indices and send it to RTIM\footnote{RTIM is the NMA server centralising all the RTIS data, located in Hønefoss.}.
+\item Produce and send SATREF messages containing the scintillation indices and send them to RTIM\footnote{RTIM is the NMA server centralising all the RTIS data, located in Hønefoss.}.
 \end{itemize}
 
 \clearpage
@@ -268,46 +270,67 @@ The software tool performs the following main tasks:
 
 \section{What exists to monitor it: description of the existing}
 
-As we have seen, RTIS data transfers have been fully implemented, and do not need any further work. However, before my arrival at Karverket, there was only one way of monitoring a distant RTIS station: connecting to it via SSH, and manually launch a monitoring program, called \textit{rtis\_mon}, on the console. Depending on the parameter it is given, this displays a table containing either information about the running processes (option \textit{-proc}), different values relevant to monitoring the performances of RTIS (option \textit{-mon}) or data about ephemeris (option \textit{-eph}). This \textit{rtis\_mon} program will then run indefinitely until it is stopped, and update its values approximately once every second.\\
+As we have seen, RTIS data transfers have been fully implemented, and do not need any further work. However, before my arrival at Karverket, there was only one way of monitoring a distant RTIS station: connecting to it via SSH, and manually launch a monitoring program, called \textit{rtis\_mon}, on the console. Depending on the parameter it is given, this displays a table containing either information about the running RTIS processes (option \textit{-proc}) or different values relevant to monitoring the performances of RTIS (option \textit{-mon}). This \textit{rtis\_mon} program will then run indefinitely until it is stopped, and update its values approximately once every second.\\
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.5\textwidth]{rtis_mon}
+	\includegraphics[width=0.8\textwidth]{rtis_mon}
 	\caption{Monitoring table as seen with rtis\_mon}
 \end{figure}
 
 Although this method works, a few problems arise.
 \begin{itemize}
-	\item Only one type of information can be displayed at once. It is obviously not possible to display several tables at the same time on a terminal, but opening several terminals and launching several instances of \textit{rtis\_mon} can also pose problems. They will try to access, maintain opened and read from the same shared memory, which is not possible within the RTIS software. \\
+	\item Only one type of information can be displayed at once. It is obviously not possible to display several tables at the same time on a terminal, and opening several terminals and launching several instances of \textit{rtis\_mon} is not very ergonomic.
 	\item The process of connecting to the distant RTIS station via SSH is not intuitive, and requires the user to have a list of the IP addresses of all the remote stations, to look through it to find the one he wants, and then to enter the command in a terminal. This does not allow to quickly browse through all stations or to easily switch between two of them.
-	\item Modifying the configuration file of the distant station requires the user to navigate through the file system to find it, and then to edit or replace it. The edition can be done manually, but a FTP connection has to be made in order to send a new file.
+	\item To modify the configuration file, the editing can be made locally and transferred by FTP to the remote site or remotely, using an editor on the remote computer. While manageable, this method is not optimal.
 	\item The update frequency cannot be chosen by the user. Though it is not a big issue, it can be annoying for the list of active processes for example, which is not going to change a lot, and certainly not every second.
 \end{itemize}
 
-
+\clearpage
 %-------------------------------------------------------------------------------
 
 \section{What needs to be done: goals and expected functionalities}
 
-The making of a new GUI obviously aims at solving the aforementioned problems. It should be a web application, preferably a light client. The new GUI should allow the user to quickly see the status of every station, to connect to any of them, and to see any of the monitoring table (corresponding to the \textit{-mon} option in \textit{rtis\_mon}), the list of active processes (\textit{-proc}), or the error messages\footnote{The \textit{error message} denomination encompasses all of the status messages returned by the applications within the RTIS system. The denomination can be misleading, since this also includes success messages.} returned by the software, to reboot the whole RTIS software, or to change its configuration file. In the following, we will refer to the monitoring table as MON, the list of active processes as PROC, and the error messages as ERR.\\
+The making of a new Graphical User Interface (GUI) obviously aims at solving the aforementioned problems. It should be a web application, preferably a light client that requires no installation whatsoever on the user side. The new GUI should allow the user to quickly see the status of every station, to connect to any of them, and to see any of the monitoring table (corresponding to the \textit{-mon} option in \textit{rtis\_mon}), the list of active processes (\textit{-proc}), or the error messages\footnote{The \textit{error message} denomination encompasses all of the status messages returned by the applications within the RTIS system. The denomination can be misleading, since this also includes success messages.} returned by the software, to reboot the whole RTIS software, or to change its configuration file. It combines both the status information obtained from the alarm system and the monitor data. 
+
+In the following, we will refer to the monitoring table as MON, the list of active processes as PROC, and the error messages as ERR.\\
+
+\begin{figure}[ht]
+	\begin{verbatim}
+	The work entrusted to the trainee consists in:
+	
+	Developping a web based GUI for the RTIS monitor. That will be installed
+	in NMA main office in Hnefoss and must be able to connect to one or
+	multiple (simultaneously) RTIS computers. The GUI will have to be used to
+	configure and update the configuration file, to monitor processes and
+	optionally download files. The monitoring can be based on values that
+	already exist in the RTIS as "shared memory" tables or files and may
+	include an overview of the processes currently running, error messages that
+	are generated, and printing special monitor parameters. All this is dynamic
+	information and information should be displayed in the GUI in near real
+	time.
+	In addition, the web application should be made in PHP or in Java.
+	\end{verbatim}
+	\caption{Statement Of Work, as present in the intership agreement}
+\end{figure}
 
 \subsection{Visualising data}
 
 It should be possible to see any combination of MON, PROC and ERR simultaneously, and to have independent user-defined refresh frequency on each of them. For example, one should be able to choose to see both MON, refreshed every 2 seconds, PROC, refreshed every 3 minutes, and no error message. The "real-time" factor is not very important, as the data will not be subject to high-frequency changes. A delay of a few seconds is acceptable.\\
 
-Displaying ERR should work differently than for PROC and MON: there will be no refresh frequency for it, and messages will always be displayed as soon as they are sent by the RTIS software. It should be possible, however, to filter them by their severity. Indeed, every error message within the RTIS software has a severity level. Ranked by order of magnitude, the possible levels are: \begin{enumerate*}
+Displaying ERR should work differently than for PROC and MON: there will be no refresh frequency for it, and messages will always be displayed as soon as they are sent by the RTIS software. It should be possible, however, to filter them by their severity. Indeed, each error message within the RTIS software has a severity level. Ranked by order of magnitude, the possible levels are: \begin{enumerate*}
   \item Fatal
   \item Error
   \item Warning
-  \item Info
+  \item Info.
 \end{enumerate*}
-There are also two special unranked levels, Debug and Notice. The user should be able to select a severity level between 0 and 4, and to receive all error messages with a severity lower or equal to the selected level. Choosing the level corresponding to Error, for example, should make visible every message with a severity of Error or Fatal. The user should additionally be able to choose whether he wants any of Debug or Notice messages, regardless of the "main" severity filter he chose.
+There are also two special unranked levels, Debug and Notice. The user should be able to select a severity level between 0 and 4, and to receive all error messages with a severity lower or equal to the selected level. Choosing the level 2, corresponding to Error for example, should make visible every message with a severity of Error or Fatal. The user should additionally be able to choose whether he wants any of Debug or Notice messages, regardless of the "main" severity filter he chose.
 
 \subsection{Modifying the RTIS behaviour}
 
 The GUI should not only be able to observe what the RTIS software does, but also to act on it in some ways: it should be possible to change the RTIS configuration file, and to reboot the whole RTIS software.\\
 
-There are no specification on how modifying the configuration file should be handled. However, a new feature to add is a history of the previous configuration files. It should be possible to retrieve a previous configuration file, and to revert back to it. It should be noted that a change in the configuration file will not take effect until the RTIS is rebooted. It is thus possible to change the configuration file several times in a row without actually changing anything, just to store the configuration files in the history for later. Again, there is no specification on how the storage should be done.
+There are no specification on how modifying the configuration file should be handled. However, a new feature to add is a history of the previous configuration files. It should be possible to retrieve a previous configuration file, and to revert back to it. It should be noted that a change in the configuration file will not take effect until the RTIS is rebooted. It is thus possible to edit the configuration file several times in a row without actually changing anything, just to store the configuration files in the history for later. Again, there is no specification on how the storage should be done.
 
 \begin{figure}[ht]
 	\begin{center}
@@ -338,16 +361,16 @@ There are no specification on how modifying the configuration file should be han
 
 The stations of the RTIS network are scattered all across continental Norway, some are in Svalbard and there is even one in Iceland. All of these stations are located close to inhabited locations and benefit from good and reliable connections to the internet.\\
 
-But some stations have been placed in extremely remote locations, like Bjørnøya (\textit{Bear Island} in Norwegian), which is not linked to any other place by submarine internet cables, and whose entire internet traffic transits through satellite connections. Due to the costs of bandwidth using these communications, the available bandwidth is very low, and due to to the island being more than 74\degre North, even the satellite connection is unreliable and can be subject to unpredictable interruptions. \\
+But some stations have been placed in extremely remote locations, like Bjørnøya\footnote{see Fig.~\ref{map}} (\textit{Bear Island} in Norwegian), which is not linked to any other place by submarine internet cables, and whose entire internet traffic transits through satellite connections. Due to the costs of bandwidth using these communications, the available bandwidth is very low, and due to the island being more than 74\degre north, even the satellite connection is unreliable and can be subject to unpredictable interruptions. \\
 
-Moreover, there already is data transiting through this connection: the actual observation data that is sent to a calculation centre. One of the requirements for the new RTIS GUI was thus to minimise the amount of data sent or received, to be sure that every message could be received on time, and would not conflict with the observation data for the broadband access. The number of exchanges and/or the size of messages exchanged between the GUI and the stations should be as small as possible.\\
+Moreover, there already is data transiting through this connection: the actual observation data that is sent to the calculation centre, RTIM. One of the requirements for the new RTIS GUI is thus to minimise the amount of data sent or received, to be sure that every message could be received on time, and would not conflict with the observation data for the bandwidth access. The number of exchanges and/or the size of messages exchanged between the GUI and the stations should be as small as possible.\\
 
-It was also demanded that the remote RTIS station would somehow detect if the connection with the GUI had been broken, and stop sending data through a broken pipe. The user should still be able to cleanly disconnect from the station to stop receiving data from it, but in the event of a breakage of a connection, it should also be able to detect it and not indefinitely continue sending data while waiting for a disconnection signal from the GUI.
+It was also demanded that the remote RTIS station would somehow detect if the connection with the GUI had been broken, and would then stop sending data through a broken pipe. The user should still be able to cleanly disconnect from the station to stop receiving data from it, but in the event of a breakage of a connection, the station should also be able to detect it by itself and not indefinitely continue sending data while waiting for a disconnection signal from the GUI.
 
 \subsection{Miscellaneous}
 The website should be able to be visited on any kind of support, with any kind of OS: Linux and Windows computers, Android and iOS phones... This has technical implications and implies to check compatibility when choosing of technologies, and also influence the design of the web page, which should be responsive and adapt to mobile devices with a smaller screen.\\
 
-About the languages to code the website in, the choice is limited to PHP or Java. Although some other  technologies might be tempting, like Node.js for the real-time display, all the maintenance of the my work is going to be done by the team behind RTIS, and they logically chose to limit the technologies involved to the ones they were familiar with.\\
+About the languages to code the website in, the choice is limited to PHP or Java. Although some other  technologies might be tempting, like Node.js for the real-time display, all the maintenance of my work is going to be done by the team behind RTIS, and they logically chose to limit the technologies involved to ones they were familiar with.\\
 
 It is not required to have any login system, nor to be able to deal with simultaneous users on the GUI. It is only meant for an internal use, with restricted access. Anyone able to access the website is able to do all the interface allows to do. I am not aware of the inner workings of the internal network in NMA, and am only expected to have the product working on my development server. They will deal with the deployment.
 
@@ -358,7 +381,7 @@ It is not required to have any login system, nor to be able to deal with simulta
 
 The solution I have come up with is a light client: since there are no calculations nor any resource-consuming operation that is going to be needed, everything will be done on the web server without any risk of overloading it.\\
 
-The website is coded in PHP, because it is a language I and the RTIS team are familiar with. The main other option was Java, which I do not really know nor like. Moreover, while environments like J2EE could be useful for bigger projects, this relatively simple interface does not require such a complex technology.
+The website is coded in PHP, because it is a language I and the RTIS team are familiar with. Moreover, while environments like J2EE could be useful for bigger projects, this relatively simple interface does not require such a complex technology.
 As the RTIS program is written in C and includes some low level libraries for communications, all of the code behind the interface used to communicate with the RTIS system will be written in C as well.\\
 
 Also, while the GUI can ask for the RTIS software to send data, it cannot directly fetch it: some modules have to be added directly in the RTIS software, in the distant stations, to be able to communicate with them.
@@ -366,7 +389,7 @@ Also, while the GUI can ask for the RTIS software to send data, it cannot direct
 \section{Architecture}
 \subsection{Global overview}
 
-\begin{figure}[!h]
+\begin{figure}[!hb]
 	\centering
 	\includegraphics[width=0.8\textwidth]{global_flowchart}
 	\caption{General organisation of the solution, working document}
@@ -379,21 +402,21 @@ In white, we have a schematization of the existing RTIS software, which will be 
 
 \subsubsection{A brief overview of the RTIS software}
 
-First, let us go through the existing RTIS software to better understand how I will interact with it. Right on top, we have the GNSS receiver, whose role is obviously to collect data. This data is stored into one of the two data buffers, while the other one is being processed by the RTIS software. Every buffer contains one minute of observations, which implies that RTIS can take up to one minute to process one minute of data. If it takes longer, the buffers are swapped anyway, the remaining data is erased by new observations, and is thus lost. This can happen in period of strong ionospheric activity, hence the need for the modules I add to take as few resources as possible.\\
+First, let us go through the existing RTIS software to better understand how I will interact with it. Right on top, we have the GNSS receiver, whose role is obviously to collect data. This data is stored into one of the two data buffers, while the other one is being processed by the RTIS software. Every minute, the buffers are swapped. Every buffer contains one minute of observations, which implies that RTIS can take up to one minute to process one minute of data. If it takes longer, the buffers are swapped anyway, the remaining data is erased by new observations, and is thus lost. This can happen in period of strong ionospheric activity, hence the need for the modules I add to take as few resources as possible.\\
 
 Just underneath the GNSS receiver, we have the Controller. It is responsible for managing all the modules that do the processing, ensuring that they are all up and running, and relaunching them if necessary. To reboot the whole RTIS system, one only needs to reboot the Controller.\\
 
-We then have a lot of independent processes that process data, store their intermediate or final results in a shared memory, and then send the results to a control center in NMA. Now, we will only be interested in some parts of the shared memory that we want to read. We do not need to know any more about the inner workings of the software or its data.
+We then have a lot of independent processes that process data, store their intermediate or final results in a shared memory, and then send the results to a control center in NMA. We are only interested in some parts of the shared memory that we want to read. We do not need to know any more about the inner workings of the software or its data.
 
 \subsubsection{The general idea behind the architecture}
 
 We will here refer to the web server that hosts the GUI as "the server" and to the distant RTIS installation as "the client".
-The architecture is pretty straightforward: the GUI can send commands to the client via the \textit{Command Sender}, which are then read on the client by a dedicated \textit{Command Reader}. Depending on the message, the \textit{Command Sender} will either modify parameters of the \textit{Command Reader}, update the configuration file on the client, or launch a bash script to reboot the system. The \textit{Data Sender} reads data from the RTIS shared memory according to what the \textit{Command Reader} demands, and sends it back to the GUI, which then reads and displays it.\\
+The architecture is pretty straightforward: the GUI can send commands to the client via the \textit{Command Sender}, which are then read on the client by a dedicated \textit{Command Reader}. Depending on the message, the \textit{Command Sender} will either ask for data to be sent by the \textit{Data Sender}, update the configuration file on the client, or launch a bash script to reboot the system. The \textit{Data Sender} reads data from the RTIS shared memory according to what the \textit{Command Reader} demands, and sends it back to the GUI, which then reads and displays it.\\
 
 There are two types of connections that link the server to the client: the server sends its request with the TCP protocol, while the client sends its data using UDP. The reason for that is that the TCP protocol offers a very reliable connection: whenever a message is sent through a TCP stream, it is almost certain that it will be received on the other side. The receiver has to send a confirmation of the reception of the message, and if the sender does not receive the confirmation, it will send the message again. As we want to be sure that our commands have been sent, this is the solution to use here.
 The UDP protocol, on the other hand, does not perform any check, nor needs the receiver to actually be connected. It just sends data and hopes that it will be received on the over side. Although obviously less reliable than TCP, it is also much faster for real-time applications: if the message has not been received, there is no point in trying to re-send it as it is already obsolete, and we need to send new messages with the new data instead. What matters here is sending information quickly, and if some of it is lost, it is not a major problem.\\
 
-About the history of configuration files, now. To limit the use of bandwidth, whenever the user wants to view the history of the configuration files for a station, or even the current configuration file, it is not efficient to fetch it from the client: even though these files only weigh 2kB, this would result in unneeded bandwidth usage.
+About the history of configuration files, now. To limit the use of bandwidth, whenever the user wants to view the history of the configuration files for a station, or even the current configuration file, it is not efficient to fetch it from the client: even though these files only weigh 2 kB, this would result in unneeded bandwidth usage.
 A database has thus to be created on the server, where configuration files are duplicated whenever they are sent to the client. This way, we are ensured to always have all of the configuration files handy without any need for costly data transfer.
 
 
@@ -405,26 +428,26 @@ A database has thus to be created on the server, where configuration files are d
 	\caption{Detailed organisation of the modules, working document}
 \end{figure}
 
-First of all, all communications between client and server are made via SATREF messages. 
+First of all, all communications between client and server are made via SATREF messages. It is an efficient and easy-to-implement way of communication.
 
 \subsubsection{Command senders}
 
-Commands senders are a combination of PHP and C scripts. Their role is, as their name suggests, to convert user input from the GUI into a command, and to send it. There is one command sender per type of command that can be sent: fetch ERR, fetch MON, fetch PROC, send configuration file, reboot. The command reader will make the difference between all of these types of messages based on their type, an integer placed into the header message. Thus, most of the messages going from the server to the client do not even need a body: they will just consist of a header whose only meaningful information will be the message type, the only exception to that being for configuration file updating.
+Commands senders are a combination of PHP and C scripts. Their role is, as their name suggests, to convert user input from the GUI into a command, and to send it to the client. There is one command sender per type of command that can be sent: fetch ERR, fetch MON, fetch PROC, send configuration file, reboot. The command reader will make the difference between all of these types of messages based on their type, an integer placed into the header message. Thus, most of the messages going from the server to the client do not even need a body: they will just consist of a header whose only meaningful information will be the message type, the only exception to that being for configuration file updating.
 If the user has entered in the interface that he wants to see MON, refreshed every 7 seconds, the PHP script will just call, every 7 seconds, the C script whose job is just to create and send one specific message. And every 7 seconds, a message of type "MON" will be sent to the client to notify it that it needs to immediately send MON data. It works the same way with PROC.\\
 
 The "Reboot" command consists of a single message, exactly like for MON \& PROC, though sent only once. \\
 
-For ERR, however, one cannot simply choose the frequency of the updates: if ERR is enabled, messages will be sent as soon as they are emitted by the client. The technique of "sending a message per update" used for MON and PROC cannot be used anymore. Here, only one message will be sent every two minutes (this step can be changed). When received, the \textit{Data Sender} will send messages for the next two minutes. While not optimal, this method, like the one used for PROC \& MON, fulfil the requirements: the messages sent from the server are extremely small in size, and if the server-client connection is broken, the \textit{Data Sender} will stop sending messages.\\
+For ERR, however, one cannot simply choose the frequency of the updates: if ERR is enabled, messages will be sent as soon as they are emitted by the client. The technique of "sending a message per update" used for MON and PROC cannot be used anymore. Here, only one message will be sent every two minutes, regardless of what happens to the connection. When received, the \textit{Data Sender} will send messages for the next two minutes. While not optimal, this method, like the one used for PROC \& MON, fulfil the requirements: the messages sent from the server are extremely small in size, and if the server-client connection is broken, the \textit{Data Sender} will stop sending messages.\\
 
-Finally, when sending a configuration file, the whole file is parsed, all of its values are extracted before being put, one after the other, into the SATREF message. The size of the message is greatly reduced compared to the file's one: only the values are taken into account, while the file has a lot of text that does not change from one file to the other and is thus useless to send. An example of a configuration file is given on Annex A.\\
+Finally, when sending a configuration file, the whole file is parsed, all of its values are extracted before being put, one after the other, into the SATREF message. The size of the message is greatly reduced compared to the file's one: only the values are taken into account, while the file has a lot of text that does not change from one file to the other and is thus useless to send. An example of a configuration file is given on Annexe~\ref{configfile}.\\
 
-All of these messages need to be acknowledged by the receiver, who should send an empty SATREF message back at the sender. Only then would the command sender know that its command has been received and obeyed to. Should this confirmation message not be received, the command will be sent again, until a certain period of time is elapsed. If no answer is received then, an error notification is sent to the GUI, that will display it. This whole process of confirming the messages is arguably redundant with the very idea of choosing a TCP connection, but we do not only want to be sure that the message has been received, we also need to be sure that it has been processed.
+All of these messages need to be acknowledged by the receiver, who should send an empty SATREF message back at the sender. Only then would the command sender know that its command has been received and obeyed to. Should this confirmation message not be received, the command will be sent again, until a certain period of time is elapsed. If no answer is received by then, an error notification is sent to the GUI, that will display it. This whole process of confirming the messages is arguably redundant with the very idea of choosing a TCP connection, but we do not only want to be sure that the message has been received, we also need to be sure that it has been processed.
 
 \subsubsection{Command reader \& data sender}
 
-The command reader consists of only one program, constantly running and listening for messages. The way things are done here are that the TCP server that listens to messages is set in "blocked" mode. Concretely, "non-blocked" would have meant having an infinite loop running at full speed and checking at every iteration for messages to read, thus asking a lot from the CPU, while "blocked" just puts the program to sleep and wakes it up whenever a message comes, which is a lot more efficient.\\
+The \textit{Command Reader} consists of only one program, constantly running and listening for messages. The way things are done here are that the TCP server that listens to messages is set in "blocked" mode. Concretely, "non-blocked" would have meant having an infinite loop running at full speed and checking at every iteration for messages to read, thus asking a lot from the CPU, while "blocked" just puts the program to sleep and wakes it up whenever a message comes, which is a lot more efficient.\\
 
-Once a message is received, it adjusts its behaviour depending on the nature of the message, indicated by the "message type" contained in the header. If the message is asking for PROC or MON, it will read it from the shared memory, once, convert it into a SATREF message, send it to the \textit{Data Reader} (via UDP) and send a confirmation to the \textit{Command Sender} (via TCP), before putting itself to sleep once more and waiting for new messages.
+Once a message is received, the \textit{Command Reader} adjusts its behaviour depending on the nature of the message, indicated by the "message type" contained in the header. If the message is asking for PROC or MON, it will read it from the shared memory, once, convert it into a SATREF message, send it to the \textit{Data Reader} (via UDP) and send a confirmation to the \textit{Command Sender} (via TCP), before putting itself to sleep once more and waiting for new messages.
 A "reboot" message will result in a system call to launch a bash file on the client, that will do the rebooting. As with any kind of received message, a confirmation is then sent to the command sender.
 For configuration files, the contents of the message are converted to C variables, a configuration file is written based on these variables, and is moved to erase the old file.\\
 
@@ -434,9 +457,9 @@ Moreover, the method for storing and reading the error messages within the RTIS 
 To deal with the problem of the infinite loop of waiting for error messages within the infinite loop of waiting for GUI commands, I have resorted to a fork of the \textit{Command Sender} program. The general idea is detailed in figure~\ref{fig:pseudocode}.\\
 
 
-\begin{figure}[!hb]
+\begin{figure}[hb]
 	\centering
-	\lstset{language=Python}'
+	\lstset{language=Python}
 	\definecolor{keywords}{RGB}{255,0,90}
 	\definecolor{comments}{RGB}{0,0,113}
 	\definecolor{red}{RGB}{160,0,0}
@@ -498,15 +521,26 @@ while(True)
 			#awakens the child
 			write(pipe, 1)				
 	\end{lstlisting}
-	\caption{Explanation of the algorithm}
+	\caption{Explanation of the algorithm, transposed to Python pseudocode}
 	\label{fig:pseudocode}
 \end{figure}
 
 \subsubsection{Data reader}
 
 The \textit{Data Reader} are, like the \textit{Command Senders}, making a link between the PHP-based GUI and the C-written RTIS software. As such, they are composed of both C and PHP codes. The C codes are just here to receive the messages using the SATREF library. When messages are received, they are either written into files that will be read by PHP or directly returned to the PHP programs.
-Each type of message then go through a different processing before being inserted and displayed in the GUI.\\
+Each type of message then go through a different processing before being inserted and displayed in the GUI. Notably, it is in here that the error messages are selected based on their severity: all of the error messages from the client are received, while we only want to display the messages with certain severities.
 
+\subsubsection{A previous model}
+
+The solution proposed here is the result of numerous iterations, and there is one of them I would like to present here, as it has major differences to the selected one, and has not been obsoleted until a few months in the internship.\\
+
+The idea behind it was to have as few messages sent by the GUI to the distant station as possible. And, for fetching data, this has a lot of implications; messages would only be sent whenever something was changed, and while no command was received by the \textit{Command Reader}, it would continue to send data the same way it was. The commands sent by the GUI related to fetching data would then include a type of data and the frequency it should be fetched at (for PROC \& MON) or the minimum severity level (for ERR). For ERR, this way of doing things allows to filter messages directly at the source, which is more bandwidth-efficient.\\
+
+However, and while this method now seems better than the currently selected one, a few problems arose from it.\begin{itemize}
+\item This would have requested three \textit{Data Senders}, running all the time, on the client. It is not very resource-friendly.
+\item It would have requested that when receiving commands to change the way data is fetched, the \textit{Command Reader} notifies the relevant \textit{Data Sender}, which should modify its inner parameters while it is still running. This would have called for much more serious and complex coding.
+\item The main problem would be detecting if the connection is broken: this aspect has not been mentioned yet, but it is crucial. It would have needed yet another module whose sole purpose would be to monitor the state of the TCP connection, and check that it is still operational. From what I have read, I have understood that it could only be done by sharing handshakes with the server: all the benefits of this model, the low number of exchanges, have just disappeared. This would, once more, have required complex, resource-consuming code, and would have resulted in no benefit when compared to the simpler (even maybe simplist) method that has been described earlier.
+\end{itemize}
 
 %-------------------------------------------------------------------------------
 \clearpage
@@ -519,12 +553,12 @@ First, let's have a look at the general design of the web page\footnote{This rep
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{Screenshot_Pinta}
+	\includegraphics[width=1.1\textwidth]{Screenshot_Pinta}
 	\caption{Screenshot of the interface, data tab}
 \end{figure}
 
-The two circled menus are present at all time when navigating the interface. The menu on the left, numbered 1, allows the user to choose the station he wants to monitor. It also indicate the state of every station thanks to the colour of the circles: green circles for healthy stations which send heartbeats with a "healthy" code, orange for non-healthy  stations whose heartbeats indicate failure, and red in case of an absence of heartbeat.
-The second menu, numbered 2, on top, is quite self-explanatory; once the user has chosen a station to connect to, it takes him to either the \textit{Data} page, to visualise monitoring data, or to the \textit{Config} page, for everything related to configuration files. The \textit{Disconnect} option on the \textit{Action} drop-down menu takes the user to the blank index page, and the \textit{Reboot} option leaves the user where he is, in order for him to see the data beginning to display when the reboot of the remote station is complete.\\
+The two circled menus are present at all time when navigating the interface. The menu on the left, numbered 1, allows the user to choose the station he wants to monitor. It also indicate the state of every station thanks to the colour of the circles: green circles for healthy stations which send heartbeats with a "healthy" code, orange for non-healthy  stations whose heartbeats indicate failure, and red in case of a total absence of heartbeat.
+The second menu, numbered 2, on top, is quite self-explanatory; once the user has chosen a station to connect to, it takes him to either the \textit{Data} page, to visualise monitoring data, or to the \textit{Config} page, for everything related to configuration files. The \textit{Disconnect} option on the \textit{Action} drop-down menu takes the user to the blank index page, and the \textit{Reboot} option leaves the user where he is, in order for him to see the data beginning to display again when the reboot of the remote station is complete.\\
 
 For mobile devices, the menu 1 with the list of stations is minimised in the top right corner of the screen, and deploys on click.\\
 
@@ -537,10 +571,10 @@ For mobile devices, the menu 1 with the list of stations is minimised in the top
 
 \subsection{Receiving data}
 
-When monitoring a station, the first thing to do is to sure it is correctly functioning.  The data tab is therefore the first tab the user is taken to when connecting to a station. This page can display the list of running RTIS processes (PROC), the monitoring table (MON) and/or the error messages from the RTIS software (ERR).
-Each of this type of information has its own panel, and can be updated separately from the others. For MON and PROC, it is possible to choose whether to update or not, and if yes, at which frequency, just under the display. The choice of colours has been made so that the different areas (title, information, settings) are easily discernible, in an effort to be as intuitive as possible. For ERR, it is possible to choose from a drop-down list a minimum severity level under which the messages will not be displayed. A "no message" option is also available. Since they are different than the regular options, the "Debug" and "Notice" filters have their own check-box, and can be chosen regardless of the "regular" severity filter. \\
+When monitoring a station, the first thing to do is to make sure it is correctly functioning. The data tab is therefore the first tab the user is taken to when connecting to a station. This page can display the list of running RTIS processes (PROC), the monitoring table (MON) and/or the error messages from the RTIS software (ERR).\\
+Each of this type of information has its own panel, and can be updated separately from the others. For MON and PROC, it is possible to choose whether to update or not, and if yes, at which frequency, just under the display. The choice of colours for the page has been made so that the different areas (title, information, settings) are easily discernible, in an effort to be as intuitive as possible. For ERR, it is possible to choose from a drop-down list a minimum severity level under which the messages will not be displayed. A "no message" option is also available. Since they are different than the regular options, the "Debug" and "Notice" filters have their own check-box, and can be chosen regardless of the "regular" severity filter. \\
 
-When the data tab is opened, is has been decided that PROC would receive only one update and set to "no update", that MON would be set to one update per second, and ERR would display all error messages except the special ones (Debug and Notice). The reason for not updating PROC by default is that it should not change: if everything is running like it should, there is no reason that a process would crash while we are monitoring the station. And if it is believed that it could happen, there is always the option to set the settings to "Update" manually.\\
+When the data tab is opened, is has been decided that PROC would receive only one update and be set to "no update", that MON would be set to one update per second, and ERR would display all error messages except the special ones (Debug and Notice). The reason for not updating PROC by default is that it should not change: if everything is running like it should, there is no reason that a process would crash while we are monitoring the station. And if it is believed that it could happen, there is always the option to set the settings to "Update" manually.\\
 
 The ERR panel will only display the ten most recent messages, and erases older messages as new ones arrive. This amount can easily be changed in the code, but given the frequency of the messages, it has been agreed that it should be enough. Each message is displayed with a colour and an icon depending on its severity. Please note that the example that follows has been done with dummy error messages composed of only random strings.\\
 
@@ -550,7 +584,7 @@ The ERR panel will only display the ten most recent messages, and erases older m
 	\caption{The error messages panel}
 \end{figure}
 
-As we can see here, the messages are displayed in a way that their title is on top, while the more detailed explicative message is written underneath, in an attempt to be easily readable and understandable.\\
+As we can see here, the messages are displayed in a way that their content is on top, with the time the error arose just underneath, in an attempt to be easily readable and understandable.\\
 
 Each of these panels can be minimised by clicking on the blue title bar, and makes it possible to hide informations. It is for example possible to minimise the middle panel, so as to see both the top and the bottom one simultaneously, which would not be possible otherwise.\\
 
@@ -572,25 +606,34 @@ Each of these panels can be minimised by clicking on the blue title bar, and mak
 \end{figure}
 
 
-The config tab is here to allow the user to send its own configuration files to the remote RTIS station. I chose to allow the file to be input either by a direct file upload or by a form that has to be manually completed. Indeed, it is possible that the user wants to send the same file for several stations, and filling the same (huge) form other and other again would be extremely counterproductive and show no advantage over the FTP deposit model that was the norm before the GUI was created. On the other hand, it is possible that the user only wants to make quick changes on a small number of parameters, and in this case opening the file in an external text editor, modifying it and uploading it would not be optimal. \\
+The config tab is here to allow the user to send its own configuration files to the remote RTIS station. I chose to allow the file to be input either by a direct file upload or by a form that has to be manually completed. Indeed, it is possible that the user wants to send the same file for several stations, and filling the same (huge) form other and other again would be extremely counterproductive and show no advantage over the FTP deposit model that was the norm before the GUI was created. On the other hand, it is possible that the user only wants to make quick changes on a small number of parameters, and in this case opening the file in an external text editor, modifying it and uploading it would not be optimal. Moreover, the very idea of having to upload files from the device does not go well with the requirement of the web page being mobile-device friendly.\\
 
-All the configuration files that are entered through this tool are stored into a database on the web server. This database only consists of one table, the configuration files, will not contain a lot of data, and is only asked to do simple read or write operations, without any join. I thus chosed to use a basic mySQL relational database.\\
+All the configuration files that are entered through this tool are stored into a database on the web server. This database only consists of one table, the configuration files, will not contain a lot of data, and is only ever asked to do simple read or write operations, without any join. I thus chose to use a basic mySQL relational database.\\
 
 The idea is that whenever the user sends a configuration file to a station, this file has to be saved into the database, in order to be able to be reloaded later. When saving a file, it is possible to give it a name. While purely aesthetic, the name could make it easier to find it again later, instead of choosing a file based solely on its modification date.\\
 To transfer data from the GUI to the database, the user has to choose between three options: \begin{itemize}
-\item sending the file to the station, and not saving the file in the database. This is not recommended, as the GUI will only display files from the database, and thus will not know what file is active;
+\item sending the file to the station, and not saving the file in the database. This is not recommended, as the GUI will only display files from the database and thus will not know what file is active: we would have no idea of what is currently running on the distant station;
 \item saving the configuration file in the database and sending the configuration file to the station, which is the option that should be used is most cases;
-\item just saving the file in the database, to continue working on it later.
+\item just saving the file in the database without sending it, to continue working on it later.
 \end{itemize}
 The latter two options will call the “Save” function of the configuration file module. When saving a file in the database, a new field is added to it: the "active" attribute. It is used to know which file is the current file in the remote station.
 
-The process of saving a file in the database is explained in the UML activity diagram, figure~\ref{fig:saveConfig}.\\
+The process of saving a file in the database is explained in a UML activity diagram, figure~\ref{fig:saveConfig}.\\
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=\textwidth]{saveConfigInDb}
 	\caption{Activity diagram of saving a file F in the database.}
 	\label{fig:saveConfig}
+\end{figure}
+
+Before saving a configuration file however, be it by direct file input or through the use of the form, all of the values it contains are checked, for malicious input, first, but also to see if the values entered correspond to what is expected: is the port number an integer? Is it lower than 65536? If any of the value is incorrect, a message is printed on the interface explaining what the problem is.\\
+When entering it through the form, the input fields are accepted or rejected as they are filled, with an explicit colour code, so that the user can see what is wrong in case of error, or have a confirmation that what he typed is acceptable. 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{configFileValidation}
+	\caption{Screenshot of filling in the form for a configuration file, halfway through: successfully filled input fields are circled in green, errors are filled in red with a little explanation text.}
 \end{figure}
 
 For communication the other way around, the GUI calls the function “Display a drop-down list” whenever the user goes to the configuration file modification page. This function queries to the database to get the list of names of the configuration files for the current station, and formats it so that it can directly be included in the HTML code as a drop-down list. Once the drop-down list is made, the user can choose one of its elements, that is to say one of the previous configuration files. Choosing an element triggers the “Prefill fields” function, which queries the database for all of the information concerning the selected configuration file, and prefills the GUI fields accordingly. Initially, the fields are filled with the values from the current active configuration file on the RTIS installation, which is the only “active” file in the database for the current station. If no active file is found, then the latest modified station is taken.\\

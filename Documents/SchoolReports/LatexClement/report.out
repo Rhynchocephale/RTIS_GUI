@@ -21,9 +21,10 @@
 \BOOKMARK [3][-]{subsubsection.2.2.2.1}{Command senders}{subsection.2.2.2}% 21
 \BOOKMARK [3][-]{subsubsection.2.2.2.2}{Command reader \046 data sender}{subsection.2.2.2}% 22
 \BOOKMARK [3][-]{subsubsection.2.2.2.3}{Data reader}{subsection.2.2.2}% 23
-\BOOKMARK [1][-]{section.2.3}{The GUI}{chapter.2}% 24
-\BOOKMARK [2][-]{subsection.2.3.1}{General presentation}{section.2.3}% 25
-\BOOKMARK [2][-]{subsection.2.3.2}{Receiving data}{section.2.3}% 26
-\BOOKMARK [2][-]{subsection.2.3.3}{Sending \046 saving configuration files}{section.2.3}% 27
-\BOOKMARK [-1][-]{chapter*.20}{Conclusion}{}% 28
-\BOOKMARK [0][-]{Appendix.1.A}{Example of a RTIS configuration file}{chapter*.20}% 29
+\BOOKMARK [3][-]{subsubsection.2.2.2.4}{A previous model}{subsection.2.2.2}% 24
+\BOOKMARK [1][-]{section.2.3}{The GUI}{chapter.2}% 25
+\BOOKMARK [2][-]{subsection.2.3.1}{General presentation}{section.2.3}% 26
+\BOOKMARK [2][-]{subsection.2.3.2}{Receiving data}{section.2.3}% 27
+\BOOKMARK [2][-]{subsection.2.3.3}{Sending \046 saving configuration files}{section.2.3}% 28
+\BOOKMARK [-1][-]{chapter*.22}{Conclusion}{}% 29
+\BOOKMARK [0][-]{Appendix.1.A}{Example of a RTIS configuration file}{chapter*.22}% 30
