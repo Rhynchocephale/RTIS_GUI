@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.29)  18 SEP 2015 09:11
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.29)  18 SEP 2015 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1295,43 +1295,45 @@ Package frenchb.ldf Warning: Please load the "caption" package
 \leftmarginFB=\skip128
 \parindentFFN=\dimen211
 )) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+\c@subsubsubsection=\count207
+
 
 Package hyperref Warning: Option `backref' has already been used,
-(hyperref)                setting the option has no effect on input line 58.
+(hyperref)                setting the option has no effect on input line 92.
 
 
 Package hyperref Warning: Option `pagebackref' has already been used,
-(hyperref)                setting the option has no effect on input line 58.
+(hyperref)                setting the option has no effect on input line 92.
 
 
 Package hyperref Warning: Option `hyperindex' has already been used,
-(hyperref)                setting the option has no effect on input line 58.
+(hyperref)                setting the option has no effect on input line 92.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 58.
-Package hyperref Info: Option `breaklinks' set `true' on input line 58.
+Package hyperref Info: Option `colorlinks' set `true' on input line 92.
+Package hyperref Info: Option `breaklinks' set `true' on input line 92.
 
 Package hyperref Warning: Option `bookmarks' has already been used,
-(hyperref)                setting the option has no effect on input line 58.
+(hyperref)                setting the option has no effect on input line 92.
 
 \longest=\skip129
 (./report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
-LaTeX Font Info:    ... okay on input line 76.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 76.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 110.
  (/usr/share/texmf/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1339,16 +1341,16 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count207
+\scratchcounter=\count208
 \scratchdimen=\dimen212
 \scratchbox=\box109
-\nofMPsegments=\count208
-\nofMParguments=\count209
+\nofMPsegments=\count209
+\nofMParguments=\count210
 \everyMPshowfont=\toks46
-\MPscratchCnt=\count210
+\MPscratchCnt=\count211
 \MPscratchDim=\dimen213
-\MPnumerator=\count211
-\makeMPintoPDFobject=\count212
+\MPnumerator=\count212
+\makeMPintoPDFobject=\count213
 \everyMPtoPDFconversion=\toks47
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -1365,7 +1367,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 76.
+Package hyperref Info: Link coloring ON on input line 110.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1373,11 +1375,11 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count213
+\c@section@level=\count214
 )
-LaTeX Info: Redefining \ref on input line 76.
-LaTeX Info: Redefining \pageref on input line 76.
-LaTeX Info: Redefining \nameref on input line 76.
+LaTeX Info: Redefining \ref on input line 110.
+LaTeX Info: Redefining \pageref on input line 110.
+LaTeX Info: Redefining \nameref on input line 110.
 
 (./report.out) (./report.out)
 \@outlinefile=\write5
@@ -1389,7 +1391,7 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             or
 (lastpage)             http://www.ctan.org/tex-archive/ 
 (lastpage)             install/macros/latex/contrib/pageslts.tds.zip
-(lastpage)             ! on input line 76.
+(lastpage)             ! on input line 110.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1429,85 +1431,87 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count214
-LaTeX Info: Redefining \degres on input line 76.
-LaTeX Info: Redefining \dots on input line 76.
+\c@lstlisting=\count215
+LaTeX Info: Redefining \degres on input line 110.
+LaTeX Info: Redefining \dots on input line 110.
 
 
 Package frenchb.ldf Warning: Setting StandardItemizeEnv=true for
 (frenchb.ldf)                compatibility with enumitem package,
-(frenchb.ldf)                 on input line 76.
+(frenchb.ldf)                 on input line 110.
 
 
 Package frenchb.ldf Warning: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)                compatibility with enumitem package,
-(frenchb.ldf)                 on input line 76.
+(frenchb.ldf)                 on input line 110.
 
-LaTeX Info: Redefining \up on input line 76.
-<images/logos/ensg_logo.png, id=143, 672.5125pt x 714.67pt>
+LaTeX Info: Redefining \up on input line 110.
+<images/logos/ensg_logo.png, id=171, 672.5125pt x 714.67pt>
 File: images/logos/ensg_logo.png Graphic file (type png)
 
 <use images/logos/ensg_logo.png>
-Package pdftex.def Info: images/logos/ensg_logo.png used on input line 83.
+Package pdftex.def Info: images/logos/ensg_logo.png used on input line 117.
 (pdftex.def)             Requested size: 113.81102pt x 120.93613pt.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 84.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 118.
+
  (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 84.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 118.
+
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 84.
-
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 118
+.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 84.
-
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 118
+.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 84.
+(Font)              <12> on input line 118.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 84.
+(Font)              <8> on input line 118.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 84.
-LaTeX Font Info:    Try loading font information for U+msa on input line 84.
+(Font)              <6> on input line 118.
+LaTeX Font Info:    Try loading font information for U+msa on input line 118.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 84.
+LaTeX Font Info:    Try loading font information for U+msb on input line 118.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/logos/kartverket_logo.png, id=144, 482.80376pt x 385.44pt>
+<images/logos/kartverket_logo.png, id=172, 482.80376pt x 385.44pt>
 File: images/logos/kartverket_logo.png Graphic file (type png)
 
 <use images/logos/kartverket_logo.png>
-Package pdftex.def Info: images/logos/kartverket_logo.png used on input line 87
-.
+Package pdftex.def Info: images/logos/kartverket_logo.png used on input line 12
+1.
 (pdftex.def)             Requested size: 113.81102pt x 90.85483pt.
 
-Overfull \hbox (20.23589pt too wide) in paragraph at lines 82--89
+Overfull \hbox (20.23589pt too wide) in paragraph at lines 116--123
 []$[]$ $[]$ 
  []
 
-<images/Aurora_Borealis_Norway.jpg, id=146, 4651.3775pt x 3080.50874pt>
+<images/Aurora_Borealis_Norway.jpg, id=174, 4651.3775pt x 3080.50874pt>
 File: images/Aurora_Borealis_Norway.jpg Graphic file (type jpg)
 
 <use images/Aurora_Borealis_Norway.jpg>
-Package pdftex.def Info: images/Aurora_Borealis_Norway.jpg used on input line 9
-5.
+Package pdftex.def Info: images/Aurora_Borealis_Norway.jpg used on input line 1
+29.
 (pdftex.def)             Requested size: 365.16234pt x 241.84842pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 97.
+(Font)              <10.95> on input line 131.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./images/logos/ensg_logo.p
@@ -1537,21 +1541,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 
  []
 
-\c@x=\count215
+\c@x=\count216
 ) [3]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 118.
+(Font)              <17.28> on input line 152.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 118.
+(Font)              <10> on input line 152.
  [4
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 130--131
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
+Underfull \hbox (badness 10000) in paragraph at lines 166--167
 
  []
 
@@ -1562,36 +1566,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 132--133
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.147 \end{abstract}
+l.181 \end{abstract}
                      [1]pdfTeX warning (ext4): destination with the same identi
 fier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.162 \end{abstract}
+l.196 \end{abstract}
                      [1]pdfTeX warning (ext4): destination with the same identi
 fier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.168 \newevenpage
+l.202 \newevenpage
                    [2] (./report.toc
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 33.
+(Font)              <14.4> on input line 37.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 33.
-)
-\tf@toc=\write6
-\openout6 = `report.toc'.
-
+(Font)              <7> on input line 37.
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.171 \newevenpage
-                   [3]pdfTeX warning (ext4): destination with the same identifi
-er (name{page.4}) has been already used, duplicate ignored
+l.40 ...ne {C}Statement of Work}{43}{Appendix.1.C}
+                                                   [3])
+\tf@toc=\write6
+\openout6 = `report.toc'.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.171 \newevenpage
+l.205 \newevenpage
                    [4] (./report.lof)
 \tf@lof=\write7
 \openout7 = `report.lof'.
@@ -1600,197 +1604,145 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.5}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.176 \newevenpage
+l.210 \newevenpage
                    [5] [6] [7
 
 ] [8] [9
 
 ] [10]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 220.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 254.
 
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 220--220
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 254--254
 [][] 
  []
 
-<images/auroral_oval.jpg, id=319, 1240.635pt x 730.73pt>
+<images/auroral_oval.jpg, id=356, 1240.635pt x 730.73pt>
 File: images/auroral_oval.jpg Graphic file (type jpg)
 
 <use images/auroral_oval.jpg>
-Package pdftex.def Info: images/auroral_oval.jpg used on input line 231.
+Package pdftex.def Info: images/auroral_oval.jpg used on input line 265.
 (pdftex.def)             Requested size: 318.66948pt x 187.6884pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--236
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 
  []
 
-<images/frequencyOfScintillation.png, id=320, 913.63556pt x 635.70833pt>
+<images/frequencyOfScintillation.png, id=357, 913.63556pt x 635.70833pt>
 File: images/frequencyOfScintillation.png Graphic file (type png)
 
 <use images/frequencyOfScintillation.png>
 Package pdftex.def Info: images/frequencyOfScintillation.png used on input line
- 239.
+ 273.
 (pdftex.def)             Requested size: 455.24411pt x 316.75726pt.
  [11
 
  <./images/auroral_oval.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 281--282
 
  []
 
-<images/rtisMap.png, id=327, 1051.93pt x 738.76pt>
+<images/rtisMap.png, id=364, 1051.93pt x 738.76pt>
 File: images/rtisMap.png Graphic file (type png)
  <use images/rtisMap.png>
-Package pdftex.def Info: images/rtisMap.png used on input line 251.
+Package pdftex.def Info: images/rtisMap.png used on input line 285.
 (pdftex.def)             Requested size: 409.71692pt x 287.74324pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 256--257
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
 
  []
 
 [12 <./images/frequencyOfScintillation.png (PNG copy)>] [13 <./images/rtisMap.p
-ng>]
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
-
- []
-
-<images/rtis_mon.png, id=347, 997.7275pt x 670.505pt>
+ng>] <images/rtis_mon.png, id=379, 997.7275pt x 670.505pt>
 File: images/rtis_mon.png Graphic file (type png)
 
 <use images/rtis_mon.png>
-Package pdftex.def Info: images/rtis_mon.png used on input line 277.
+Package pdftex.def Info: images/rtis_mon.png used on input line 317.
 (pdftex.def)             Requested size: 364.19667pt x 244.74763pt.
  [14
 
  <./images/rtis_mon.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 296--297
+Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
 
-Overfull \hbox (7.88112pt too wide) in paragraph at lines 308--308
-[]\T1/lmtt/m/n/12 include an overview of the processes currently running, error
- messages that[] 
- []
-
-
-Overfull \hbox (7.88112pt too wide) in paragraph at lines 309--309
-[]\T1/lmtt/m/n/12 are generated, and printing special monitor parameters. All t
-his is dynamic[] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
-
- []
-
-[15
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 331--332
+Underfull \hbox (badness 10000) in paragraph at lines 348--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--345
- [][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--345
- [][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 362--363
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
-[16]
+
 Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+ [][][][] 
+ []
 
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+ [][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+Underfull \hbox (badness 10000) in paragraph at lines 397--398
+
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 399--400
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--374
+Underfull \hbox (badness 10000) in paragraph at lines 404--405
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 406--407
 
  []
 
 [17] [18]
 Chapter 2.
 
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 378--378
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 411--411
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--386
+Underfull \hbox (badness 10000) in paragraph at lines 417--419
 
  []
 
-<images/global_flowchart.png, id=382, 566.115pt x 769.87625pt>
+<images/global_flowchart.png, id=421, 579.16376pt x 768.8725pt>
 File: images/global_flowchart.png Graphic file (type png)
 
 <use images/global_flowchart.png>
-Package pdftex.def Info: images/global_flowchart.png used on input line 394.
-(pdftex.def)             Requested size: 364.19667pt x 495.2918pt.
+Package pdftex.def Info: images/global_flowchart.png used on input line 427.
+(pdftex.def)             Requested size: 364.19667pt x 483.48888pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 407--408
-
- []
-
-[19
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 413--415
-
- []
-
-[20 <./images/global_flowchart.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 416--418
-
- []
-
-<images/detailed_flowchart2.png, id=396, 862.22125pt x 914.41624pt>
-File: images/detailed_flowchart2.png Graphic file (type png)
-
-<use images/detailed_flowchart2.png>
-Package pdftex.def Info: images/detailed_flowchart2.png used on input line 427.
-
-(pdftex.def)             Requested size: 455.24411pt x 482.79652pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--437
-
- []
-
-[21]
 Underfull \hbox (badness 10000) in paragraph at lines 438--439
 
  []
@@ -1800,152 +1752,205 @@ Underfull \hbox (badness 10000) in paragraph at lines 440--441
 
  []
 
-[22 <./images/detailed_flowchart2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 442--443
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 448--450
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 448--449
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./images/global_flowchart.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 451--453
+
+ []
+
+<images/detailed_flowchart2.png, id=437, 862.22125pt x 883.3pt>
+File: images/detailed_flowchart2.png Graphic file (type png)
+
+<use images/detailed_flowchart2.png>
+Package pdftex.def Info: images/detailed_flowchart2.png used on input line 462.
+
+(pdftex.def)             Requested size: 455.24411pt x 466.36768pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (28.61075pt too wide) in paragraph at lines 471--482
+[][] 
+ []
+
+[21]
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--453
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22 <./images/detailed_flowchart2.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 495--496
 
  []
 
-[23] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 502--503
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 504--507
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--512
+
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/08/26 1.5b listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 537--538
-
- []
-
-[24] [25]
-Underfull \hbox (badness 10000) in paragraph at lines 550--551
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 552--553
-
- []
-
-<images/Screenshot_Pinta.png, id=477, 2569.6pt x 1395.2125pt>
-File: images/Screenshot_Pinta.png Graphic file (type png)
-
-<use images/Screenshot_Pinta.png>
-Package pdftex.def Info: images/Screenshot_Pinta.png used on input line 556.
-(pdftex.def)             Requested size: 500.77129pt x 271.88438pt.
-
-Overfull \hbox (45.52718pt too wide) in paragraph at lines 556--557
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 560--562
-
- []
-
-[26
-
- <./images/Screenshot_Pinta.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
-
- []
-
-<images/gui_mobile.png, id=485, 1735.48375pt x 1174.3875pt>
-File: images/gui_mobile.png Graphic file (type png)
-
-<use images/gui_mobile.png>
-Package pdftex.def Info: images/gui_mobile.png used on input line 567.
-(pdftex.def)             Requested size: 455.24411pt x 308.05734pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 574--576
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 577--578
-
- []
-
-[27 <./images/gui_mobile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 579--580
-
- []
-
-<images/errPanel.png, id=492, 2091.815pt x 973.6375pt>
-File: images/errPanel.png Graphic file (type png)
-
-<use images/errPanel.png>
-Package pdftex.def Info: images/errPanel.png used on input line 583.
-(pdftex.def)             Requested size: 455.24411pt x 211.8833pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 587--588
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 589--590
 
  []
 
-<images/minimised.png, id=493, 2073.7475pt x 205.76875pt>
+
+Underfull \vbox (badness 5217) has occurred while \output is active []
+
+ [24]
+Underfull \hbox (badness 10000) in paragraph at lines 591--593
+
+ []
+
+[25] [26]
+Underfull \hbox (badness 10000) in paragraph at lines 605--606
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
+
+ []
+
+<images/Screenshot_Pinta.png, id=525, 2569.6pt x 1395.2125pt>
+File: images/Screenshot_Pinta.png Graphic file (type png)
+
+<use images/Screenshot_Pinta.png>
+Package pdftex.def Info: images/Screenshot_Pinta.png used on input line 611.
+(pdftex.def)             Requested size: 500.77129pt x 271.88438pt.
+
+Overfull \hbox (45.52718pt too wide) in paragraph at lines 611--612
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 615--617
+
+ []
+
+[27
+
+ <./images/Screenshot_Pinta.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 618--619
+
+ []
+
+<images/gui_mobile.png, id=533, 1735.48375pt x 1174.3875pt>
+File: images/gui_mobile.png Graphic file (type png)
+
+<use images/gui_mobile.png>
+Package pdftex.def Info: images/gui_mobile.png used on input line 622.
+(pdftex.def)             Requested size: 455.24411pt x 308.05734pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 633--634
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 635--636
+
+ []
+
+[28 <./images/gui_mobile.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 637--638
+
+ []
+
+<images/errPanel.png, id=540, 2091.815pt x 973.6375pt>
+File: images/errPanel.png Graphic file (type png)
+
+<use images/errPanel.png>
+Package pdftex.def Info: images/errPanel.png used on input line 641.
+(pdftex.def)             Requested size: 455.24411pt x 211.8833pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 645--646
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 647--648
+
+ []
+
+<images/minimised.png, id=541, 2073.7475pt x 205.76875pt>
 File: images/minimised.png Graphic file (type png)
 
 <use images/minimised.png>
-Package pdftex.def Info: images/minimised.png used on input line 593.
+Package pdftex.def Info: images/minimised.png used on input line 651.
 (pdftex.def)             Requested size: 455.24411pt x 45.17192pt.
- [28 <./images/errPanel.png> <./images/minimised.png>] <images/screenshotConfig
-.png, id=499, 1284.8pt x 722.7pt>
+ [29 <./images/errPanel.png> <./images/minimised.png>] <images/screenshotConfig
+.png, id=547, 2569.6pt x 1395.2125pt>
 File: images/screenshotConfig.png Graphic file (type png)
 
 <use images/screenshotConfig.png>
-Package pdftex.def Info: images/screenshotConfig.png used on input line 604.
-(pdftex.def)             Requested size: 455.24411pt x 256.06956pt.
+Package pdftex.def Info: images/screenshotConfig.png used on input line 662.
+(pdftex.def)             Requested size: 455.24411pt x 247.16762pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 609--610
+Underfull \hbox (badness 10000) in paragraph at lines 667--668
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--670
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 611--612
+Underfull \hbox (badness 10000) in paragraph at lines 679--680
 
  []
 
-[29 <./images/screenshotConfig.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 621--622
-
- []
-
-<images/saveConfigInDb.png, id=506, 655.44875pt x 693.59125pt>
+[30 <./images/screenshotConfig.png>]
+<images/saveConfigInDb.png, id=555, 655.44875pt x 693.59125pt>
 File: images/saveConfigInDb.png Graphic file (type png)
 
 <use images/saveConfigInDb.png>
-Package pdftex.def Info: images/saveConfigInDb.png used on input line 625.
+Package pdftex.def Info: images/saveConfigInDb.png used on input line 683.
 (pdftex.def)             Requested size: 455.24411pt x 481.74289pt.
- [30 <./images/saveConfigInDb.png>]
-<images/configFileValidation.png, id=513, 2569.6pt x 1395.2125pt>
+
+<images/configFileValidation.png, id=556, 2569.6pt x 1395.2125pt>
 File: images/configFileValidation.png Graphic file (type png)
 
 <use images/configFileValidation.png>
-Package pdftex.def Info: images/configFileValidation.png used on input line 635
+Package pdftex.def Info: images/configFileValidation.png used on input line 693
 .
 (pdftex.def)             Requested size: 455.24411pt x 247.16762pt.
- [31 <./images/configFileValidation.png>]
-[32] [33
+ [31 <./images/saveConfigInDb.png>]
+[32 <./images/configFileValidation.png>] [33
 
 ] [34] (./report.ann)
 \tf@ann=\write8
@@ -1956,7 +1961,60 @@ Package pdftex.def Info: images/configFileValidation.png used on input line 635
 ] [36]
 Appendix A.
 
-Overfull \hbox (41.6248pt too wide) in paragraph at lines 652--652
+Underfull \hbox (badness 1540) in paragraph at lines 710--710
+[]|\T1/lmr/m/sc/24.88 Process Ta-ble & Mon-i-tor
+ []
+
+
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 710--710
+[][] 
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+)
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 714.
+
+
+(/usr/share/texmf/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 714.
+
+Overfull \hbox (101.70251pt too wide) in paragraph at lines 715--716
+[][][][] 
+ []
+
+
+Overfull \hbox (101.70251pt too wide) in paragraph at lines 717--718
+[][][][] 
+ []
+
+
+Overfull \hbox (38.25284pt too wide) in paragraph at lines 722--723
+[][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (101.70251pt too wide) in paragraph at lines 728--729
+[][][][] 
+ []
+
+
+Overfull \hbox (101.70251pt too wide) in paragraph at lines 730--731
+[][][][] 
+ []
+
+[37
+
+] [38]
+Appendix B.
+
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 752--752
 [][] 
  []
 
@@ -1967,49 +2025,522 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 File: lstlang2.sty 2013/08/26 1.5b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 655.
+nput line 755.
 
 (./resources/rtis_config.cfg
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 1.
- (/usr/share/texmf/tex/latex/lm/omslmr.fd
-File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Font shape `OMS/lmr/m/it' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 1.
-
 Underfull \vbox (badness 2277) has occurred while \output is active []
 
- [37
+ [39
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38])
+ [40])
+[41] [42]
+Appendix C.
+
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 757--757
+[][] 
+ []
+
+<resources/statementOfWork.pdf, id=749, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+ <use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+ <use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+ <use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+ <use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+ <use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf>
+Package pdftex.def Info: resources/statementOfWork.pdf used on input line 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+ [43
+
+]
+<resources/statementOfWork.pdf, id=767, page=1, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 1>
+Package pdftex.def Info: resources/statementOfWork.pdf, page1 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 1>
+Package pdftex.def Info: resources/statementOfWork.pdf, page1 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 1>
+Package pdftex.def Info: resources/statementOfWork.pdf, page1 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 1>
+Package pdftex.def Info: resources/statementOfWork.pdf, page1 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 1>
+Package pdftex.def Info: resources/statementOfWork.pdf, page1 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [44 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=841,
+ page=2, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 2>
+Package pdftex.def Info: resources/statementOfWork.pdf, page2 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 2>
+Package pdftex.def Info: resources/statementOfWork.pdf, page2 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 2>
+Package pdftex.def Info: resources/statementOfWork.pdf, page2 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [45 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=847,
+ page=3, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 3>
+Package pdftex.def Info: resources/statementOfWork.pdf, page3 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 3>
+Package pdftex.def Info: resources/statementOfWork.pdf, page3 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 3>
+Package pdftex.def Info: resources/statementOfWork.pdf, page3 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [46 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=853,
+ page=4, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 4>
+Package pdftex.def Info: resources/statementOfWork.pdf, page4 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 4>
+Package pdftex.def Info: resources/statementOfWork.pdf, page4 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 4>
+Package pdftex.def Info: resources/statementOfWork.pdf, page4 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [47 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=859,
+ page=5, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 5>
+Package pdftex.def Info: resources/statementOfWork.pdf, page5 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 5>
+Package pdftex.def Info: resources/statementOfWork.pdf, page5 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 5>
+Package pdftex.def Info: resources/statementOfWork.pdf, page5 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [48 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=865,
+ page=6, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 6>
+Package pdftex.def Info: resources/statementOfWork.pdf, page6 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 6>
+Package pdftex.def Info: resources/statementOfWork.pdf, page6 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 6>
+Package pdftex.def Info: resources/statementOfWork.pdf, page6 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [49 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=872,
+ page=7, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 7>
+Package pdftex.def Info: resources/statementOfWork.pdf, page7 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 7>
+Package pdftex.def Info: resources/statementOfWork.pdf, page7 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 7>
+Package pdftex.def Info: resources/statementOfWork.pdf, page7 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [50 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=878,
+ page=8, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 8>
+Package pdftex.def Info: resources/statementOfWork.pdf, page8 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 8>
+Package pdftex.def Info: resources/statementOfWork.pdf, page8 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 8>
+Package pdftex.def Info: resources/statementOfWork.pdf, page8 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [51 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=884,
+ page=9, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 9>
+Package pdftex.def Info: resources/statementOfWork.pdf, page9 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 9>
+Package pdftex.def Info: resources/statementOfWork.pdf, page9 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 9>
+Package pdftex.def Info: resources/statementOfWork.pdf, page9 used on input lin
+e 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [52 <./resources/statementOfWork.pdf>] <resources/statementOfWork.pdf, id=890,
+ page=10, 597.23125pt x 845.1575pt>
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 10>
+Package pdftex.def Info: resources/statementOfWork.pdf, page10 used on input li
+ne 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 10>
+Package pdftex.def Info: resources/statementOfWork.pdf, page10 used on input li
+ne 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/statementOfWork.pdf Graphic file (type pdf)
+
+<use resources/statementOfWork.pdf, page 10>
+Package pdftex.def Info: resources/statementOfWork.pdf, page10 used on input li
+ne 759.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [53 <./resources/statementOfWork.pdf>] [54]
+Appendix D.
+
+Overfull \hbox (41.6248pt too wide) in paragraph at lines 761--761
+[][] 
+ []
+
+
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=900, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf>
+Package pdftex.def Info: resources/SATREF.pdf used on input line 763.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+File: resources/SATREF.pdf Graphic file (type pdf)
+<use resources/SATREF.pdf>
+Package pdftex.def Info: resources/SATREF.pdf used on input line 763.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+[55
+
+]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=909, page=1, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 1>
+Package pdftex.def Info: resources/SATREF.pdf, page1 used on input line 763.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 1>
+Package pdftex.def Info: resources/SATREF.pdf, page1 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 1>
+Package pdftex.def Info: resources/SATREF.pdf, page1 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 1>
+Package pdftex.def Info: resources/SATREF.pdf, page1 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 1>
+Package pdftex.def Info: resources/SATREF.pdf, page1 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [56 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=922, page=2, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 2>
+Package pdftex.def Info: resources/SATREF.pdf, page2 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 2>
+Package pdftex.def Info: resources/SATREF.pdf, page2 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 2>
+Package pdftex.def Info: resources/SATREF.pdf, page2 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [57 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=929, page=3, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 3>
+Package pdftex.def Info: resources/SATREF.pdf, page3 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 3>
+Package pdftex.def Info: resources/SATREF.pdf, page3 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 3>
+Package pdftex.def Info: resources/SATREF.pdf, page3 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [58 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=938, page=4, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 4>
+Package pdftex.def Info: resources/SATREF.pdf, page4 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 4>
+Package pdftex.def Info: resources/SATREF.pdf, page4 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 4>
+Package pdftex.def Info: resources/SATREF.pdf, page4 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [59 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=943, page=5, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 5>
+Package pdftex.def Info: resources/SATREF.pdf, page5 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 5>
+Package pdftex.def Info: resources/SATREF.pdf, page5 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 5>
+Package pdftex.def Info: resources/SATREF.pdf, page5 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [60 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=949, page=6, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 6>
+Package pdftex.def Info: resources/SATREF.pdf, page6 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 6>
+Package pdftex.def Info: resources/SATREF.pdf, page6 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 6>
+Package pdftex.def Info: resources/SATREF.pdf, page6 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [61 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=955, page=7, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 7>
+Package pdftex.def Info: resources/SATREF.pdf, page7 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 7>
+Package pdftex.def Info: resources/SATREF.pdf, page7 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 7>
+Package pdftex.def Info: resources/SATREF.pdf, page7 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [62 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=960, page=8, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 8>
+Package pdftex.def Info: resources/SATREF.pdf, page8 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 8>
+Package pdftex.def Info: resources/SATREF.pdf, page8 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 8>
+Package pdftex.def Info: resources/SATREF.pdf, page8 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [63 <./resources/SATREF.pdf>]
+
+pdfTeX warning: pdflatex (file ./resources/SATREF.pdf): PDF inclusion: found PD
+F version <1.6>, but at most version <1.5> allowed
+<resources/SATREF.pdf, id=965, page=9, 597.23125pt x 845.1575pt>
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 9>
+Package pdftex.def Info: resources/SATREF.pdf, page9 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+ <use resources/SATREF.pdf, page 9>
+Package pdftex.def Info: resources/SATREF.pdf, page9 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: resources/SATREF.pdf Graphic file (type pdf)
+
+<use resources/SATREF.pdf, page 9>
+Package pdftex.def Info: resources/SATREF.pdf, page9 used on input line 763.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [64 <./resources/SATREF.pdf>]
 
 AED: lastpage setting LastPage
-[39]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 660.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 660.
- (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 660.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 660.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 769.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 769.
+(./report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 769.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 769.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 7E9AE442FA9CF2B7BD6B3B36E6028F16;2285.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 660.
+(rerunfilecheck)             Checksum: 17E51BB30A1D883C0093BDC7DAA31C43;2894.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 769.
  ) 
 Here is how much of TeX's memory you used:
- 26569 strings out of 493304
- 476866 string characters out of 6139871
- 680273 words of memory out of 5000000
- 29183 multiletter control sequences out of 15000+600000
+ 26909 strings out of 493304
+ 483126 string characters out of 6139871
+ 681054 words of memory out of 5000000
+ 29444 multiletter control sequences out of 15000+600000
  110198 words of font info for 83 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 63i,12n,75p,990b,2341s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
+ 63i,18n,75p,1104b,2340s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exi
 st, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
-, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
 , replaced by a fixed one
@@ -2032,10 +2563,10 @@ ts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb><
 share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
 bols/msam10.pfb>
-Output written on report.pdf (45 pages, 10554368 bytes).
+Output written on report.pdf (70 pages, 11139138 bytes).
 PDF statistics:
- 762 PDF objects out of 1000 (max. 8388607)
- 655 compressed objects within 7 object streams
- 265 named destinations out of 1000 (max. 500000)
- 429 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1092 PDF objects out of 1200 (max. 8388607)
+ 892 compressed objects within 9 object streams
+ 337 named destinations out of 1000 (max. 500000)
+ 655 words of extra memory for PDF output out of 10000 (max. 10000000)
 

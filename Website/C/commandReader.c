@@ -343,14 +343,14 @@ INT32 main(int argc, char *argv[])
 		Reboot
 		*********************************************************************
 		*/				
-		} else if(msgType == 13){
+		} else if(ucMsgType == FIRST_MSG_TYPE+3){
 			status = system("./RTIS_KILL_ALL.sh");
 		/*
 		*********************************************************************
 		Error messages
 		*********************************************************************
 		*/				
-		} else if(msgType == 14){
+		} else if(ucMsgType == FIRST_MSG_TYPE+4){
 			
 			//forking, to have a child reading error messages.
 			
@@ -391,5 +391,3 @@ INT32 main(int argc, char *argv[])
 		}
 	}
 }
-‮tt
-ABCDEFGHIJKLM‮NOPQRSTUVWXtest

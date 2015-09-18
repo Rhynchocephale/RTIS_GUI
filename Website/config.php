@@ -31,7 +31,7 @@
 			<div class="pull-right">
 				<button name="saveSendFileButton" type="button" class="btn btn-success" onclick="checkAndSubmitFile(1);">Save & send</button>
 				<button name="saveFileButton" type="button" class="btn btn-primary" onclick="checkAndSubmitFile(0);">Save</button>
-				<button name="sendFileButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSaveFile">Send (but don't save)</button>
+				<!--<button name="sendFileButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSaveFile">Send (but don't save)</button>-->
 			</div>
 
 			<!-- Send (no save) -->
@@ -530,7 +530,7 @@
 			<div class="pull-right">
 				<button name="saveSendButton" type="button" class="btn btn-success" onclick="checkAndSubmit(1);">Save & send</button>
 				<button name="saveButton" type="button" class="btn btn-primary" onclick="checkAndSubmit(0);">Save</button>
-				<button name="sendButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>
+				<!--<button name="sendButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>-->
 			</div>
 
 			<!-- Send (no save) -->

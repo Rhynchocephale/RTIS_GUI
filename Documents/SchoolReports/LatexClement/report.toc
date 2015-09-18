@@ -20,15 +20,22 @@
 \contentsline {section}{\numberline {2.2}Architecture}{19}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Global overview}{19}{subsection.2.2.1}
 \contentsline {subsubsection}{\numberline {2.2.1.1}A brief overview of the RTIS software}{19}{subsubsection.2.2.1.1}
-\contentsline {subsubsection}{\numberline {2.2.1.2}The general idea behind the architecture}{20}{subsubsection.2.2.1.2}
+\contentsline {subsubsection}{\numberline {2.2.1.2}The general idea behind the architecture}{21}{subsubsection.2.2.1.2}
 \contentsline {subsection}{\numberline {2.2.2}In-depth descriptions of the modules}{21}{subsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.2.1}Command senders}{21}{subsubsection.2.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2.2}Command reader \& data sender}{23}{subsubsection.2.2.2.2}
+\contentsline {subsubsubsection}{\numberline {2.2.2.1.a}MON \& PROC commands}{23}{subsubsubsection.2.2.2.1.1}
+\contentsline {subsubsubsection}{\numberline {2.2.2.1.b}REB commands}{23}{subsubsubsection.2.2.2.1.2}
+\contentsline {subsubsubsection}{\numberline {2.2.2.1.c}ERR commands}{23}{subsubsubsection.2.2.2.1.3}
+\contentsline {subsubsubsection}{\numberline {2.2.2.1.d}CFG commands}{23}{subsubsubsection.2.2.2.1.4}
+\contentsline {subsubsection}{\numberline {2.2.2.2}Command reader \& data sender}{24}{subsubsection.2.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.2.3}Data reader}{24}{subsubsection.2.2.2.3}
-\contentsline {subsubsection}{\numberline {2.2.2.4}A previous model}{24}{subsubsection.2.2.2.4}
-\contentsline {section}{\numberline {2.3}The GUI}{26}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}General presentation}{26}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}Receiving data}{27}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Sending \& saving configuration files}{29}{subsection.2.3.3}
+\contentsline {subsubsection}{\numberline {2.2.2.4}A previous model}{25}{subsubsection.2.2.2.4}
+\contentsline {section}{\numberline {2.3}The GUI}{27}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}General presentation}{27}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Receiving data}{28}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Sending \& saving configuration files}{30}{subsection.2.3.3}
 \contentsline {part}{Conclusion}{33}{chapter*.22}
-\contentsline {chapter}{\numberline {A}Example of a RTIS configuration file}{37}{Appendix.1.A}
+\contentsline {chapter}{\numberline {A}Process Table \& Monitor Data Structures}{37}{Appendix.1.A}
+\contentsline {chapter}{\numberline {B}Example of a RTIS configuration file}{39}{Appendix.1.B}
+\contentsline {chapter}{\numberline {C}Statement of Work}{43}{Appendix.1.C}
+\contentsline {chapter}{\numberline {D}SATREF Extended Message Protocol Specification}{55}{Appendix.1.D}

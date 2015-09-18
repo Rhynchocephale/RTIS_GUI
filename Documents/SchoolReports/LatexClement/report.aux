@@ -44,6 +44,7 @@
 \newacro{DSHEI}[\AC@hyperlink{DSHEI}{DSHEI}]{D\IeC {\'e}partement des Sciences Humaines, des relations Entreprises et des relations Internationales = Social Sciences, Industry relations and International relations Department}
 \newacro{ENSG}[\AC@hyperlink{ENSG}{ENSG}]{\IeC {\'E}cole Nationale des Sciences G\IeC {\'e}ographiques = National School of Geographic Sciences}
 \newacro{ERR}[\AC@hyperlink{ERR}{ERR}]{ERRor messages}
+\newacro{FIFO}[\AC@hyperlink{FIFO}{FIFO}]{First In, First Out}
 \newacro{FTP}[\AC@hyperlink{FTP}{FTP}]{File Transfer Protocol}
 \newacro{GPS}[\AC@hyperlink{GPS}{GPS}]{Global Positioning System}
 \newacro{GLONASS}[\AC@hyperlink{GLONASS}{GLONASS}]{GLObal NAvigation Satellite System}
@@ -52,19 +53,18 @@
 \newacro{GUI}[\AC@hyperlink{GUI}{GUI}]{Graphical User Interface}
 \newacro{IGN}[\AC@hyperlink{IGN}{IGN}]{Institut G\IeC {\'e}ographique National = National Geographical Institute}
 \newacro{IP}[\AC@hyperlink{IP}{IP}]{Internet Protocol}
+\newacro{IPC}[\AC@hyperlink{IPC}{IPC}]{Inter-Process Communication device}
 \newacro{MON}[\AC@hyperlink{MON}{MON}]{MONitoring table}
 \newacro{NMA}[\AC@hyperlink{NMA}{NMA}]{Norwegian Mapping Authority, the English name of Kartverket}
 \newacro{OS}[\AC@hyperlink{OS}{OS}]{Operating System}
 \newacro{PHP}[\AC@hyperlink{PHP}{PHP}]{PHP: Hypertext Preprocessor (recursive acronym)}
 \newacro{PROC}[\AC@hyperlink{PROC}{PROC}]{list of active PROCesses}
 \newacro{RTIS}[\AC@hyperlink{RTIS}{RTIS}]{Real-Time Ionosphere Scintillation}
-\newacro{RTIM}[\AC@hyperlink{RTIM}{RTIM}]{Real Time Ionosphere Monitor}
 \newacro{SATREF}[\AC@hyperlink{SATREF}{SATREF}]{SATellittbasert REFeransesystem = Satellite-based Reference System}
 \newacro{SSH}[\AC@hyperlink{SSH}{SSH}]{Secure SHell}
 \newacro{TCP}[\AC@hyperlink{TCP}{TCP}]{Transmission Control Protocol}
 \newacro{UDP}[\AC@hyperlink{UDP}{UDP}]{User Datagram Protocol}
 \newacro{UML}[\AC@hyperlink{UML}{UML}]{Unified Modelling Language}
-\newacro{USB}[\AC@hyperlink{USB}{USB}]{Universal Serial Bus}
 \@writefile{toc}{\contentsline {chapter}{Introduction}{9}{chapter*.5}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Definition of the objectives}{11}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
@@ -81,10 +81,9 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}What exists to monitor it: description of the existing}{14}{section.1.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Monitoring table as seen with rtis\_mon\relax }}{14}{figure.caption.9}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}What needs to be done: goals and expected functionalities}{15}{section.1.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Statement Of Work, as present in the intership agreement\relax }}{15}{figure.caption.10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.1}Visualising data}{15}{subsection.1.3.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.2}Modifying the RTIS behaviour}{16}{subsection.1.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Use-case diagram of the GUI\relax }}{16}{figure.caption.11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Use-case diagram of the GUI\relax }}{16}{figure.caption.10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.3}The problem of the bandwidth}{16}{subsection.1.3.3}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3.4}Miscellaneous}{17}{subsection.1.3.4}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}The proposed solution}{19}{chapter.2}}
@@ -94,37 +93,57 @@
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Architecture}{19}{section.2.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Global overview}{19}{subsection.2.2.1}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1.1}A brief overview of the RTIS software}{19}{subsubsection.2.2.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1.2}The general idea behind the architecture}{20}{subsubsection.2.2.1.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces General organisation of the solution, working document\relax }}{20}{figure.caption.12}}
-\newlabel{generalOrganisation}{{2.1}{20}{General organisation of the solution, working document\relax }{figure.caption.12}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces General organisation of the solution, working document\relax }}{20}{figure.caption.11}}
+\newlabel{generalOrganisation}{{2.1}{20}{General organisation of the solution, working document\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1.2}The general idea behind the architecture}{21}{subsubsection.2.2.1.2}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}In-depth descriptions of the modules}{21}{subsection.2.2.2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.1}Command senders}{21}{subsubsection.2.2.2.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Detailed organisation of the modules, working document\relax }}{22}{figure.caption.13}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.2}Command reader \& data sender}{23}{subsubsection.2.2.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Detailed organisation of the modules, working document\relax }}{22}{figure.caption.12}}
+\@writefile{toc}{\contentsline {subsubsubsection}{\numberline {2.2.2.1.a}MON \& PROC commands}{23}{subsubsubsection.2.2.2.1.1}}
+\@writefile{toc}{\contentsline {subsubsubsection}{\numberline {2.2.2.1.b}REB commands}{23}{subsubsubsection.2.2.2.1.2}}
+\@writefile{toc}{\contentsline {subsubsubsection}{\numberline {2.2.2.1.c}ERR commands}{23}{subsubsubsection.2.2.2.1.3}}
+\@writefile{toc}{\contentsline {subsubsubsection}{\numberline {2.2.2.1.d}CFG commands}{23}{subsubsubsection.2.2.2.1.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Table of the different existing message types and their description\relax }}{23}{figure.caption.13}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.2}Command reader \& data sender}{24}{subsubsection.2.2.2.2}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.3}Data reader}{24}{subsubsection.2.2.2.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.4}A previous model}{24}{subsubsection.2.2.2.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Explanation of the algorithm, transposed to Python pseudocode\relax }}{25}{figure.caption.14}}
-\newlabel{fig:pseudocode}{{2.3}{25}{Explanation of the algorithm, transposed to Python pseudocode\relax }{figure.caption.14}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}The GUI}{26}{section.2.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}General presentation}{26}{subsection.2.3.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Screenshot of the interface, data tab\relax }}{26}{figure.caption.15}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Responsive design: minimised menu on the left, deployed menu on the right\relax }}{27}{figure.caption.16}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Receiving data}{27}{subsection.2.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces The error messages panel\relax }}{28}{figure.caption.17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces An example of a minimised panel\relax }}{28}{figure.caption.18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Sending \& saving configuration files}{29}{subsection.2.3.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Screenshot of the config tab\relax }}{29}{figure.caption.19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Activity diagram of saving a file F in the database.\relax }}{30}{figure.caption.20}}
-\newlabel{fig:saveConfig}{{2.9}{30}{Activity diagram of saving a file F in the database.\relax }{figure.caption.20}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Screenshot of filling in the form for a configuration file, halfway through: successfully filled input fields are circled in green, errors are filled in red with a little explanation text.\relax }}{31}{figure.caption.21}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2.4}A previous model}{25}{subsubsection.2.2.2.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Explanation of the algorithm, transposed to Python pseudocode\relax }}{26}{figure.caption.14}}
+\newlabel{fig:pseudocode}{{2.4}{26}{Explanation of the algorithm, transposed to Python pseudocode\relax }{figure.caption.14}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}The GUI}{27}{section.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}General presentation}{27}{subsection.2.3.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Screenshot of the interface, data tab\relax }}{27}{figure.caption.15}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces Responsive design: minimised menu on the left, deployed menu on the right\relax }}{28}{figure.caption.16}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.2}Receiving data}{28}{subsection.2.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces The error messages panel\relax }}{29}{figure.caption.17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces An example of a minimised panel\relax }}{29}{figure.caption.18}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3.3}Sending \& saving configuration files}{30}{subsection.2.3.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Screenshot of the config tab\relax }}{30}{figure.caption.19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces Activity diagram of saving a file F in the database.\relax }}{31}{figure.caption.20}}
+\newlabel{fig:saveConfig}{{2.10}{31}{Activity diagram of saving a file F in the database.\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Screenshot of filling in the form for a configuration file, halfway through: successfully filled input fields are circled in green, errors are filled in red with a little explanation text.\relax }}{32}{figure.caption.21}}
 \@writefile{toc}{\contentsline {part}{Conclusion}{33}{chapter*.22}}
 \newlabel{beginappendices}{{2.3.3}{35}{Conclusion}{chapter*.22}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Example of a RTIS configuration file}{37}{Appendix.1.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Process Table \& Monitor Data Structures}{37}{Appendix.1.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{ann}{\contentsline {annexe}{\numberline {A} Example of a RTIS configuration file}{37}{annexenb.1}}
-\newlabel{configfile}{{A}{37}{Example of a RTIS configuration file}{annexenb.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{resources/rtis\textunderscore config.cfg}{37}{lstlisting.1.A.-2}}
-\newlabel{LastPage}{{}{39}{}{page.39}{}}
-\xdef\lastpage@lastpage{39}
-\xdef\lastpage@lastpageHy{39}
+\@writefile{ann}{\contentsline {annexe}{\numberline {A} Process Table \& Monitor Data Structures}{37}{annexenb.1}}
+\newlabel{structures}{{A}{37}{Process Table \& Monitor Data Structures}{annexenb.1}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Example of a RTIS configuration file}{39}{Appendix.1.B}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{ann}{\contentsline {annexe}{\numberline {B} Example of a RTIS configuration file}{39}{annexenb.2}}
+\newlabel{configfile}{{B}{39}{Example of a RTIS configuration file}{annexenb.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{resources/rtis\textunderscore config.cfg}{39}{lstlisting.1.B.-3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {C}Statement of Work}{43}{Appendix.1.C}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{ann}{\contentsline {annexe}{\numberline {C} Statement of Work}{43}{annexenb.3}}
+\newlabel{SOW}{{C}{43}{Statement of Work}{annexenb.3}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {D}SATREF Extended Message Protocol Specification}{55}{Appendix.1.D}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{ann}{\contentsline {annexe}{\numberline {D} SATREF Extended Message Protocol Specification}{55}{annexenb.4}}
+\newlabel{satref}{{D}{55}{SATREF Extended Message Protocol Specification}{annexenb.4}{}}
+\newlabel{LastPage}{{}{64}{}{page.64}{}}
+\xdef\lastpage@lastpage{64}
+\xdef\lastpage@lastpageHy{64}

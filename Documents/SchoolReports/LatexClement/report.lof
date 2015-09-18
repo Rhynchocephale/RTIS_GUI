@@ -7,17 +7,20 @@
 \contentsline {figure}{\numberline {1.2}{\ignorespaces Frequency of scintillations (P. Kintner, 2009)\relax }}{12}{figure.caption.7}
 \contentsline {figure}{\numberline {1.3}{\ignorespaces Map of NMA scintillation receivers\relax }}{13}{figure.caption.8}
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Monitoring table as seen with rtis\_mon\relax }}{14}{figure.caption.9}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Statement Of Work, as present in the intership agreement\relax }}{15}{figure.caption.10}
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Use-case diagram of the GUI\relax }}{16}{figure.caption.11}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Use-case diagram of the GUI\relax }}{16}{figure.caption.10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces General organisation of the solution, working document\relax }}{20}{figure.caption.12}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Detailed organisation of the modules, working document\relax }}{22}{figure.caption.13}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Explanation of the algorithm, transposed to Python pseudocode\relax }}{25}{figure.caption.14}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Screenshot of the interface, data tab\relax }}{26}{figure.caption.15}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Responsive design: minimised menu on the left, deployed menu on the right\relax }}{27}{figure.caption.16}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces The error messages panel\relax }}{28}{figure.caption.17}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces An example of a minimised panel\relax }}{28}{figure.caption.18}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Screenshot of the config tab\relax }}{29}{figure.caption.19}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Activity diagram of saving a file F in the database.\relax }}{30}{figure.caption.20}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Screenshot of filling in the form for a configuration file, halfway through: successfully filled input fields are circled in green, errors are filled in red with a little explanation text.\relax }}{31}{figure.caption.21}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces General organisation of the solution, working document\relax }}{20}{figure.caption.11}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Detailed organisation of the modules, working document\relax }}{22}{figure.caption.12}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Table of the different existing message types and their description\relax }}{23}{figure.caption.13}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Explanation of the algorithm, transposed to Python pseudocode\relax }}{26}{figure.caption.14}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Screenshot of the interface, data tab\relax }}{27}{figure.caption.15}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Responsive design: minimised menu on the left, deployed menu on the right\relax }}{28}{figure.caption.16}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces The error messages panel\relax }}{29}{figure.caption.17}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces An example of a minimised panel\relax }}{29}{figure.caption.18}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Screenshot of the config tab\relax }}{30}{figure.caption.19}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Activity diagram of saving a file F in the database.\relax }}{31}{figure.caption.20}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Screenshot of filling in the form for a configuration file, halfway through: successfully filled input fields are circled in green, errors are filled in red with a little explanation text.\relax }}{32}{figure.caption.21}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
 \addvspace {10\p@ }
