@@ -246,7 +246,9 @@ Last but not least, I would like to give a big thanks to Zuheir Altamimi to whom
 \newevenpage
 \chapter*{Introduction}
   \addcontentsline{toc}{chapter}{Introduction}
-  Due to the high latitude of Norway and of the norwegian islands, the country is subject to space phenomena, dont une des manifestations les plus fréquentes are aurora borealis. They are also responsible for irregularities in the electron distribution in the ionosphere, that can directly impact the quality of GNSS observations across the country.\\ The Real-Time Ionospheric Scintillation monitor software has been developed to measure and quantify this phenomenon, and has been deployed in 12 stations all across the Norwegian Sea. These stations send their data to a server in Hønefoss, where the Norwegian Mapping Authority is located. This internship, however, has nothing to do with this data: it aims to see the creation of a new graphical user interface that would allow to easily monitor the stations of the RTIS network.
+  Due to the high latitude of Norway and of the norwegian islands, the country is subjected to solar winds, one of whose most well-known manifestations are aurora borealis. They are also responsible for irregularities in the electron distribution in the ionosphere, that can directly impact the quality of GNSS observations across the country.\\ The Real-Time Ionospheric Scintillation monitor software has been developed to measure and quantify this phenomenon, and has been deployed in 12 stations all across the Norwegian Sea. These stations send their data to a server in Hønefoss, where the Norwegian Mapping Authority is located. This internship, however, has nothing to do with this data: it aims to see the creation of a new graphical user interface that would allow to easily monitor the stations of the RTIS network. The user should be able visualise some of their data, reboot them, and even modify some aspects of their behaviour. The existing solution for monitoring, while working, lacks ergonomics and practicality. \\
+  
+The expected output of this internship is thus a user-friendly GUI in the form of a web application that would fulfil the requirements stated by the NMA. The application conceived and developed during this internship would then be deployed in the NMA network for an internal use.
   \vspace{1.5cm}
 	
 %-------------------------------------------------------------------------------
@@ -329,7 +331,7 @@ Although this method works, a few problems arise.
 
 \section{What needs to be done: goals and expected functionalities}
 
-The making of a new Graphical User Interface (GUI) obviously aims at solving the aforementioned problems. Most of the requirements have been stated in my Statement of Work, in Annexe~\ref{SOW}. They will be detailed here. \\
+The making of a new Graphical User Interface (GUI) obviously aims at solving the aforementioned problems. The requirements have been stated in my Statement of Work, in Annexe~\ref{SOW}, and, as we will see, have been fulfilled. They will be detailed here. \\
 
 
 The GUI should be a web application, preferably a light client that requires no installation whatsoever on the user side. The new GUI should allow the user to quickly see the status of every station, to connect to any of them, and to see any of the monitoring table, the list of active processes on the remote station, or the error messages\footnote{The \textit{error message} denomination encompasses all of the status messages returned by the applications within the RTIS system. The denomination can be misleading, since this also includes success messages.} returned by the software, to reboot the whole RTIS software, or to change its configuration file It combines both the status information obtained from the alarm system and the monitor data. 
@@ -653,7 +655,7 @@ Each of these panels can be minimised by clicking on the blue title bar, and mak
 \end{figure}
 
 
-The config tab is here to allow the user to send its own configuration files to the remote RTIS station. I chose to allow the file to be input either by a direct file upload or by a form that has to be manually completed, as either way can be practical depending on what the user wants to do. Going through the form can be longer than just uploading a file, but it allows to load an existing file and just modify a few fields. à, Moreover, the very idea of having to upload files from the device does not go well with the requirement of the web page being mobile-device friendly.\\
+The config tab is here to allow the user to send its own configuration files to the remote RTIS station. I chose to allow the file to be input either by a direct file upload or by a form that has to be manually completed, as either way can be practical depending on what the user wants to do. Going through the form can be longer than just uploading a file, but it allows to load an existing file and just modify a few fields. Moreover, the very idea of having to upload files from the device does not go well with the requirement of the web page being mobile-device friendly.\\
 
 All the configuration files that are entered through this tool are stored into a database on the web server. This database only consists of one table, the configuration files, will not contain a lot of data, and is only ever asked to do simple read or write operations, without any join. I thus chose to use a basic mySQL relational database.\\
 
@@ -690,6 +692,12 @@ It is also possible to remove a file from the database from the GUI by selecting
 \newevenpage
 \chapter*{Conclusion}
   \addcontentsline{toc}{part}{Conclusion}
+  
+	On a technical point of view, I think this internship has been a success. The solution I have come up with is efficient, works well, looks nice and answers to all of the requests that have been expressed and more.\\
+	This internship has taught me a lot about estimating time: while my estimations for "big modules" have been quite accurate, I tended to minimise the time for all the smaller pieces of code. And in the context of a GUI, there are a lot of small things that have to be done, a lot of special cases that have to be dealt with and created custom displays for within the interface. This is this very part of the coding, linking the GUI to the code behind and displaying messages for every single output \& possible error message, that has taken me the most time in this whole internship. Having a working code was not that hard, but creating a nice display for it was, as I found out, quite unpredictably time-consuming. Even if I did not have time to implement some minor features I would have liked to add, I am still proud of what I have handed in.\\
+	
+	On a personal aspect now, this was the longest project I have ever had to conduct, and I was given a lot of independence, be it on the rhythm of the work, or even the technical solution. It has taught me a lot about working by myself and self-motivation. On the whole, it was a very positive and rewarding experience.
+	  
   \vspace{1.5cm}
 
 \newevenpage
@@ -708,7 +716,7 @@ RTIS Process Table
 typedef struct
 {
 	pid_t 			Pid;
-	char	 	    		IntName[GL_PROCESS_NAME_SIZE];
+	char	 	   	IntName[GL_PROCESS_NAME_SIZE];
 	INT32			iStartTime;
 	INT8 			ActionFlag;
 }rtis_TProcessTableInfo;
