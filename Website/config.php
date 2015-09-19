@@ -35,7 +35,7 @@
 			</div>
 
 			<!-- Send (no save) -->
-			<div class="modal fade" id="confirmNoSaveFile" tabindex="-1" role="dialog" aria-labelledby="confirmNoSaveFile" aria-hidden="true">
+			<!--<div class="modal fade" id="confirmNoSaveFile" tabindex="-1" role="dialog" aria-labelledby="confirmNoSaveFile" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 						<div class="modal-header">
@@ -54,7 +54,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>-->
 
 		</form>
 	</div>
@@ -72,27 +72,11 @@
 				<select id="selectConfig" name="selectConfig" class="form-control" onchange="prefillFields();" required>
 					<option value="-1">No file found</option>
 				</select>
-				<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#confirmDelete"><i class="fa fa-trash"></i> Irreversibly delete this file</button>
+				<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#confirmDelete" onclick="isItFirstElement()"><i class="fa fa-trash"></i> Irreversibly delete this file</button>
 			</div>
 			<br/>
 
 			<div class="modal fade" id="confirmDelete" tabindex="-1" role="dialog" aria-labelledby="confirmDelete" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2 class="modal-title">Are you sure you want to do this?</h2>
-						</div>
-						<div class="modal-body">
-							<h3>This file will be deleted from the database only, with no possible recovery.
-							Please note that this will not affect the remote station at all.
-							Do you really want to continue?</h3>
-						</div>
-						<div class="modal-footer">
-							<button type="button" name="deleteButton" class="btn btn-danger" data-dismiss="modal" onclick="deleteFileFromDb();">Yep, sure.</button>
-							<button type="button" class="btn btn-success" data-dismiss="modal">Well, not really.</button>
-						</div>
-					</div>
-				</div>
 			</div>
 		</form>
 
@@ -562,6 +546,43 @@
 <script>
 	setActive("li-config");
 	getList();
+	
+	function isItFirstElement(){
+		
+		var x = document.getElementById("selectConfig").selectedIndex;
+		var newContent = "";
+		
+		newContent += '<div class="modal-dialog">';
+		newContent += '	<div class="modal-content">';
+		newContent += '		<div class="modal-header">';
+		
+		if(x==0){
+			newContent += '			<h2 class="modal-title">This is the active file!</h2>';
+			newContent += '		</div>';
+			newContent += '		<div class="modal-body">';
+			newContent += '			<h3>This file is the current active file on the distant station. It cannot be deleted.</h3>';
+			newContent += '		</div>';
+			newContent += '		<div class="modal-footer">';
+			newContent += '			<button type="button" class="btn btn-success" data-dismiss="modal">Ok, understood.</button>';
+			
+		} else {
+			newContent += '			<h2 class="modal-title">Are you sure you want to do this?</h2>';
+			newContent += '		</div>';
+			newContent += '		<div class="modal-body">';
+			newContent += '			<h3>This file will be deleted from the database only, with no possible recovery.';
+			newContent += '			Please note that this will not affect the remote station at all.';
+			newContent += '			Do you really want to continue?</h3>';
+			newContent += '		</div>';
+			newContent += '		<div class="modal-footer">';
+			newContent += '			<button type="button" name="deleteButton" class="btn btn-danger" data-dismiss="modal" onclick="deleteFileFromDb();">Yep, sure.</button>';
+			newContent += '			<button type="button" class="btn btn-success" data-dismiss="modal">Well, not really.</button>';
+		}
+		
+		newContent += '		</div>';
+		newContent += '	</div>';
+		newContent += '</div>';
+		document.getElementById("confirmDelete").innerHTML = newContent;
+	}
 	
 	<?php include("js/ajaxSubmissions.php"); ?>
 </script>
