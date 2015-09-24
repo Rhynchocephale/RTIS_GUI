@@ -1,5 +1,5 @@
 <?php
-$timeout = 10;
+$timeout = 15;
 
 $toSend = '';
 $split = explode(",",$_POST["array"]);
@@ -12,7 +12,7 @@ $now = time();
 $returnValue = 1;
 while($returnValue != 0) {
 	if(time() - $now > $timeout){
-		//echo "TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS";
+		echo "TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS";
 		ob_flush();
 		flush();
 	}
@@ -20,4 +20,6 @@ while($returnValue != 0) {
 	sleep(1);
 }
 echo "Success";
+ob_flush();
+flush();
 ?>
