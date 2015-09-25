@@ -8,27 +8,22 @@ while(true) {
 	$now = time();
 	$returnValue = 1;
 	while($returnValue != 0) {
-		if(time() - $now > $timeout){
-			//echo "data: TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS\n\n";
+		$elapsedTime = time() - $now;
+		if($elapsedTime > $timeout){
+			echo "data: TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$elapsedTime." SECONDS. RETRYING.\n\n";
 			ob_flush();
 			flush();
 		}
-		//exec("cd ../../C && ./commandSenderData ".$_GET["sta"]." 0",$output,$returnValue);
+		exec("cd ../../C/Server && ./commandSenderData ".$_GET["sta"]." 0",$output,$returnValue);
+		sleep(1);
 	}
 	
-	$fileContents = file_get_contents("./process.txt");
-	//$time = date('r');
-	//$newData = rand(0, 1000);
-	if($fileContents){
-		echo "data: Contents of the file: ".$fileContents."\n\n";
-		//echo "data: <tr><td>Server time:</td><td>".$time."</td></tr><tr><td>Random number</td><td>".$newData."</td></tr>\n\n"; //$newData
-		ob_flush();
-		flush();
+	echo "data: ".$output."\n\n";
+	ob_flush();
+	flush();
+	$remainingSleep = $procFreq - $elapsedTime;
+	if($remainingSleep > 0){
 		sleep($procFreq);
-	} else {
-		echo "data: No data received yet.\n\n";
-		ob_flush();
-		flush();
 	}
 }
 

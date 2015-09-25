@@ -4,13 +4,25 @@ header('Cache-Control: no-cache');
 include("commandSenderData.php");
 
 while(true) {
-	$date = date('r');
-	$newdate = strtotime ( '-10 days' , strtotime ( $date ) ) ;
-	$time = date ( 'r' , $newdate );
-	$newData = rand(0, 1000);
-	echo "data: <tr><td>Server time:</td><td>".$time."</td></tr><tr><td>Random number</td><td>".$newData."</td></tr>\n\n";
+	$now = time();
+	$returnValue = 1;
+	while($returnValue != 0) {
+		$elapsedTime = time() - $now;
+		if($elapsedTime > $timeout){
+			echo "data: TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$elapsedTime." SECONDS. RETRYING.\n\n";
+			ob_flush();
+			flush();
+		}
+		exec("cd ../../C/Server && ./commandSenderData ".$_GET["sta"]." 1",$output,$returnValue);
+		sleep(1);
+	}
+	
+	echo "data: ".$output."\n\n";
 	ob_flush();
 	flush();
-	sleep($monFreq);
+	$remainingSleep = $procFreq - $elapsedTime;
+	if($remainingSleep > 0){
+		sleep($procFreq);
+	}
 }
 ?>

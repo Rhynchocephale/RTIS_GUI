@@ -73,6 +73,20 @@
 %\setbeamertemplate{footline} % To remove the footer line in all slides uncomment this line
 %\setbeamertemplate{footline}[page number] % To replace the footer line in all slides with a simple slide count uncomment this line
 
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
 \setbeamertemplate{navigation symbols}{} % To remove the navigation symbols from the bottom of all slides uncomment this line
 }
 
@@ -80,6 +94,10 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
+\usepackage{appendixnumberbeamer}
+
+
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -112,29 +130,67 @@ National Mapping Authority
 %----------------------------------------------------------------------------------------
 
 %------------------------------------------------
-\section{First Section} % Sections can be created in order to organize your presentation into discrete blocks, all sections and subsections are automatically printed in the table of contents as an overview of the talk
-%------------------------------------------------
-
-\subsection{Subsection Example} % A subsection can be created just before a set of slides with a common theme to further break down your presentation into chunks
+\section{Brief presentation of the context}
 
 \begin{frame}
-\frametitle{Paragraphs of Text}
-Sed iaculis dapibus gravida. Morbi sed tortor erat, nec interdum arcu. Sed id lorem lectus. Quisque viverra augue id sem ornare non aliquam nibh tristique. Aenean in ligula nisl. Nulla sed tellus ipsum. Donec vestibulum ligula non lorem vulputate fermentum accumsan neque mollis.\\~\\
+\frametitle{Description of RTIS}
+\begin{itemize}
+\item The Real-Time Ionospheric Scintillation Monitor (RTIS) is a software developed by the Norwegian Mapping Authority (NMA)
+\item It is deployed in twelve observation stations, spread all across Norway and the Norwegian Sea. %speak about remoteness
+\end{itemize}
 
-Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. Aliquam vel dui orci, a porta odio. Nullam id suscipit ipsum. Aenean lobortis commodo sem, ut commodo leo gravida vitae. Pellentesque vehicula ante iaculis arcu pretium rutrum eget sit amet purus. Integer ornare nulla quis neque ultrices lobortis. Vestibulum ultrices tincidunt libero, quis commodo erat ullamcorper id.
+\begin{figure}
+	\includegraphics[width=0.7\linewidth]{images/rtisMap}
+\end{figure}
+
 \end{frame}
 
 %------------------------------------------------
 
 \begin{frame}
-\frametitle{Bullet Points}
+\frametitle{Ionospheric Scintillation}
 \begin{itemize}
-\item Lorem ipsum dolor sit amet, consectetur adipiscing elit
-\item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
-\item Nulla commodo, erat quis gravida posuere, elit lacus lobortis est, quis porttitor odio mauris at libero
-\item Nam cursus est eget velit posuere pellentesque
-\item Vestibulum faucibus velit a augue condimentum quis convallis nulla gravida
+	\item[] Phenomenon related to solar winds.
+	\item[] Lessens quality of GNSS observations.
 \end{itemize}
+
+\begin{figure}
+	\includegraphics[width=0.7\linewidth]{images/auroral_oval}
+\end{figure}
+
+\end{frame}
+
+%------------------------------------------------
+
+
+\begin{frame}
+\frametitle{Goal of the internship}
+
+Create an interface for monitoring the stations:
+\begin{itemize}
+	\item Visualise data
+	\item Get application messages %aka error messages
+	\item Change configuration files
+	\item Reboot the system
+\end{itemize}
+
+\end{frame}
+
+%------------------------------------------------
+
+\section{The architecture}
+
+
+\begin{frame}[plain]{}
+	\centering
+	\includegraphics[height=\paperheight]{../LatexClement/images/global_flowchart.png}
+\end{frame}
+
+\subsection{Limiting the bandwidth}
+\begin{frame}
+
+\frametitle{Requirements}
+Low bandwidth on some stations $\Rightarrow$ minimise exchanges.
 \end{frame}
 
 %------------------------------------------------
@@ -155,7 +211,7 @@ Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenati
 \end{frame}
 
 %------------------------------------------------
-
+\subsection{Test again 3}
 \begin{frame}
 \frametitle{Multiple Columns}
 \begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
@@ -238,25 +294,22 @@ This statement requires citation \cite{p1}.
 \end{frame}
 
 %------------------------------------------------
+\section{}
 
 \begin{frame}
 \Huge{\centerline{The End}}
-\end{frame}
-
-%------------------------------------------------.
-
-
-\begin{frame}[plain]
-	\hspace*{-5mm}
-	\includegraphics[width=\paperwidth]{../Poster/poster.png}
 \end{frame}
 
 
 %------------------------------------------------
-
-\begin{frame}
-\Huge{\centerline{The End}}
+\appendix
+\bgroup
+\setbeamercolor{background canvas}{bg=black}
+\begin{frame}[plain]{}
+	\hspace*{-4.5mm}
+	\includegraphics[width=\paperwidth]{../Poster/poster.png}
 \end{frame}
+\egroup
 
 %----------------------------------------------------------------------------------------
 

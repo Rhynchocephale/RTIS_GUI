@@ -1,7 +1,5 @@
 #define GL_PC_LINUX
-#define CONFIG_FILE_SIZE = 335
-#define HEADER_SIZE = 20
-#define CMD_CONFIG_MSG_TYPE = 11
+
 #include <gl_App.h>
 #include <stdio.h>
 
@@ -11,20 +9,15 @@ INT32 main(int argc, char *argv[])
 	char 					szProcessName[]="";
 	char 					szFunctionName[]="main";
 	
+	pid_t					pid;
+	
 	INT32					i;
-	INT32					n;	
 	
 	gl_TSatrefExtMsg		satrefMsg;
-	gl_TSatrefExtHeader		msgHead;
-	UINT8					msgBody[CONFIG_FILE_SIZE];
-	
-	pid_t 					pid;
 	
 	gl_TError 				Error;
 	gl_TDevice 				ErrDev[RTIS_MAX_NO_OF_ERROR_DEV];
-	
-	const char *			delimitor=",";
-		
+			
 	/*
 	*********************************************************************
 	Initialize the alarm system
@@ -67,29 +60,39 @@ INT32 main(int argc, char *argv[])
 	*********************************************************************
 	*/
 	if(argc != 1){
-		printf("Expecting 1 argument, %i received.",argc-1);
+		printf("Expecting no argument, %i received.",argc-1);
 		fflush(stdout);
 		return(GL_ERROR);
 	}
 
-	n=0;
+	iTcpStatus = gl_Socket_Server_Connect(&tcpSocket, GL_DEVICE_TYPE_TCP_CLIENT_SOCKET, , , GL_DEVICE_PROTOCOL_SATREF, GL_DEVICE_FORMAT_BINARY, TIMEOUT, GL_DEVICE_BLOCKED, &Error);
 
-	/*
-	*********************************************************************
-	Making header
-	*********************************************************************
-	*/
-	INT16_BIT16(&msgHead[n],sRefId);  n +=sizeof(INT16);
-	msgHead[n] = ucMsgClass; n +=sizeof(UINT8);
-	msgHead[n] = CMD_CONFIG_MSG_TYPE; n +=sizeof(UINT8);
-	INT32_BIT32(&msgHead[n],lGpsSec); n +=sizeof(INT32);
-	INT16_BIT16(&msgHead[n],sGpsmSec); n +=sizeof(INT16);
-	INT16_BIT16(&msgHead[n],sLen); n +=sizeof(INT16);
+	INT16_BIT16(&satrefMsg.HeaderData.sRefId,sRefId);
+	satrefMsg.HeaderData.ucMsgClass = ucMsgClass;
+	satrefMsg.HeaderData.ucMsgType = ucMsgType;
+	INT32_BIT32(&satrefMsg.HeaderData.lGpsSec,time(NULL));
+	INT16_BIT16(&satrefMsg.HeaderData.sGpsmSec,0);
+	INT16_BIT16(&satrefMsg.HeaderData.sLen,1);
 	
-	gl_Satref_PackMsg(gl_TSatrefExtMsg *SatrefExtMsg, UINT8 *ucBuf, INT32 *iLen,  gl_TError *Error);
+	satrefMsg.ucData[0] = 0;
+	
+	gl_Satref_WriteMsg(&tcpSocket, &satrefMsg, &Error);
+	
+	iStatus = gl_Satref_ReadMsg(&tcpSocket, &satrefMsg, &Error);
 
-	// Write or send a Satref message
-	gl_Satref_WriteMsg(gl_TDevice *Dev, gl_TSatrefExtMsg *SatrefExtMsg, gl_TError *Error);
+	//Waiting for an acknowledgement of the command
+	while(i<TIMEOUT){
+		if(satrefMsg.HeaderData.sLen == 0){
+			gl_Sleep(1,0);
+			iStatus = gl_Satref_ReadMsg(&tcpSocket, &satrefMsg, &Error);
+			i++;
+		} else {			
+			//TODO: read message
+			return 0;
+		}
+	}
+	printf("Timeout");
+	return 1;	
 	
 	return 0;
 }

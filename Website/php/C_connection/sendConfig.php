@@ -11,12 +11,13 @@ $toSend = implode(" ",$toSend);
 $now = time();
 $returnValue = 1;
 while($returnValue != 0) {
-	if(time() - $now > $timeout){
-		echo "TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$timeout." SECONDS";
+	$elapsedTime = time() - $now;
+	if($elapsedTime > $timeout){
+		echo "TIMEOUT: NO ANSWER RECEIVED FROM STATION WITHIN ".$elapsedTime." SECONDS. RETRYING.";
 		ob_flush();
 		flush();
 	}
-	exec("cd ../../C && ./commandSenderConfig ".$toSend,$output,$returnValue);
+	exec("cd ../../C/Server && ./commandSenderConfig ".$toSend,$output,$returnValue);
 	sleep(1);
 }
 echo "Success";
