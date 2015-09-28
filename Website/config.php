@@ -128,7 +128,7 @@
 
 						<div class="form-group">
 							<label>RxPortNo</label>
-							<input name="RCFRxPortNo" class="form-control" onchange="validateUint('RCFRxPortNo');" required>
+							<input name="RCFRxPortNo" class="form-control" onchange="validatePort('RCFRxPortNo');" required>
 						</div>
 
 						<div class="form-group">
@@ -275,7 +275,7 @@
 
 						<div class="form-group">
 							<label>TxPortNo</label>
-							<input name="ICMTxPortNo" class="form-control" onchange="validateUint('ICMTxPortNo');" required>
+							<input name="ICMTxPortNo" class="form-control" onchange="validatePort('ICMTxPortNo');" required>
 						</div>
 
 						<div class="form-group">
@@ -517,7 +517,7 @@
 				<!--<button name="sendButton" type="button" class="btn btn-warning" data-toggle="modal" data-target="#confirmNoSave">Send (but don't save)</button>-->
 			</div>
 
-			<!-- Send (no save) -->
+			<!-- Send (no save)
 			<div class="modal fade" id="confirmNoSave" tabindex="-1" role="dialog" aria-labelledby="confirmNoSave" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -538,6 +538,7 @@
 					</div>
 				</div>
 			</div>
+			-->
 
 		</form>
 	</div> <!-- End of panel-body -->

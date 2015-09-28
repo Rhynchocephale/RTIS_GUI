@@ -105,8 +105,6 @@
 }
 
 
-
-
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
@@ -118,7 +116,7 @@
 {
 École Nationale des Sciences Géographiques \\ % Your institution for the title page
 \medskip
-National Mapping Authority
+Norwegian Mapping Authority
 }
 \date{29 September 2015} % Date, can be changed to a custom date
 
@@ -137,13 +135,15 @@ National Mapping Authority
 %	PRESENTATION SLIDES
 %----------------------------------------------------------------------------------------
 
+
 %------------------------------------------------
 \section{Brief presentation of the context}
+\frame{\sectionpage}
 
 \begin{frame}
 \frametitle{Description of RTIS}
 \begin{itemize}
-\item The Real-Time Ionospheric Scintillation Monitor (RTIS) is a software developed by the Norwegian Mapping Authority (NMA)
+\item The Real-Time Ionospheric Scintillation Monitor (RTIS) is a software developed by the Norwegian Mapping Authority (NMA).
 \item It is deployed in twelve observation stations, spread all across Norway and the Norwegian Sea. %speak about remoteness
 \end{itemize}
 
@@ -187,7 +187,8 @@ Create an interface for monitoring the stations:
 
 %------------------------------------------------
 
-\section{The architecture}
+\section{Architecture}
+\frame{\sectionpage}
 
 \begin{frame}
 \frametitle{Requirements}
@@ -204,26 +205,38 @@ Create an interface for monitoring the stations:
 
 %------------------------------------------------
 
-\subsection{Successive designs}
 \begin{frame}
-\frametitle{First version: a complex client.}
-\begin{figure}
+\subsection{First version}
+\frametitle{A complex client}
+\begin{center}
 	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V1}
-\end{figure}
+\end{center}
 \end{frame}
 
 \begin{frame}
-\frametitle{Second version: too many connections.}
-\begin{figure}
+Problems:
+\begin{itemize}
+	\item Modifying data sender parameters on the fly.
+	\item Detecting disconnects.
+	\item[$\Rightarrow$] Complex code.
+\end{itemize}
+
+\end{frame}
+
+\subsection{Second version}
+\begin{frame}
+\frametitle{Too many connections}
+\begin{center}
 	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V2a}
-\end{figure}
+\end{center}
 \end{frame}
 
+
 \begin{frame}
-\frametitle{Second version: too many connections.}
-\begin{figure}
-	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V2b}
-\end{figure}
+\frametitle{Too many connections}
+\begin{center}
+	\includegraphics[height=0.75\paperheight]{images/global_flowchart_V2b}
+\end{center}
 \end{frame}
 
 \begin{frame}
@@ -240,12 +253,65 @@ Problems:
 
 \end{frame}
 
+\subsection{Third version}
+\begin{frame}
+\frametitle{Back to basics.}
+\begin{center}
+	\includegraphics[height=0.7\paperheight]{images/global_flowchart_V3}
+\end{center}
+\end{frame}
+
+%------------------------------------------------
+
+\section{Graphical interface}
+\frame{\sectionpage}
+
+\subsection{About the configuration files}
+\begin{frame}
+\frametitle{Storage}
+\begin{itemize}
+	\item Files stored on the web server
+	\begin{itemize}
+		\item[$\Rightarrow$] Faster, less bandwidth
+		\item[$\Rightarrow$] Keeps track
+	\end{itemize}
+	\item Simple local database:
+	\begin{itemize}
+		\item Only one table
+		\item Only simple operations (read, write, delete)
+	\end{itemize}
+\end{itemize}
+\end{frame}
 
 \begin{frame}
-\frametitle{Third version: back to basics.}
-\begin{figure}
-	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V1}
-\end{figure}
+\frametitle{The web page}
+
+\begin{center}
+	\hspace*{-5mm}
+	\includegraphics[width=\paperwidth]{images/dataTab}
+\end{center}
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+%PAS LA BONNE IMAGE !\\
+
+\end{frame}
+
+\subsection{Displaying data}
+\begin{frame}
+\frametitle{Data tab}
+	\hspace*{-5mm}
+	\includegraphics[width=\paperwidth]{images/dataTab}
 \end{frame}
 
 %------------------------------------------------

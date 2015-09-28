@@ -51,7 +51,7 @@ function parseValues($fp){
 	$data = getIntLine($data,"RCF","SeverityFilter");
 	$data = getIntLine($data,"RCF","StationId");
 	$data = getIpLine($data,"RCF","RxIP_Address");
-	$data = getIntLine($data,"RCF","RxPortNo");
+	$data = getPortLine($data,"RCF","RxPortNo");
 	$data = getIntLine($data,"RCF","RxSocketType");
 	$data = getIntLine($data,"RCF","RxIOTimeout");
 	$data = getIntLine($data,"RCF","RxConnectionTimeout");
@@ -73,7 +73,7 @@ function parseValues($fp){
 	
 	$data = getIntLine($data,"ICM","SeverityFilter");
 	$data = getIpLine($data,"ICM","TxIP_Address");
-	$data = getIntLine($data,"ICM","TxPortNo");
+	$data = getPortLine($data,"ICM","TxPortNo");
 	$data = getIntLine($data,"ICM","TxSocketType");
 	$data = getIntLine($data,"ICM","TxIOTimeout");
 	$data = getIntLine($data,"ICM","TxConnectionTimeout");
@@ -99,6 +99,28 @@ function getIntLine($data,$section,$type) {
 	
 	if(!ctype_digit($value)) {   	//if value not an int
 		$errorMsg = "Error when parsing for $type: " . ($value != "" ? $value : "NULL") . " is not a valid INT." ;
+		return false;
+	}
+	
+	$data[$section.$type] = $value; //everything is fine, then.
+	return $data;
+}
+
+function getPortLine($data,$section,$type) {
+	global $fp, $errorMsg;
+	
+	$value = commonChecks($fp, $type);
+	if($value === false) {
+		return false;
+	}
+	
+	if(!ctype_digit($value)) {   	//if value not an int
+		$errorMsg = "Error when parsing for $type: " . ($value != "" ? $value : "NULL") . " is not an integer." ;
+		return false;
+	}
+	
+	if($value < 1 || $value > 65535) {   	//if value not an int
+		$errorMsg = "Error when parsing for $type: " . ($value != "" ? $value : "NULL") . " is out of range." ;
 		return false;
 	}
 	

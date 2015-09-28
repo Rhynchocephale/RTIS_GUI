@@ -54,7 +54,47 @@
 						<th>Value</th>
 					</tr>
 				</thead>
-				<tbody id="monitorBody">
+				<!--<tbody id="monitorBody">-->
+				<tbody>
+					<tr>
+	<td>IPAdress</td>
+	<td>2.148.132.16</td>
+</tr>
+
+<tr>
+	<td>PortNo</td>
+	<td>50000</td>
+</tr>
+
+<tr>
+	<td>SampleRate</td>
+	<td>30</td>
+</tr>
+
+<tr>
+	<td>NoOfRawMeas</td>
+	<td>68</td>
+</tr>
+
+<tr>
+	<td>NoOfLostRawMeas</td>
+	<td>0</td>
+</tr>
+
+<tr>
+	<td>NoOfIQMeas</td>
+	<td>68</td>
+</tr>
+
+<tr>
+	<td>NoOfLostIQMeas</td>
+	<td>0</td>
+</tr>
+
+<tr>
+	<td>Other</td>
+	<td>0</td>
+</tr>
 				</tbody>
 			</table>
 		</div>

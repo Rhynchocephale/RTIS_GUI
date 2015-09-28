@@ -15,6 +15,23 @@ function validateUint(id) {
 	}
 }
 
+function validatePort(id) {
+	var myElement = $("[name="+id+"]");
+	myElement.removeClass("has-error has-success");
+	$("#"+id+'_Label').remove();   				//removing the error label if present
+	if( myElement.val() ) { 					//if is not empty
+		if (/^([1-9][0-9]{0,3}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5])$/.test(myElement.val())){		//between 1 and 65536
+			myElement.addClass("has-success");
+		} else {
+			myElement.addClass("has-error");
+			if(! myElement.parent().hasClass("form-group")) { 		//going one step higher, in order to get out of input-groups
+					myElement = myElement.parent();
+			}
+			myElement.after( "<div id=\""+id+"_Label\" class=\"label label-danger\">Invalid port</div>" ); //adding an error label after the current element
+		}
+	}
+}
+
 function validateFloat(id) {
 	var myElement = $("[name="+id+"]");
 	myElement.removeClass("has-error has-success")
