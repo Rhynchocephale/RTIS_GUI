@@ -95,6 +95,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
 \usepackage{appendixnumberbeamer}
+\usepackage{listings} %insertion de code
+\usepackage{enumitem} %personnalisation des listes
+
+\setbeamercolor{item}{fg=red}
+\setitemize{label=\usebeamerfont*{itemize item}%
+  \usebeamercolor[fg]{itemize item}
+  \usebeamertemplate{itemize item}
+}
 
 
 
@@ -151,6 +159,7 @@ National Mapping Authority
 \frametitle{Ionospheric Scintillation}
 \begin{itemize}
 	\item[] Phenomenon related to solar winds.
+	\item[] Randomises electron density.
 	\item[] Lessens quality of GNSS observations.
 \end{itemize}
 
@@ -180,117 +189,63 @@ Create an interface for monitoring the stations:
 
 \section{The architecture}
 
-
-\begin{frame}[plain]{}
-	\centering
-	\includegraphics[height=\paperheight]{../LatexClement/images/global_flowchart.png}
-\end{frame}
-
-\subsection{Limiting the bandwidth}
 \begin{frame}
-
 \frametitle{Requirements}
-Low bandwidth on some stations $\Rightarrow$ minimise exchanges.
+\begin{itemize}
+	\item Low bandwidth on some stations
+	\begin{itemize}[label=$\Rightarrow$]
+		\item Minimise exchanges.
+		\item Detect broken connections.
+	\end{itemize}
+	\item Independent refresh for each type of data.
+	\item History of configuration files.
+\end{itemize}
 \end{frame}
 
 %------------------------------------------------
+
+\subsection{Successive designs}
+\begin{frame}
+\frametitle{First version: a complex client.}
+\begin{figure}
+	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V1}
+\end{figure}
+\end{frame}
 
 \begin{frame}
-\frametitle{Blocks of Highlighted Text}
-\begin{block}{Block 1}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-\end{block}
-
-\begin{block}{Block 2}
-Pellentesque sed tellus purus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum quis magna at risus dictum tempor eu vitae velit.
-\end{block}
-
-\begin{block}{Block 3}
-Suspendisse tincidunt sagittis gravida. Curabitur condimentum, enim sed venenatis rutrum, ipsum neque consectetur orci, sed blandit justo nisi ac lacus.
-\end{block}
+\frametitle{Second version: too many connections.}
+\begin{figure}
+	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V2a}
+\end{figure}
 \end{frame}
-
-%------------------------------------------------
-\subsection{Test again 3}
-\begin{frame}
-\frametitle{Multiple Columns}
-\begin{columns}[c] % The "c" option specifies centered vertical alignment while the "t" option is used for top vertical alignment
-
-\column{.45\textwidth} % Left column and width
-\textbf{Heading}
-\begin{enumerate}
-\item Statement
-\item Explanation
-\item Example
-\end{enumerate}
-
-\column{.5\textwidth} % Right column and width
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lectus nisl, ultricies in feugiat rutrum, porttitor sit amet augue. Aliquam ut tortor mauris. Sed volutpat ante purus, quis accumsan dolor.
-
-\end{columns}
-\end{frame}
-
-%------------------------------------------------
-\section{Second Section}
-%------------------------------------------------
 
 \begin{frame}
-\frametitle{Table}
-\begin{table}
-\begin{tabular}{l l l}
-\toprule
-\textbf{Treatments} & \textbf{Response 1} & \textbf{Response 2}\\
-\midrule
-Treatment 1 & 0.0003262 & 0.562 \\
-Treatment 2 & 0.0015681 & 0.910 \\
-Treatment 3 & 0.0009271 & 0.296 \\
-\bottomrule
-\end{tabular}
-\caption{Table caption}
-\end{table}
+\frametitle{Second version: too many connections.}
+\begin{figure}
+	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V2b}
+\end{figure}
 \end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
+
+Problems:
+\begin{itemize}
+	\item "Blocked-mode" communications
+	\begin{itemize}
+		\item[$\Rightarrow$] Listening simultaneously on different channels is difficult.
+	\end{itemize}
+	\item[]
+	\item Redundant TCP confirmation for data.
+\end{itemize}
+
 \end{frame}
 
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
-
-%------------------------------------------------
 
 \begin{frame}
-\frametitle{Figure}
-Uncomment the code on this slide to include your own image from the same directory as the template .TeX file.
-%\begin{figure}
-%\includegraphics[width=0.8\linewidth]{test}
-%\end{figure}
-\end{frame}
-
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Citation}
-An example of the \verb|\cite| command to cite within the presentation:\\~
-
-This statement requires citation \cite{p1}.
+\frametitle{Third version: back to basics.}
+\begin{figure}
+	\includegraphics[height=0.78\paperheight]{images/global_flowchart_V1}
+\end{figure}
 \end{frame}
 
 %------------------------------------------------
@@ -303,6 +258,50 @@ This statement requires citation \cite{p1}.
 
 %------------------------------------------------
 \appendix
+
+{
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle\hspace*{3em}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+
+
+\begin{frame}[fragile]
+
+\frametitle{C-PHP communications}
+\begin{block}{test.c}
+	\lstset{language=C}
+	\begin{lstlisting}
+		main(){
+			int x;
+			printf("Initialisation");
+			x = 1;
+			printf("Done");
+			return x;
+		}
+	\end{lstlisting}
+\end{block}
+
+\begin{block}{example.php}
+	\lstset{language=PHP}
+	\begin{lstlisting}
+		exec("./test",$output,$returnValue);
+		//$output = ["Initialisation","Done"]
+		//$returnValue = 1
+	\end{lstlisting}
+\end{block}
+
+\end{frame}
+
 \bgroup
 \setbeamercolor{background canvas}{bg=black}
 \begin{frame}[plain]{}
@@ -310,6 +309,9 @@ This statement requires citation \cite{p1}.
 	\includegraphics[width=\paperwidth]{../Poster/poster.png}
 \end{frame}
 \egroup
+
+
+}
 
 %----------------------------------------------------------------------------------------
 

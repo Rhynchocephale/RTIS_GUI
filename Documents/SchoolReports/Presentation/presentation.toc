@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.24pt}
+\beamer@sectionintoc {1}{Brief presentation of the context}{3}{0}{1}
+\beamer@sectionintoc {2}{The architecture}{6}{0}{2}
+\beamer@subsectionintoc {2}{1}{Successive designs}{7}{0}{2}

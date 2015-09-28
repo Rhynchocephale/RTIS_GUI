@@ -1,0 +1,24 @@
+
+\frametitle{C-PHP communications}
+\begin{block}{test.c}
+\lstset{language=C}
+\begin{lstlisting}
+main(){
+int x;
+printf("Initialisation");
+x = 1;
+printf("Done");
+return x;
+}
+\end{lstlisting}
+\end{block}
+
+\begin{block}{example.php}
+\lstset{language=PHP}
+\begin{lstlisting}
+exec("./test",$output,$returnValue);
+//$output = ["Initialisation","Done"]
+//$returnValue = 1
+\end{lstlisting}
+\end{block}
+
